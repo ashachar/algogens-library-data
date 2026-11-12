@@ -44,6 +44,6 @@
   "verification": {
     "status": "corrected",
     "checked_on": "2026-11-03",
-    "notes": "Resolved arXiv:2503.03350 (Bomer, Koltermann, Disselnmeyer, Dorr, Meyer; v1 5 Mar 2025; comment 'under review LION19'). Report said 'small models with context can beat larger ones' - true for the pair Qwen2.5-Coder:32b (CEoH) vs GPT-4o (EoH), but the paper notes GPT-4o did better with plain EoH than with CEoH, so context does not always help. Parent set to eoh. Org confirmed from the arXiv HTML (review 2026-11-03)."
+    "notes": "Resolved arXiv:2503.03350 (Bomer, Koltermann, Disselnmeyer, Dorr, Meyer; v1 5 Mar 2025; comment 'under review LION19'). The draft said 'small models with context can beat larger ones' - true for the pair Qwen2.5-Coder:32b (CEoH) vs GPT-4o (EoH), but the paper notes GPT-4o did better with plain EoH than with CEoH, so context does not always help. Parent set to eoh. Org confirmed from the arXiv HTML (review 2026-11-03)."
   }
 }

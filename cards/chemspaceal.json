@@ -54,6 +54,6 @@
   "verification": {
     "checked_on": "2026-11-03",
     "status": "verified",
-    "notes": "Read the full text of PMC10516108 (the arXiv preprint, v2) via Europe PMC XML and the published JCIM abstract. Report corrections: (1) docking is DiffDock, a learned diffusion docking model, not physics docking, and scoring is a custom sum of attractive contact points; (2) RDKit descriptors are for the chemical-space proxy, and sampling is about 1% per cluster giving 1,000 molecules per iteration; (3) the paper says imatinib and bosutinib appear after five iterations. The report's year is ambiguous: preprint 2023, published JCIM 2024; card year now 2024 (J Chem Inf Model, 2024-01-30) per the corpus citation ledger."
+    "notes": "Read the full text of PMC10516108 (the arXiv preprint, v2) via Europe PMC XML and the published JCIM abstract. Draft corrections: (1) docking is DiffDock, a learned diffusion docking model, not physics docking, and scoring is a custom sum of attractive contact points; (2) RDKit descriptors are for the chemical-space proxy, and sampling is about 1% per cluster giving 1,000 molecules per iteration; (3) the paper says imatinib and bosutinib appear after five iterations. The draft's year is ambiguous: preprint 2023, published JCIM 2024; card year now 2024 (J Chem Inf Model, 2024-01-30) per the corpus citation ledger."
   }
 }

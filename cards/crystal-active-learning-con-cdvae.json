@@ -44,6 +44,6 @@
   "verification": {
     "checked_on": "2026-11-03",
     "status": "verified",
-    "notes": "arXiv id resolves to the claimed title (Li, Liu, Ye, Srolovitz, Wen; HKU; submitted 24 Feb 2025). Read the full PDF text. Report corrections: the paper says 'alloy' crystals specifically; the bulk-modulus accuracy is judged by CGCNN, with DFT used for validation and training labels; MD uses MACE-MP-0 in LAMMPS. The MAPE 0.4 to 0.2 is the paper's phrase for the average; a separate 0.14 value is quoted for the 350 GPa condition at Iter2. It is a preprint (no venue shown)."
+    "notes": "arXiv id resolves to the claimed title (Li, Liu, Ye, Srolovitz, Wen; HKU; submitted 24 Feb 2025). Read the full PDF text. Draft corrections: the paper says 'alloy' crystals specifically; the bulk-modulus accuracy is judged by CGCNN, with DFT used for validation and training labels; MD uses MACE-MP-0 in LAMMPS. The MAPE 0.4 to 0.2 is the paper's phrase for the average; a separate 0.14 value is quoted for the 350 GPa condition at Iter2. It is a preprint (no venue shown)."
   }
 }

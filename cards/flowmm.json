@@ -41,7 +41,7 @@
   "youtube_id": null,
   "verification": {
     "status": "verified",
-    "checked_on": "2026-04-12",
+    "checked_on": "2026-11-06",
     "notes": "Checked against Miller et al., ICML 2024."
   }
 }

@@ -44,6 +44,6 @@
   "verification": {
     "status": "verified",
     "checked_on": "2026-11-03",
-    "notes": "Resolved arXiv:2609.12286 (Ogawa and Mori; v1 10 Sep 2026, v2 14 Oct 2026). Abstract numbers match the report's direction (better sample efficiency than EoH at equal calls); added the exact 9/10 and 0.836% vs 3.912% figures. Report's 'preprint' label confirmed. Affiliations not checked, so org lists the authors. Parent left null: the paper says its example is aligned with EoH but frames T-GADE as a general framework. Org confirmed from the arXiv HTML title block: Graduate School of Informatics, Osaka Metropolitan University (review 2026-11-03)."
+    "notes": "Resolved arXiv:2609.12286 (Ogawa and Mori; v1 10 Sep 2026, v2 14 Oct 2026). Abstract numbers match the draft's direction (better sample efficiency than EoH at equal calls); added the exact 9/10 and 0.836% vs 3.912% figures. The draft's 'preprint' label confirmed. Affiliations not checked, so org lists the authors. Parent left null: the paper says its example is aligned with EoH but frames T-GADE as a general framework. Org confirmed from the arXiv HTML title block: Graduate School of Informatics, Osaka Metropolitan University (review 2026-11-03)."
   }
 }

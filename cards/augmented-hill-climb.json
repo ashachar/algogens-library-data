@@ -42,6 +42,6 @@
   "verification": {
     "checked_on": "2026-11-03",
     "status": "verified",
-    "notes": "Abstract opened via Europe PMC (PMC9531503; the Springer URL redirects). Authors Thomas, O'Boyle, Bender, de Graaf; first-author affiliation printed as Centre for Molecular Informatics, University of Cambridge (org field uses that only). Numbers (1.5-fold, 45-fold, six tasks, transformer result) quoted from the abstract. The report's 'better sample efficiency than REINVENT's strategy' is correct and now carries the ~45-fold figure. Only the abstract was read, not the full methods."
+    "notes": "Abstract opened via Europe PMC (PMC9531503; the Springer URL redirects). Authors Thomas, O'Boyle, Bender, de Graaf; first-author affiliation printed as Centre for Molecular Informatics, University of Cambridge (org field uses that only). Numbers (1.5-fold, 45-fold, six tasks, transformer result) quoted from the abstract. The draft's 'better sample efficiency than REINVENT's strategy' is correct and now carries the ~45-fold figure. Only the abstract was read, not the full methods."
   }
 }

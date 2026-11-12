@@ -42,6 +42,6 @@
   "verification": {
     "status": "corrected",
     "checked_on": "2026-11-03",
-    "notes": "Read abstract and Section 7 of the PDF text. Report said '>90% of 150 tasks': true (137/150 = 91.3%) but conditions missing (max 3 tries, GPT-4o, authors' own benchmark, baseline 67/150). Paper appeared at OOPSLA 2025 (arXiv 2024); year set to arXiv year. Org is from author names (Lahiri, Lorch, Lu and others), not an affiliation line I read. Org confirmed from the affiliations printed in the arXiv HTML title block (review 2026-11-03). Review 2026-11-03: headline numbers re-checked against the source."
+    "notes": "Read abstract and Section 7 of the PDF text. The draft said '>90% of 150 tasks': true (137/150 = 91.3%) but conditions missing (max 3 tries, GPT-4o, authors' own benchmark, baseline 67/150). Paper appeared at OOPSLA 2025 (arXiv 2024); year set to arXiv year. Org is from author names (Lahiri, Lorch, Lu and others), not an affiliation line I read. Org confirmed from the affiliations printed in the arXiv HTML title block (review 2026-11-03). Review 2026-11-03: headline numbers re-checked against the source."
   }
 }

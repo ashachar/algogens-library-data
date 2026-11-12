@@ -56,6 +56,6 @@
   "verification": {
     "checked_on": "2026-11-03",
     "status": "verified",
-    "notes": "Opened the full text (Europe PMC PMC10882833; the Springer page itself redirects to a login cookie page) and the DockStream GitHub README. Confirmed authors Loeffler et al., AstraZeneca Molecular AI, 2024. DockStream is cited as the docking interface supporting AutoDock Vina, rDock, Hybrid, Glide and GOLD. PDK1 numbers (119/6400, 1.9%, 103 scaffolds, thresholds) taken from the paper's Fig. 5 text. Report said 'example: docking-guided design vs PDK1': correct but it is a demo, not a project result. DockStream repo confirmed unmaintained via README and archived flag (GitHub API). Review 2026-11-03: headline numbers re-checked against the source."
+    "notes": "Opened the full text (Europe PMC PMC10882833; the Springer page itself redirects to a login cookie page) and the DockStream GitHub README. Confirmed authors Loeffler et al., AstraZeneca Molecular AI, 2024. DockStream is cited as the docking interface supporting AutoDock Vina, rDock, Hybrid, Glide and GOLD. PDK1 numbers (119/6400, 1.9%, 103 scaffolds, thresholds) taken from the paper's Fig. 5 text. The draft said 'example: docking-guided design vs PDK1': correct but it is a demo, not a project result. DockStream repo confirmed unmaintained via README and archived flag (GitHub API). Review 2026-11-03: headline numbers re-checked against the source."
   }
 }

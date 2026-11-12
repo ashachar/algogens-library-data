@@ -45,6 +45,6 @@
   "verification": {
     "status": "verified",
     "checked_on": "2026-11-03",
-    "notes": "Resolved arXiv:2401.02051 (Liu, Tong, Yuan, Lin, Wang, Lu, Zhang; v1 4 Jan 2024; v3 1 Jun 2024). Numbers from Table 9 and text via the HTML version. Report claim 'beats hand heuristics incl. online bin packing' holds. I could not confirm a conference venue from arXiv metadata, so none is stated."
+    "notes": "Resolved arXiv:2401.02051 (Liu, Tong, Yuan, Lin, Wang, Lu, Zhang; v1 4 Jan 2024; v3 1 Jun 2024). Numbers from Table 9 and text via the HTML version. Draft claim 'beats hand heuristics incl. online bin packing' holds. I could not confirm a conference venue from arXiv metadata, so none is stated."
   }
 }

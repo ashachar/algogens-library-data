@@ -50,6 +50,6 @@
   "verification": {
     "checked_on": "2026-11-03",
     "status": "verified",
-    "notes": "Read the arXiv abstract and the full PDF text. Confirmed: NVIDIA, UPenn, Caltech, UT Austin; ICLR 2024; 5 iterations, K=16 samples per iteration, 5 independent runs per environment; gpt-4-0314; reward reflection; 83% and 52% from the abstract; 29 environments (9 Isaac plus 20 Dexterity). Eureka matches or exceeds humans on all Isaac tasks and 15 of 20 Dexterity tasks. Added from the robotics-gap list, not in the report's 27 entries. Review 2026-11-03: headline numbers re-checked against the source."
+    "notes": "Read the arXiv abstract and the full PDF text. Confirmed: NVIDIA, UPenn, Caltech, UT Austin; ICLR 2024; 5 iterations, K=16 samples per iteration, 5 independent runs per environment; gpt-4-0314; reward reflection; 83% and 52% from the abstract; 29 environments (9 Isaac plus 20 Dexterity). Eureka matches or exceeds humans on all Isaac tasks and 15 of 20 Dexterity tasks. Added in a second search pass. Review 2026-11-03: headline numbers re-checked against the source."
   }
 }

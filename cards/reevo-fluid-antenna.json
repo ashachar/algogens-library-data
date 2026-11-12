@@ -51,6 +51,6 @@
   "verification": {
     "checked_on": "2026-11-03",
     "status": "verified",
-    "notes": "arXiv id 2610.10235 resolves to the claimed title; v1 7 Oct 2026, v2 26 Oct 2026; comment 'Accepted by WCSP 2026'. Read abstract and HTML full text. Report said 'higher secure sum-rate than plain GA and LLM-GA at equal generations': correct, and now quantified. The page cites ReEvo as NeurIPS 2024 (Ye et al.) but does not print arXiv 2402.01145; that link is only background. Affiliations are not shown on the page, so org is left generic. Did not verify the ReEvo-evolved operators are open-sourced. Org confirmed from the arXiv HTML title block: all three authors at HIT Shenzhen (review 2026-11-03)."
+    "notes": "arXiv id 2610.10235 resolves to the claimed title; v1 7 Oct 2026, v2 26 Oct 2026; comment 'Accepted by WCSP 2026'. Read abstract and HTML full text. The draft said 'higher secure sum-rate than plain GA and LLM-GA at equal generations': correct, and now quantified. The page cites ReEvo as NeurIPS 2024 (Ye et al.) but does not print arXiv 2402.01145; that link is only background. Affiliations are not shown on the page, so org is left generic. Did not verify the ReEvo-evolved operators are open-sourced. Org confirmed from the arXiv HTML title block: all three authors at HIT Shenzhen (review 2026-11-03)."
   }
 }

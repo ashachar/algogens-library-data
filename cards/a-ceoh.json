@@ -46,6 +46,6 @@
   "verification": {
     "status": "verified",
     "checked_on": "2026-11-03",
-    "notes": "Resolved arXiv:2601.19622 (Bomer, Koltermann, Disselnmeyer, Amberg; v1 27 Jan 2026; comment 'accepted at EvoStar'). Solved-count tables read from the HTML (percentages are my arithmetic). Affiliations assumed to match the CEoH authors (KIT / TU Dortmund) and not checked on this paper. Report's 'pre-marshalling and sliding puzzles' confirmed. Parent set to eoh as a variant of CEoH/EoH. Org confirmed from the arXiv HTML: KIT (4 authors) and TU Dortmund (1) (review 2026-11-03)."
+    "notes": "Resolved arXiv:2601.19622 (Bomer, Koltermann, Disselnmeyer, Amberg; v1 27 Jan 2026; comment 'accepted at EvoStar'). Solved-count tables read from the HTML (percentages are my arithmetic). Affiliations assumed to match the CEoH authors (KIT / TU Dortmund) and not checked on this paper. The draft's 'pre-marshalling and sliding puzzles' confirmed. Parent set to eoh as a variant of CEoH/EoH. Org confirmed from the arXiv HTML: KIT (4 authors) and TU Dortmund (1) (review 2026-11-03)."
   }
 }

@@ -10,7 +10,8 @@ permissions:
 
 jobs:
   check:
-    if: contains(github.event.issue.labels.*.name, 'submission')
+    # Runs on issues made with the submit form (its body has this heading), whether or not the label exists yet.
+    if: contains(github.event.issue.body, '### Entry type')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -36,8 +37,10 @@ jobs:
             elif [ "$CODE" = "2" ]; then echo "Schema check: no JSON entry was given, so a maintainer will write it from the form."; \
             else echo "Schema check: the JSON entry has problems. Please edit the issue to fix them."; fi
             echo
-            echo '```'
-            cat result.txt
-            echo '```'
+            echo '~~~~text'
+            tr -d '`~' < result.txt
+            echo '~~~~'
           } > comment.md
+          gh label create submission --repo "${{ github.repository }}" --color 0E8A16 --description "Submitted system or tool" 2>/dev/null || true
+          gh issue edit "${{ github.event.issue.number }}" --repo "${{ github.repository }}" --add-label submission || true
           gh issue comment "${{ github.event.issue.number }}" --repo "${{ github.repository }}" --body-file comment.md

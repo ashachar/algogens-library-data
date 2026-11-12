@@ -49,6 +49,6 @@
   "verification": {
     "status": "verified",
     "checked_on": "2026-11-03",
-    "notes": "Resolved arXiv:2505.22954 (Zhang, Hu, Lu, Lange, Clune; v1 29 May 2025, v3 12 Mar 2026). Report listed nothing; added as a candidate. Passes the filter: generator is an LLM, algorithmic judge is benchmark test results, the archive is updated by results. Org (Sakana AI and UBC) is from the task brief and the Sakana blog, not read on the arXiv page. Numbers: 20.0 to 50.0 and 14.2 to 30.7 from abstract; 80 iterations and models from the HTML. Did not read cost appendix. Org confirmed from Sakana AI announcement (sakana.ai/dgm: collaboration with Clune lab at UBC); arXiv page lists no affiliations (review 2026-11-03). Review 2026-11-03: headline numbers re-checked against the source."
+    "notes": "Resolved arXiv:2505.22954 (Zhang, Hu, Lu, Lange, Clune; v1 29 May 2025, v3 12 Mar 2026). Added as a candidate in a second search pass. Passes the filter: generator is an LLM, algorithmic judge is benchmark test results, the archive is updated by results. Org (Sakana AI and UBC) is from the task brief and the Sakana blog, not read on the arXiv page. Numbers: 20.0 to 50.0 and 14.2 to 30.7 from abstract; 80 iterations and models from the HTML. Did not read cost appendix. Org confirmed from Sakana AI announcement (sakana.ai/dgm: collaboration with Clune lab at UBC); arXiv page lists no affiliations (review 2026-11-03). Review 2026-11-03: headline numbers re-checked against the source."
   }
 }

@@ -37,13 +37,13 @@ print(sum(c["validity_scope"] == "formal" for c in cards), "systems with a forma
 - Or open a pull request that adds `cards/<slug>.json` or `tools/<slug>.json`. Run `make check` first; the same
   check runs on every pull request.
 
-Every claim needs a public source. New entries come in as `"status": "submitted"` and are checked against their
-sources before they are marked verified.
+Every claim needs a public source. New cards come in as `"status": "submitted"`, and every new card or tool is
+checked against its sources before it is merged.
 
 ## Cite it
 
-Citation details are in [`CITATION.cff`](CITATION.cff) (GitHub shows a "Cite this repository" button). Each
-release is archived on Zenodo with its own DOI.
+Citation details are in [`CITATION.cff`](CITATION.cff) (GitHub shows a "Cite this repository" button). Releases
+are archived on Zenodo, which gives each one a DOI.
 
 The idea behind the library comes from Amir Shachar, *Introduction to Algogens: Integrating Generative AI with
 Algorithmic Frameworks* (2024), [arXiv:2403.01426](https://arxiv.org/abs/2403.01426).

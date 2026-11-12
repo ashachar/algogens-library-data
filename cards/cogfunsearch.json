@@ -49,6 +49,6 @@
   "verification": {
     "status": "corrected",
     "checked_on": "2026-11-03",
-    "notes": "Opened the DeepMind publication page (authors Castro Rivadeneira, Stachenfeld, Miller, Tomasev, et al.; bioRxiv, 6 Feb 2025). Report claim confirmed: beats an existing cognitive model; the unconstrained NN does better. Corrections: it is a bioRxiv preprint, not a peer-reviewed paper; the bioRxiv title is 'Discovering Symbolic Cognitive Models from Human and Animal Behavior' (DeepMind page uses a different title); data covered humans, rats and flies per a secondary summary. The bioRxiv PDF itself was not opened. Domain set to science since the target is neuroscience, not math. Org confirmed from the bioRxiv full text (review 2026-11-03); the DeepMind page was not re-opened."
+    "notes": "Opened the DeepMind publication page (authors Castro Rivadeneira, Stachenfeld, Miller, Tomasev, et al.; bioRxiv, 6 Feb 2025). Draft claim confirmed: beats an existing cognitive model; the unconstrained NN does better. Corrections: it is a bioRxiv preprint, not a peer-reviewed paper; the bioRxiv title is 'Discovering Symbolic Cognitive Models from Human and Animal Behavior' (DeepMind page uses a different title); data covered humans, rats and flies per a secondary summary. The bioRxiv PDF itself was not opened. Domain set to science since the target is neuroscience, not math. Org confirmed from the bioRxiv full text (review 2026-11-03); the DeepMind page was not re-opened."
   }
 }

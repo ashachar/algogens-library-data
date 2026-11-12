@@ -45,6 +45,6 @@
   "verification": {
     "status": "verified",
     "checked_on": "2026-11-03",
-    "notes": "Read the arXiv abstract and the PDF text (section stating '42 out of 50 of all 2000-2024 IMO geometry problems'; SKEST named in the contributions). Report claim of 'above average gold-medalist' matches the abstract wording. Set parent=alphageometry."
+    "notes": "Read the arXiv abstract and the PDF text (section stating '42 out of 50 of all 2000-2024 IMO geometry problems'; SKEST named in the contributions). Draft claim of 'above average gold-medalist' matches the abstract wording. Set parent=alphageometry."
   }
 }

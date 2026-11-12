@@ -49,6 +49,6 @@
   "verification": {
     "status": "verified",
     "checked_on": "2026-11-03",
-    "notes": "Read the upstream README: MAP-Elites, islands with migration, LLM ensembles, artifact feedback, Apache-2.0. Confirmed via HTTP 301 that github.com/codelion/openevolve redirects to algorithmicsuperintelligence/openevolve (GitHub API: created 2025-05-15). Report said 'sorting, circle packing, kernel optimization' - README mentions adaptive sorting, signal processing, circle packing n=26 and MLX Metal kernels (2-3x). No paper to cite; evidence level is code. Third-party description of the MAP-Elites/island design also appears in ThetaEvolve (arXiv:2511.23473), not opened in full."
+    "notes": "Read the upstream README: MAP-Elites, islands with migration, LLM ensembles, artifact feedback, Apache-2.0. Confirmed via HTTP 301 that github.com/codelion/openevolve redirects to algorithmicsuperintelligence/openevolve (GitHub API: created 2025-05-15). The draft said 'sorting, circle packing, kernel optimization' - README mentions adaptive sorting, signal processing, circle packing n=26 and MLX Metal kernels (2-3x). No paper to cite; evidence level is code. Third-party description of the MAP-Elites/island design also appears in ThetaEvolve (arXiv:2511.23473), not opened in full."
   }
 }

@@ -45,6 +45,6 @@
   "verification": {
     "status": "verified",
     "checked_on": "2026-11-03",
-    "notes": "Resolved arXiv:2505.12285 (Huang, Wu, Wu, Wang, Lee, et al.; v1 18 May 2025). From the HTML tables: Qwen2.5-7B-Instruct INT4, GRPO (not PPO), 24GB GPU, tasks OBP/TSP/CVRP/OP. Report claim '7B INT4 on 24GB' confirmed; added that the RL method is GRPO and that CALM does not win every setting. Org confirmed from the arXiv HTML (review 2026-11-03)."
+    "notes": "Resolved arXiv:2505.12285 (Huang, Wu, Wu, Wang, Lee, et al.; v1 18 May 2025). From the HTML tables: Qwen2.5-7B-Instruct INT4, GRPO (not PPO), 24GB GPU, tasks OBP/TSP/CVRP/OP. Draft claim '7B INT4 on 24GB' confirmed; added that the RL method is GRPO and that CALM does not win every setting. Org confirmed from the arXiv HTML (review 2026-11-03)."
   }
 }

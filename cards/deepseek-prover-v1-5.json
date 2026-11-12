@@ -44,6 +44,6 @@
   "verification": {
     "status": "corrected",
     "checked_on": "2026-11-03",
-    "notes": "Read abstract and Tables 1 and 2 in the PDF text. 63.5% (miniF2F-test) and 25.3% (ProofNet test) are correct but the report omitted conditions: 63.5% is RL + RMaxTS at 32 x 6400 samples with the mixture strategy; ProofNet 25.3% is 4 x 6400. Authors list starts Huajian Xin, DeepSeek."
+    "notes": "Read abstract and Tables 1 and 2 in the PDF text. 63.5% (miniF2F-test) and 25.3% (ProofNet test) are correct but the draft omitted conditions: 63.5% is RL + RMaxTS at 32 x 6400 samples with the mixture strategy; ProofNet 25.3% is 4 x 6400. Authors list starts Huajian Xin, DeepSeek."
   }
 }

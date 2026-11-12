@@ -45,6 +45,6 @@
   "verification": {
     "status": "verified",
     "checked_on": "2026-11-03",
-    "notes": "Resolved arXiv:2402.01145 (Ye, Wang, Cao, Berto, et al.; v1 2 Feb 2024; comment 'Accepted at NeurIPS 2024'). Numbers from the HTML. Report said 'competitive/SOTA' - the abstract says state-of-the-art and competitive across five algorithm types; kept to the specific numbers. Affiliations from the paper title block."
+    "notes": "Resolved arXiv:2402.01145 (Ye, Wang, Cao, Berto, et al.; v1 2 Feb 2024; comment 'Accepted at NeurIPS 2024'). Numbers from the HTML. The draft said 'competitive/SOTA' - the abstract says state-of-the-art and competitive across five algorithm types; kept to the specific numbers. Affiliations from the paper title block."
   }
 }

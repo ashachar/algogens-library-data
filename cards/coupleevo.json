@@ -46,6 +46,6 @@
   "verification": {
     "status": "verified",
     "checked_on": "2026-11-03",
-    "notes": "Resolved arXiv:2605.06341 (Bomer, Amberg, Disselnmeyer, Meyer; v1 7 May 2026; comment 'accepted at GECCO 2026 workshop'). Table 1 numbers read from the HTML. Report said 'sequential/iterative more stable than integrated' - confirmed. Not verified whether it is built on EoH, so parent is null. Org confirmed from the arXiv HTML: all authors at KIT (review 2026-11-03)."
+    "notes": "Resolved arXiv:2605.06341 (Bomer, Amberg, Disselnmeyer, Meyer; v1 7 May 2026; comment 'accepted at GECCO 2026 workshop'). Table 1 numbers read from the HTML. The draft said 'sequential/iterative more stable than integrated' - confirmed. Not verified whether it is built on EoH, so parent is null. Org confirmed from the arXiv HTML: all authors at KIT (review 2026-11-03)."
   }
 }

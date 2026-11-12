@@ -55,6 +55,6 @@
   "verification": {
     "status": "corrected",
     "checked_on": "2026-11-03",
-    "notes": "This was not in the report; added as a kernel-loop candidate. Opened arXiv:2509.14279 (Lange, Sun, Prasad, Faldor, Tang, Ha; 16 Sep 2025), which is the follow-up with the full pipeline and numbers, not the original Feb 2025 'AI CUDA Engineer' document. The 3.13x to 1.49x figure appears in that paper as read via the HTML. The Feb 2025 retraction details come from search results (TechCrunch via Techmeme, Sakana X post) and were not read at the primary Sakana postmortem. Whether the pipeline's LLM verifiers make it fail the 'algorithmic judge' filter is borderline; kept because compile, test and profiling decide. Org: Sakana AI researchers per alphaXiv and the Sakana blog; paper HTML did not load in review (2026-11-03)."
+    "notes": "This was not in the draft; added as a kernel-loop candidate. Opened arXiv:2509.14279 (Lange, Sun, Prasad, Faldor, Tang, Ha; 16 Sep 2025), which is the follow-up with the full pipeline and numbers, not the original Feb 2025 'AI CUDA Engineer' document. The 3.13x to 1.49x figure appears in that paper as read via the HTML. The Feb 2025 retraction details come from search results (TechCrunch via Techmeme, Sakana X post) and were not read at the primary Sakana postmortem. Whether the pipeline's LLM verifiers make it fail the 'algorithmic judge' filter is borderline; kept because compile, test and profiling decide. Org: Sakana AI researchers per alphaXiv and the Sakana blog; paper HTML did not load in review (2026-11-03)."
   }
 }

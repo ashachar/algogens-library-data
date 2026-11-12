@@ -43,6 +43,6 @@
   "verification": {
     "checked_on": "2026-11-03",
     "status": "verified",
-    "notes": "Opened the Frontiers full text (first 100,000 characters). Authors Sauer, Matter, Hessler, Grebner (Sanofi), published 19 Oct 2022. Confirmed: Glide XP and ligand efficiency, RFXscore, QED and fXa QSAR used as rewards; MM/GBSA (OPLS3e, threshold -70 kcal/mol) and MedChem filters applied afterwards, matching the report's note that MM/GBSA is not in every step (it is never a training reward). The report's 'Glide docking + scoring in the reward' is correct. Parent set to reinvent-4 per instruction, though Lib-INVENT originates in a 2021 paper not opened here."
+    "notes": "Opened the Frontiers full text (first 100,000 characters). Authors Sauer, Matter, Hessler, Grebner (Sanofi), published 19 Oct 2022. Confirmed: Glide XP and ligand efficiency, RFXscore, QED and fXa QSAR used as rewards; MM/GBSA (OPLS3e, threshold -70 kcal/mol) and MedChem filters applied afterwards, matching the draft's note that MM/GBSA is not in every step (it is never a training reward). The draft's 'Glide docking + scoring in the reward' is correct. Parent set to reinvent-4 per instruction, though Lib-INVENT originates in a 2021 paper not opened here."
   }
 }

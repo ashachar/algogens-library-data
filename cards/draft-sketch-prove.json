@@ -42,7 +42,7 @@
   "youtube_id": null,
   "verification": {
     "status": "verified",
-    "checked_on": "2026-04-12",
+    "checked_on": "2026-11-06",
     "notes": "Checked against Jiang et al., ICLR 2023. Year corrected 2023 to 2022 (first posting); ICLR 2023 is not printed on the arXiv page, so it was removed from the source title (ledger)."
   }
 }

@@ -44,6 +44,6 @@
   "verification": {
     "status": "verified",
     "checked_on": "2026-11-03",
-    "notes": "Report gave only a GitHub org page; the paper is arXiv:2306.15626 (2023-06-27), which I opened (abstract plus results via HTML). Report says NeurIPS 2023; venue not confirmed by me. Numbers read from the paper's tables. Report said 'Counts as the prover, not the benchmark': agreed, card is for ReProver; it passes the filter because best-first search over Lean states steers generation, though weights are not updated by it."
+    "notes": "Report gave only a GitHub org page; the paper is arXiv:2306.15626 (2023-06-27), which I opened (abstract plus results via HTML). The draft says NeurIPS 2023; venue not confirmed by me. Numbers read from the paper's tables. The draft said 'Counts as the prover, not the benchmark': agreed, card is for ReProver; it passes the filter because best-first search over Lean states steers generation, though weights are not updated by it."
   }
 }

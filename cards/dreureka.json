@@ -49,6 +49,6 @@
   "verification": {
     "checked_on": "2026-11-03",
     "status": "verified",
-    "notes": "Read the arXiv abstract (RSS 2024) and the HTML full text (first 100,000 characters). Table I values quoted directly. The paper text claims 34% faster and 20% farther; the track table gives about 39% faster and 20% farther for the best policy, so the card quotes table values and avoids the percentages. Affiliation order in the extracted text was ambiguous (UPenn, NVIDIA, UT Austin). Added from the robotics-gap list. Org confirmed from the arXiv HTML title block (review 2026-11-03)."
+    "notes": "Read the arXiv abstract (RSS 2024) and the HTML full text (first 100,000 characters). Table I values quoted directly. The paper text claims 34% faster and 20% farther; the track table gives about 39% faster and 20% farther for the best policy, so the card quotes table values and avoids the percentages. Affiliation order in the extracted text was ambiguous (UPenn, NVIDIA, UT Austin). Added in a second search pass. Org confirmed from the arXiv HTML title block (review 2026-11-03)."
   }
 }

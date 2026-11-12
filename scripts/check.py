@@ -44,9 +44,10 @@ def validate(value, schema, path="$"):
         if not ok:
             return errors + [f"{path}: expected {expected}, got {type(value).__name__}"]
     if isinstance(value, str):
-        if len(value) < schema.get("minLength", 0):
+        if len(value.strip()) < schema.get("minLength", 0):
             errors.append(f"{path}: must not be empty")
-        if "pattern" in schema and not re.search(schema["pattern"], value):
+        # fullmatch-style: "$" in Python also matches before a final newline, so reject newlines in patterned values.
+        if "pattern" in schema and ("\n" in value or not re.search(schema["pattern"], value)):
             errors.append(f"{path}: {value!r} does not match {schema['pattern']}")
     if isinstance(value, int) and not isinstance(value, bool):
         if "minimum" in schema and value < schema["minimum"]:
@@ -69,15 +70,16 @@ def validate(value, schema, path="$"):
             if key in props:
                 errors += validate(item, props[key], f"{path}.{key}")
             elif schema.get("additionalProperties") is False:
-                errors.append(f"{path}: unknown field '{key}'")
+                errors.append(f"{path}: unknown field {key[:60]!r}")
     return errors
 
 
 def kind_of(path: Path) -> str | None:
-    parts = path.resolve().parts
-    if "cards" in parts:
+    resolved = path.resolve()
+    parts = resolved.relative_to(ROOT).parts if resolved.is_relative_to(ROOT) else ()
+    if parts[:1] == ("cards",):
         return "card"
-    if "tools" in parts:
+    if parts[:1] == ("tools",):
         return "tool"
     for name in SCHEMAS:
         if path.name.startswith(f"{name}-"):

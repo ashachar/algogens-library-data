@@ -49,6 +49,6 @@
   "verification": {
     "checked_on": "2026-11-03",
     "status": "verified",
-    "notes": "Read the arXiv v2 abstract and 100,000 characters of the HTML full text; journal reference (npj Comput Mater 11, 364) and DOI taken from the arXiv record, since nature.com redirects to a login handshake. Report corrections: generator is a diffusion model; Ehull source is the Bohrium platform and the paper does not say DFT; DFT is explicit only for the superconductor task; the two Ehull counts disagree inside the paper. Successor to InvDesFlow (arXiv:2409.08065), not opened. The last 26,000 characters of the HTML were not read. Org confirmed from the arXiv HTML title block; one author also at UCAS (review 2026-11-03)."
+    "notes": "Read the arXiv v2 abstract and 100,000 characters of the HTML full text; journal reference (npj Comput Mater 11, 364) and DOI taken from the arXiv record, since nature.com redirects to a login handshake. Draft corrections: generator is a diffusion model; Ehull source is the Bohrium platform and the paper does not say DFT; DFT is explicit only for the superconductor task; the two Ehull counts disagree inside the paper. Successor to InvDesFlow (arXiv:2409.08065), not opened. The last 26,000 characters of the HTML were not read. Org confirmed from the arXiv HTML title block; one author also at UCAS (review 2026-11-03)."
   }
 }

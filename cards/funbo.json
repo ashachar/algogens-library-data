@@ -44,7 +44,7 @@
   "youtube_id": null,
   "verification": {
     "status": "verified",
-    "checked_on": "2026-04-12",
+    "checked_on": "2026-11-06",
     "notes": "Re-checked 2026-11-09 against Aglietti et al., arXiv:2406.04824 (abstract and PDF text): island-model database, GP posterior mean and variance inputs, simple-regret scoring, and EI/UCB comparisons all confirmed. Corrections: the card previously cited unrelated arXiv:2406.03024; affiliation is Google DeepMind (PDF title block), not Huawei Noah's Ark Lab and UCL; venue is ICML 2025 (PMLR v267), not ICML 2024, and the year field stays at the 2024 first posting."
   }
 }

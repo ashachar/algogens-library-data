@@ -43,6 +43,6 @@
   "verification": {
     "status": "corrected",
     "checked_on": "2026-11-03",
-    "notes": "Read abstract and Table 2 of the PDF text. Report said 'translation to verified code for HumanEval/MBPP-style tasks': the translation step builds exemplars from DafnyBench (Dafny to Verus); HumanEval and MBPP are the evaluation sets for generating verified code from specs. 'No fine-tuning' confirmed in the abstract. Authors include Aggarwal, Parno and Welleck; CMU affiliation is from my knowledge of them, not an affiliation line I read. Org confirmed from the arXiv HTML: all three authors at CMU (review 2026-11-03)."
+    "notes": "Read abstract and Table 2 of the PDF text. The draft said 'translation to verified code for HumanEval/MBPP-style tasks': the translation step builds exemplars from DafnyBench (Dafny to Verus); HumanEval and MBPP are the evaluation sets for generating verified code from specs. 'No fine-tuning' confirmed in the abstract. Authors include Aggarwal, Parno and Welleck; CMU affiliation is from my knowledge of them, not an affiliation line I read. Org confirmed from the arXiv HTML: all three authors at CMU (review 2026-11-03)."
   }
 }
