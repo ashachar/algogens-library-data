@@ -1,0 +1,54 @@
+{
+  "slug": "shinkaevolve",
+  "name": "ShinkaEvolve",
+  "org": "Sakana AI",
+  "year": 2025,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "Open-source program evolution that aims to need fewer LLM samples: careful parent choice, near-duplicate rejection, and a bandit that picks the LLM.",
+  "loop": {
+    "proposes": "Diff edits, rewrites or crossovers of programs, written by an ensemble of LLMs",
+    "judged_by": "Task-specific evaluators that score each program and return text feedback",
+    "steers": "Parents mix score and novelty across islands; an embedding filter rejects repeats; a UCB1 bandit picks the LLM"
+  },
+  "headline_result": "ShinkaEvolve found a circle-packing (n=26) solution with sum of radii 2.63598 under its relaxed verifier, beating AlphaEvolve's reported solution within 150 program evaluations. It also improved ALE-Agent solutions on ALE-Bench by about 2.3% on average over 10 tasks, designed an AIME agent scaffold (gpt-4.1-nano, 7 LLM calls), and found a new mixture-of-experts load-balancing loss.",
+  "caveat": "The paper uses both '150 samples' and '150 generations' for the circle-packing run. The MoE loss was evolved at small scale (556M parameters, 2B tokens) and the authors note limited budget and similar architecture between search and test. AIME gains were smaller on 2023 problems, which the authors link to possible contamination.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model"
+  ],
+  "beyond_harness_note": "Parent sampling, novelty filtering and bandit model selection are algorithmic controls over a population, and the evolved programs and loss functions are artifacts that run without the model.",
+  "proposal_object": "program",
+  "generative_model": "LLM ensemble, frozen (claude-sonnet-4, o4-mini, gpt-4.1 family; gpt-5-nano for meta and novelty)",
+  "algorithmic_authority": "Task evaluators plus an embedding-similarity filter and UCB1 bandit",
+  "feedback_payload": "score",
+  "update_target": "context+population",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "derivative",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "ShinkaEvolve: Towards Open-Ended And Sample-Efficient Program Evolution",
+      "url": "https://arxiv.org/abs/2509.19349",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    },
+    {
+      "title": "SakanaAI/ShinkaEvolve (code, Apache-2.0)",
+      "url": "https://github.com/SakanaAI/ShinkaEvolve",
+      "kind": "code",
+      "supports": "license"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Resolved arXiv:2509.19349 (Lange, Imajuku, Cetin; v1 17 Sep 2025; Sakana AI; 52 pages). Verified 150-samples claim, circle packing value, ALE-Bench +2.3%, AIME scaffold and MoE loss from the HTML text. Report's 'SOTA circle packing with ~150 samples' holds; added the 'samples vs generations' wording inconsistency as a caveat. The AlphaEvolve score the paper compares against was not restated in the text I read."
+  }
+}

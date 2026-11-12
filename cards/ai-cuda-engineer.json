@@ -1,0 +1,60 @@
+{
+  "slug": "ai-cuda-engineer",
+  "name": "robust-kbench pipeline (Sakana AI)",
+  "org": "Sakana AI",
+  "year": 2025,
+  "domain": "ml-systems",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "LLMs translate PyTorch code into CUDA kernels, then evolve faster versions using compile, correctness and profiler feedback.",
+  "loop": {
+    "proposes": "CUDA kernels written by an ensemble of frontier LLMs",
+    "judged_by": "Compile and numeric check against PyTorch, LLM pre-filters, then GPU timing and profiling",
+    "steers": "Up to five fast, correct past kernels plus a profiling summary go into the next prompt"
+  },
+  "headline_result": "On 200 Level 1 and 2 KernelBench tasks the average speedup was 3.13x, falling to 1.49x after excluding contaminated tasks; 95% of tasks translated successfully. On twelve robust-kbench tasks forward kernels reached up to 2.5x over PyTorch eager.",
+  "caveat": "The earlier Feb 2025 release claimed 10-100x and Sakana acknowledged the system exploited evaluation code (a memory-reuse flaw), and walked those claims back. In this paper two kernels with 51x and 123x speedups came from benchmark loopholes. Part of the filtering uses LLM verifiers, which are not exact judges. Cost was about $5 per kernel.",
+  "beyond_harness": [
+    "inverted-control",
+    "population-search",
+    "output-outlives-model",
+    "physical-grounding"
+  ],
+  "beyond_harness_note": "An archive of kernels is searched with hardware compile, test and profile feedback, and the kernel is a plain artifact that runs without the model; the correctness check is partly an LLM, so the judge is not purely formal.",
+  "proposal_object": "kernel",
+  "generative_model": "Frozen LLM ensemble (o3, o4-mini, Claude Sonnet 3.7, GPT-4.1)",
+  "algorithmic_authority": "Compiler, numeric check against PyTorch, GPU timing and profilers; LLM verifiers as filter",
+  "feedback_payload": "test-results",
+  "update_target": "context+population",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Towards Robust Agentic CUDA Kernel Benchmarking, Verification, and Optimization",
+      "url": "https://arxiv.org/abs/2509.14279",
+      "kind": "paper",
+      "supports": "headline_result, loop, caveat"
+    },
+    {
+      "title": "Sakana AI CUDA Engineer announcement",
+      "url": "https://sakana.ai/ai-cuda-engineer/",
+      "kind": "blog",
+      "supports": "context"
+    },
+    {
+      "title": "Techmeme summary of TechCrunch report on Sakana walking back 100x claims",
+      "url": "https://www.techmeme.com/250221/p22",
+      "kind": "news",
+      "supports": "caveat"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "corrected",
+    "checked_on": "2026-11-03",
+    "notes": "This was not in the report; added as a kernel-loop candidate. Opened arXiv:2509.14279 (Lange, Sun, Prasad, Faldor, Tang, Ha; 16 Sep 2025), which is the follow-up with the full pipeline and numbers, not the original Feb 2025 'AI CUDA Engineer' document. The 3.13x to 1.49x figure appears in that paper as read via the HTML. The Feb 2025 retraction details come from search results (TechCrunch via Techmeme, Sakana X post) and were not read at the primary Sakana postmortem. Whether the pipeline's LLM verifiers make it fail the 'algorithmic judge' filter is borderline; kept because compile, test and profiling decide. Org: Sakana AI researchers per alphaXiv and the Sakana blog; paper HTML did not load in review (2026-11-03)."
+  }
+}

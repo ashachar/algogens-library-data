@@ -1,0 +1,47 @@
+{
+  "slug": "llmorpheus",
+  "name": "LLMorpheus",
+  "org": "Northeastern University",
+  "year": 2024,
+  "domain": "security",
+  "family": "verifier-guided-repair",
+  "parent": null,
+  "one_liner": "Mutation testing framework where an LLM proposes fault-injecting code mutants by filling placeholders in JavaScript source; mutants are run against the project test suite.",
+  "loop": {
+    "proposes": "An LLM is prompted at placeholders in chosen code locations and suggests replacement code, producing mutants of JavaScript packages.",
+    "judged_by": "The project test suite is run against each mutant to determine whether it is killed or survives.",
+    "steers": "Surviving mutants expose concrete gaps in the existing test suite."
+  },
+  "headline_result": "On 13 real-world JavaScript packages, produced mutants resembling real bugs that StrykerJS, a state-of-the-art mutation testing tool, cannot produce.",
+  "caveat": "Distinguishing a genuinely surviving bug-revealing mutant from a semantically equivalent refactoring still requires diff inspection.",
+  "beyond_harness": [
+    "inverted-control",
+    "domain-authority-judge",
+    "population-search"
+  ],
+  "beyond_harness_note": "An automated mutation-testing harness compiles and runs the test suite over every proposed AST mutant to classify killed vs. surviving faults.",
+  "proposal_object": "patch",
+  "generative_model": "Code-generating LLM mutant operator",
+  "algorithmic_authority": "Compiler and automated mutation-testing execution engine",
+  "feedback_payload": "test-results",
+  "update_target": "population",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "LLMorpheus: Mutation Testing using Large Language Models (arXiv:2404.09952)",
+      "url": "https://arxiv.org/abs/2404.09952",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-09",
+    "notes": "Re-checked against Tip, Bell and Schaefer, arXiv:2404.09952 (abstract). Corrections: card previously cited unrelated arXiv:2404.08846; title is \"LLMorpheus: Mutation Testing using Large Language Models\"; language is JavaScript only (not TypeScript); the abstract describes placeholder-filling by an LLM, not AST-location mutation, and does not mention ranking by survivability or compilation; the headline now states the StrykerJS comparison the abstract gives. The unconfirmed \"IEEE TSE 2024\" venue was removed (the arXiv page prints no venue). Year stays 2024 (first posted 2024-04-15)."
+  }
+}

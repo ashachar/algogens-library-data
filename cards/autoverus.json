@@ -1,0 +1,47 @@
+{
+  "parent": null,
+  "direct_algogen_link": "conceptual-fit",
+  "youtube_id": null,
+  "lineage": "origin",
+  "evidence_level": "experiment",
+  "validity_scope": "formal",
+  "slug": "autoverus",
+  "name": "AutoVerus",
+  "org": "Microsoft Research, University of Illinois Urbana-Champaign, Columbia University and UC Irvine",
+  "year": 2024,
+  "domain": "code-verification",
+  "family": "verifier-guided-repair",
+  "one_liner": "LLM agents write the proof annotations Verus needs to prove Rust code correct, and Verus's error messages drive the repair rounds.",
+  "loop": {
+    "proposes": "Proof annotations (loop invariants, assertions) for Rust code with Verus specifications, from GPT-4o agents",
+    "judged_by": "The Verus verifier, which either proves the specification or returns errors",
+    "steers": "Three phases: initial proof, refinement with generic tips, then agents that fix the specific errors Verus reports"
+  },
+  "headline_result": "Proves 137 of 150 tasks (91.3%) on Verus-Bench, with at most 3 tries per task and GPT-4o; 122 were proved on the first attempt. A baseline that repeatedly calls GPT-4o for up to 10 minutes proved 67 of 150. More than half were done in under 30 seconds or 3 LLM calls.",
+  "caveat": "Verus-Bench is a 150-task suite the authors built from existing code and verification benchmarks, and the task gives the code and the specification. The tool proves what the spec says; a wrong spec would still pass.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "formal-kernel"
+  ],
+  "beyond_harness_note": "Verus decides validity, not an LLM or a test, and the verified annotations stay in the code with no model needed to re-check them.",
+  "proposal_object": "proof",
+  "generative_model": "GPT-4o (frozen), orchestrated as a network of specialized agents",
+  "algorithmic_authority": "Verus verifier (SMT-based)",
+  "feedback_payload": "verifier-errors",
+  "update_target": "context",
+  "loop_stage": "inference",
+  "sources": [
+    {
+      "title": "AutoVerus: Automated Proof Generation for Rust Code",
+      "url": "https://arxiv.org/abs/2409.13082",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "verification": {
+    "status": "corrected",
+    "checked_on": "2026-11-03",
+    "notes": "Read abstract and Section 7 of the PDF text. Report said '>90% of 150 tasks': true (137/150 = 91.3%) but conditions missing (max 3 tries, GPT-4o, authors' own benchmark, baseline 67/150). Paper appeared at OOPSLA 2025 (arXiv 2024); year set to arXiv year. Org is from author names (Lahiri, Lorch, Lu and others), not an affiliation line I read. Org confirmed from the affiliations printed in the arXiv HTML title block (review 2026-11-03). Review 2026-11-03: headline numbers re-checked against the source."
+  }
+}

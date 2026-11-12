@@ -1,0 +1,49 @@
+{
+  "slug": "lean-copilot",
+  "name": "Lean Copilot",
+  "org": "California Institute of Technology",
+  "year": 2024,
+  "domain": "proofs",
+  "family": "proof-state-search",
+  "parent": "reprover-leandojo",
+  "one_liner": "In-editor Lean 4 neural theorem-proving framework combining LLM tactic generation, premise selection, and a best-first proof search tactic that uses the model confidence as score.",
+  "loop": {
+    "proposes": "Native CTranslate2 models running inside Lean 4 propose tactics and retrieve premises for the active proof goal.",
+    "judged_by": "The Lean 4 kernel checks each tactic application and returns updated subgoal states.",
+    "steers": "A best-first search tactic (`search_proof`) with the model confidence as score explores the proof tree until all goals close."
+  },
+  "headline_result": "Automates proof goals directly inside Lean 4 workflows with 3.8x faster tactic inference than Python RPC bridges.",
+  "caveat": "Designed for interactive lemma and subgoal automation rather than multi-hour distributed search.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "population-search",
+    "formal-kernel"
+  ],
+  "beyond_harness_note": "A native Lean 4 best-first search engine invokes the neural tactic generator and verifies every node in the Lean kernel.",
+  "proposal_object": "tactic",
+  "generative_model": "ReProver / ByT5 tactic and premise models",
+  "algorithmic_authority": "Lean 4 kernel and best-first proof search",
+  "feedback_payload": "proof-state",
+  "update_target": "search-tree",
+  "loop_stage": "inference",
+  "validity_scope": "formal",
+  "evidence_level": "code",
+  "lineage": "derivative",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Lean Copilot: Large Language Models as Copilots for Theorem Proving in Lean (arXiv:2404.12534)",
+      "url": "https://arxiv.org/abs/2404.12534",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Song et al., arXiv:2404.12534."
+  }
+}

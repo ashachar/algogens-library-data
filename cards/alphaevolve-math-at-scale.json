@@ -1,0 +1,54 @@
+{
+  "slug": "alphaevolve-math-at-scale",
+  "name": "AlphaEvolve at scale on 67 math problems (Georgiev, Gomez-Serrano, Tao, Wagner)",
+  "org": "Google DeepMind, Brown University, Institute for Advanced Study and UCLA (Georgiev, Gomez-Serrano, Tao, Wagner)",
+  "year": 2025,
+  "domain": "math",
+  "family": "program-evolution",
+  "parent": "alphaevolve",
+  "one_liner": "Mathematicians used AlphaEvolve on 67 research problems and report where its evolved search programs rediscovered, improved or failed to beat known results.",
+  "loop": {
+    "proposes": "Search heuristics (programs) that look for a mathematical construction, or programs that give a formula for any n",
+    "judged_by": "User-written deterministic evaluators that score the best object found, sometimes checked afterwards by proof tools",
+    "steers": "Best heuristics are reused in later rounds; Kakeya's program went to proof tools"
+  },
+  "headline_result": "The paper reports 67 problems across analysis, combinatorics, geometry and number theory. AlphaEvolve rediscovered the best known solutions in most cases and found improved ones in several, for example an autocorrelation upper bound reduced from 1.5708 to 1.5032 and a finite field Kakeya construction of size 1/4 p^3 + 7/8 p^2 - 1/8 for primes p = 1 mod 4.",
+  "caveat": "The authors state it did not match previous results in all cases, struggles without a smooth score, and some gains could have been matched by traditional methods. It exploited weak verifiers in some problems (for example numerical integration in Problem 6.6), and results depended on expert prompt advice.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model"
+  ],
+  "beyond_harness_note": "The evolutionary search and evaluators do the solving, and the outputs are mathematical constructions or formulas that stand without the model.",
+  "proposal_object": "construction",
+  "generative_model": "Gemini-based AlphaEvolve (frozen), with Deep Think and AlphaProof for proof steps",
+  "algorithmic_authority": "Deterministic evaluator scoring the construction; some results later proven by hand or in Lean (one simple Kakeya case)",
+  "feedback_payload": "score",
+  "update_target": "context+population",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "application",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Mathematical exploration and discovery at scale",
+      "url": "https://arxiv.org/abs/2511.02864",
+      "kind": "paper",
+      "supports": "headline_result, caveat"
+    },
+    {
+      "title": "AlphaEvolve: A coding agent for scientific and algorithmic discovery",
+      "url": "https://arxiv.org/abs/2506.13131",
+      "kind": "paper",
+      "supports": "loop"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Resolved arXiv:2511.02864 (Georgiev, Gomez-Serrano, Tao, Wagner; v1 3 Nov 2025, v3 22 Dec 2025). Title is exactly 'Mathematical exploration and discovery at scale'. 67 problems from abstract. Examples and caveats from the first ~100k characters of the HTML; exact counts of rediscovered vs improved problems were NOT in the text I read, so the card does not state them. Kissing number 592 to 593 also appears there. Org confirmed from the arXiv HTML title block (review 2026-11-03)."
+  }
+}

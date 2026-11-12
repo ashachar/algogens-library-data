@@ -1,0 +1,50 @@
+{
+  "slug": "calm",
+  "name": "CALM (Co-evolution of Algorithms and Language Model)",
+  "org": "City University of Hong Kong, Southeast University, University of Victoria, Hon Hai Research Institute",
+  "year": 2025,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "Heuristic evolution where the LLM itself is also fine-tuned with reinforcement learning on how good its heuristics are.",
+  "loop": {
+    "proposes": "Heuristic code from a small LLM inside an evolutionary search",
+    "judged_by": "Running the heuristic on problem instances to get a quality score that becomes the RL reward",
+    "steers": "Verbal guidance through prompts plus numerical guidance through GRPO fine-tuning of the LLM weights"
+  },
+  "headline_result": "A Qwen2.5-7B-Instruct model (INT4, on a single 24GB GPU) with GRPO fine-tuning reached an average 0.71% gap on online bin packing, against 0.89% for MCTS-AHD and 2.40% for Best Fit, and beat the best listed competitor on CVRP (3.95% vs 4.70%) and OP (12.58% vs 16.34%) at N=200 in the paper's tables.",
+  "caveat": "The advantage is not uniform: on TSP at N=50 MCTS-AHD (9.69%) beats CALM (10.04%). Numbers come from the paper's own tables and baselines, which mostly ran on GPT-4o-mini.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model",
+    "retrains-generator",
+    "design-time"
+  ],
+  "beyond_harness_note": "Beyond a harness, the feedback also updates the generator's weights by RL while an evolutionary search runs, and the result is a heuristic that works without the model.",
+  "proposal_object": "heuristic",
+  "generative_model": "Qwen2.5-7B-Instruct, INT4, fine-tuned with GRPO (about 1.15% of weights)",
+  "algorithmic_authority": "Benchmark evaluation of heuristic quality",
+  "feedback_payload": "reward",
+  "update_target": "context+population+weights",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "derivative",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "CALM: Co-evolution of Algorithms and Language Model for Automatic Heuristic Design",
+      "url": "https://arxiv.org/abs/2505.12285",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Resolved arXiv:2505.12285 (Huang, Wu, Wu, Wang, Lee, et al.; v1 18 May 2025). From the HTML tables: Qwen2.5-7B-Instruct INT4, GRPO (not PPO), 24GB GPU, tasks OBP/TSP/CVRP/OP. Report claim '7B INT4 on 24GB' confirmed; added that the RL method is GRPO and that CALM does not win every setting. Org confirmed from the arXiv HTML (review 2026-11-03)."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "alphafold-3",
+  "name": "AlphaFold 3",
+  "org": "Google DeepMind, Isomorphic Labs",
+  "year": 2024,
+  "domain": "chemistry",
+  "family": "oracle-trained-generation",
+  "parent": null,
+  "one_liner": "Diffusion-based biomolecular structure generator whose samples are ranked by a confidence formula with clash, disorder and chirality terms.",
+  "loop": {
+    "proposes": "A Pairformer trunk and 3D atomic diffusion module generate joint all-atom coordinates for proteins, nucleic acids, ligands, and ions.",
+    "judged_by": "Samples are ranked by a formula of the model pTM and ipTM with clash, disorder and chirality terms; nothing is filtered out.",
+    "steers": "Confidence ranking picks the top sample across diffusion rollouts; cross-distillation is a training-data step."
+  },
+  "headline_result": "Achieved 76.4% PoseBusters accuracy on protein-ligand complexes, far surpassing classical physics-based docking tools.",
+  "caveat": "Can hallucinate spurious secondary structure in disordered regions or produce occasional stereochemical clashes when diffusion samples conflict.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "population-search",
+    "non-llm-generator"
+  ],
+  "beyond_harness_note": "An all-atom SE(3) diffusion generator produces biomolecular complexes that are ranked by a confidence formula with clash, disorder and chirality terms.",
+  "proposal_object": "protein",
+  "generative_model": "Pairformer + 3D all-atom diffusion network",
+  "algorithmic_authority": "Ranking formula of pTM and ipTM with clash, disorder and chirality terms",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "inference",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "independent-replication",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Accurate structure prediction of biomolecular interactions with AlphaFold 3 (Nature, 2024)",
+      "url": "https://doi.org/10.1038/s41586-024-07487-w",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Abramson et al., Nature 630, 2024."
+  }
+}

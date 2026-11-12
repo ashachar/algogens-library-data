@@ -1,0 +1,48 @@
+{
+  "slug": "voxposer",
+  "name": "VoxPoser",
+  "org": "Stanford University",
+  "year": 2023,
+  "domain": "robotics",
+  "family": "formalize-and-solve",
+  "parent": "code-as-policies",
+  "one_liner": "Synthesizes 3D voxel affordance and obstacle value maps from language instructions, then solves for collision-free robot trajectories via MPC.",
+  "loop": {
+    "proposes": "An LLM writes Python expressions that compose open-vocabulary vision masks into 3D voxel grids of target attractors, obstacles, and rotation/gripper maps.",
+    "judged_by": "A deterministic sampling-based Model Predictive Control (MPC) trajectory optimizer and inverse-kinematics solver compute minimum-cost paths over the 3D field.",
+    "steers": "MPC replans at each step from the current observation; the value map comes from cached model-written code."
+  },
+  "headline_result": "Zero-shot execution of 25 everyday manipulation tasks across real-world and simulated robot arms with 88% success, plus online adaptation to moving obstacles.",
+  "caveat": "Voxel grid resolution (e.g. 100^3) limits fine sub-millimeter insertion tasks.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "domain-authority-judge",
+    "output-outlives-model",
+    "neuro-symbolic"
+  ],
+  "beyond_harness_note": "The LLM compiles instructions into a 3D potential field while a deterministic MPC trajectory optimizer solves the continuous control problem.",
+  "proposal_object": "specification",
+  "generative_model": "GPT-4 3D potential-field synthesizer",
+  "algorithmic_authority": "Model Predictive Control (MPC) trajectory planner and IK solver",
+  "feedback_payload": "score",
+  "update_target": "context",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "successor",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "VoxPoser: Composable 3D Value Maps for Robotic Manipulation with Language Models (CoRL 2023 / arXiv:2307.05973)",
+      "url": "https://arxiv.org/abs/2307.05973",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Huang et al., CoRL 2023."
+  }
+}

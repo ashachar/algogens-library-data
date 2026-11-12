@@ -1,0 +1,49 @@
+{
+  "slug": "ceoh",
+  "name": "CEoH (Contextual Evolution of Heuristics)",
+  "org": "Karlsruhe Institute of Technology and TU Dortmund University",
+  "year": 2025,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": "eoh",
+  "one_liner": "EoH with a problem description added to every prompt, so smaller LLMs can design heuristics for niche problems.",
+  "loop": {
+    "proposes": "Tree-search scoring heuristics for the unit-load pre-marshalling problem, as thought plus code",
+    "judged_by": "Running the heuristic and measuring the average relative gap of its move count to a lower bound",
+    "steers": "Fitness drives EoH selection; the added problem description is kept in every prompt"
+  },
+  "headline_result": "For unit-load pre-marshalling, Qwen2.5-Coder:32b with CEoH reached a fitness of 12.5% (best overall), against 14.3% for the best EoH run (GPT-4o 2024-08-06). The \"Optimal A*\" baseline scored about 8.1%. CEoH outperformed EoH for Gemma2:27b, Qwen2.5-Coder:32b and DeepSeekV3:685b.",
+  "caveat": "One niche problem. On unseen instances fitness rose to 30.8 (Qwen CEoH) and 33.9 (GPT-4o EoH), which the authors read as overfitting. For GPT-4o EoH was better than CEoH, and none solved the hardest case (80% fill).",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model",
+    "design-time"
+  ],
+  "beyond_harness_note": "An evolutionary loop over a population produces a heuristic that is plugged into a search algorithm and used without the model.",
+  "proposal_object": "heuristic",
+  "generative_model": "Pretrained LLMs, frozen (Gemma2:27b, Qwen2.5-Coder:32b, DeepSeekV3:685b, GPT-4o)",
+  "algorithmic_authority": "Instance evaluation of heuristic inside a tree search",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "derivative",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Leveraging Large Language Models to Develop Heuristics for Emerging Optimization Problems",
+      "url": "https://arxiv.org/abs/2503.03350",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "corrected",
+    "checked_on": "2026-11-03",
+    "notes": "Resolved arXiv:2503.03350 (Bomer, Koltermann, Disselnmeyer, Dorr, Meyer; v1 5 Mar 2025; comment 'under review LION19'). Report said 'small models with context can beat larger ones' - true for the pair Qwen2.5-Coder:32b (CEoH) vs GPT-4o (EoH), but the paper notes GPT-4o did better with plain EoH than with CEoH, so context does not always help. Parent set to eoh. Org confirmed from the arXiv HTML (review 2026-11-03)."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "instructor",
+  "name": "Instructor",
+  "author": "567-labs",
+  "kind": "library",
+  "repo_url": "https://github.com/567-labs/instructor",
+  "install": "pip install instructor",
+  "one_liner": "Gets typed, validated data out of an LLM using Pydantic models, and retries with the error message when validation fails.",
+  "loop": {
+    "proposes": "a structured answer (JSON) from a hosted or local LLM",
+    "judged_by": "Pydantic validation of types and any custom validators you write",
+    "steers": "on a failed check, the validation error is sent back to the model and the call is retried"
+  },
+  "not_proved": "Passing validation shows the data fits the schema and your rules, not that it is true. Retries cost extra model calls and may still end in failure.",
+  "license": "MIT",
+  "sources": [
+    {
+      "title": "Instructor repository",
+      "url": "https://github.com/567-labs/instructor"
+    },
+    {
+      "title": "Instructor README",
+      "url": "https://raw.githubusercontent.com/567-labs/instructor/main/README.md"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

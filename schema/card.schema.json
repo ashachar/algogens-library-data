@@ -1,0 +1,335 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ashachar/algogens-library-data/schema/card.schema.json",
+  "title": "AlgoGens Library card",
+  "description": "One AlgoGen system: what the model proposes, what algorithm judges it, and how the judgment steers the next proposals.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "name",
+    "org",
+    "year",
+    "domain",
+    "family",
+    "parent",
+    "one_liner",
+    "loop",
+    "headline_result",
+    "caveat",
+    "beyond_harness",
+    "beyond_harness_note",
+    "proposal_object",
+    "generative_model",
+    "algorithmic_authority",
+    "feedback_payload",
+    "update_target",
+    "loop_stage",
+    "validity_scope",
+    "evidence_level",
+    "lineage",
+    "direct_algogen_link",
+    "sources",
+    "youtube_id",
+    "verification"
+  ],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "org": {
+      "type": "string",
+      "minLength": 1
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 1950,
+      "maximum": 2100
+    },
+    "domain": {
+      "enum": [
+        "math",
+        "optimization",
+        "proofs",
+        "code-verification",
+        "chemistry",
+        "materials",
+        "engineering",
+        "robotics",
+        "security",
+        "science",
+        "ml-systems"
+      ]
+    },
+    "family": {
+      "enum": [
+        "formalize-and-solve",
+        "program-evolution",
+        "proof-state-search",
+        "verifier-guided-repair",
+        "oracle-trained-generation",
+        "active-learning-generation",
+        "offline-solver-discovery"
+      ]
+    },
+    "parent": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        }
+      ]
+    },
+    "one_liner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "loop": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proposes",
+        "judged_by",
+        "steers"
+      ],
+      "properties": {
+        "proposes": {
+          "type": "string",
+          "minLength": 1
+        },
+        "judged_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "steers": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "headline_result": {
+      "type": "string",
+      "minLength": 1
+    },
+    "caveat": {
+      "type": "string",
+      "minLength": 1
+    },
+    "beyond_harness": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "algorithm-is-solver",
+          "inverted-control",
+          "output-outlives-model",
+          "domain-authority-judge",
+          "retrains-generator",
+          "population-search",
+          "non-llm-generator",
+          "design-time",
+          "formal-kernel",
+          "multi-fidelity",
+          "neuro-symbolic",
+          "meta-evolution",
+          "physical-grounding",
+          "intra-algorithmic"
+        ]
+      }
+    },
+    "beyond_harness_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "proposal_object": {
+      "enum": [
+        "specification",
+        "program",
+        "heuristic",
+        "proof",
+        "tactic",
+        "construction",
+        "molecule",
+        "crystal",
+        "protein",
+        "reward-function",
+        "patch",
+        "fuzz-target",
+        "equation",
+        "kernel",
+        "search-operator"
+      ]
+    },
+    "generative_model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "algorithmic_authority": {
+      "type": "string",
+      "minLength": 1
+    },
+    "feedback_payload": {
+      "enum": [
+        "score",
+        "ranking",
+        "verbal-reflection",
+        "verifier-errors",
+        "proof-state",
+        "reward",
+        "new-data",
+        "multi-fidelity",
+        "coverage",
+        "test-results"
+      ]
+    },
+    "update_target": {
+      "type": "string",
+      "pattern": "^(context|population|search-tree|weights|training-data)(\\+(context|population|search-tree|weights|training-data))*$"
+    },
+    "loop_stage": {
+      "enum": [
+        "training",
+        "inference",
+        "offline-design",
+        "continuous-operation"
+      ]
+    },
+    "validity_scope": {
+      "enum": [
+        "formal",
+        "empirical",
+        "surrogate",
+        "approximate-physical"
+      ]
+    },
+    "evidence_level": {
+      "enum": [
+        "description",
+        "code",
+        "experiment",
+        "independent-replication",
+        "deployment"
+      ]
+    },
+    "lineage": {
+      "enum": [
+        "origin",
+        "derivative",
+        "successor",
+        "application"
+      ]
+    },
+    "direct_algogen_link": {
+      "enum": [
+        "conceptual-fit",
+        "explicit-citation",
+        "uses-term"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "url",
+          "kind",
+          "supports"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https?://"
+          },
+          "kind": {
+            "enum": [
+              "paper",
+              "code",
+              "blog",
+              "news",
+              "docs",
+              "video",
+              "dataset"
+            ]
+          },
+          "supports": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "youtube_id": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{11}$"
+        }
+      ]
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "checked_on",
+        "notes"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "verified",
+            "corrected",
+            "submitted"
+          ]
+        },
+        "checked_on": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "video_notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "fact",
+          "source"
+        ],
+        "properties": {
+          "fact": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "pattern": "^https?://"
+          }
+        }
+      }
+    }
+  }
+}

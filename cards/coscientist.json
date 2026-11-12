@@ -1,0 +1,47 @@
+{
+  "slug": "coscientist",
+  "name": "Coscientist",
+  "org": "Carnegie Mellon University",
+  "year": 2023,
+  "domain": "chemistry",
+  "family": "verifier-guided-repair",
+  "parent": null,
+  "one_liner": "Autonomous chemical research system that generates liquid-handler control scripts and runs palladium-catalyzed cross-couplings, with its condition optimization run against previously collected, fully mapped yield datasets.",
+  "loop": {
+    "proposes": "An LLM planner designs reaction matrices and writes Opentrons Python protocol scripts and hardware commands.",
+    "judged_by": "Protocol syntax checkers, robotic liquid handlers, and UV-vis plate readers execute the reactions and measure product yield.",
+    "steers": "The optimization study selects conditions against previously collected, fully mapped yield datasets."
+  },
+  "headline_result": "Autonomously executed Suzuki-Miyaura and Sonogashira cross-coupling reactions on cloud lab hardware and ran an optimization study that selected conditions against previously collected, fully mapped yield datasets.",
+  "caveat": "Wet-lab loop throughput is bounded by physical incubation and analytical characterization times.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "physical-grounding"
+  ],
+  "beyond_harness_note": "Physical robotic reactors and spectrophotometric yield measurements judge the proposed experimental protocols.",
+  "proposal_object": "program",
+  "generative_model": "GPT-4 experimental planner and protocol synthesizer",
+  "algorithmic_authority": "Opentrons robotic execution validator and UV-vis spectrophotometer",
+  "feedback_payload": "score",
+  "update_target": "context",
+  "loop_stage": "continuous-operation",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Autonomous chemical research with large language models (Nature, 2023)",
+      "url": "https://doi.org/10.1038/s41586-023-06792-0",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Boiko et al., Nature 624, 2023."
+  }
+}

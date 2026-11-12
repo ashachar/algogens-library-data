@@ -1,0 +1,48 @@
+{
+  "slug": "chatafl",
+  "name": "ChatAFL",
+  "org": "Nanyang Technological University, University of Melbourne",
+  "year": 2024,
+  "domain": "security",
+  "family": "verifier-guided-repair",
+  "parent": null,
+  "one_liner": "Protocol-guided greybox fuzzer that uses an LLM to infer message grammars and mutate state-machine inputs under coverage feedback.",
+  "loop": {
+    "proposes": "An LLM extracts protocol request grammars and synthesizes structure-aware seed sequences and state-transition mutations.",
+    "judged_by": "The greybox fuzzer (AFLNet engine) executes the target network server, measuring edge coverage, state transitions, and sanitizer crashes.",
+    "steers": "When coverage stalls in a protocol state, the fuzzer queries the LLM with the observed server responses to generate inputs that unlock new states."
+  },
+  "headline_result": "Covered 47.6% more state transitions and 29.6% more code branches than AFLNet across nine network protocol implementations, discovering 9 previously unknown vulnerabilities.",
+  "caveat": "Targets text-based application protocols (RTSP, FTP, SMTP, SIP); binary protocols require separate serialization adapters.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "population-search"
+  ],
+  "beyond_harness_note": "The evolutionary greybox fuzzer runs the main coverage loop and calls the LLM only to infer protocol grammars and break coverage plateaus.",
+  "proposal_object": "fuzz-target",
+  "generative_model": "LLM protocol grammar and seed mutator",
+  "algorithmic_authority": "Coverage-guided stateful greybox fuzzer and address sanitizers",
+  "feedback_payload": "coverage",
+  "update_target": "population",
+  "loop_stage": "continuous-operation",
+  "validity_scope": "empirical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Large Language Model Guided Protocol Fuzzing (NDSS 2024)",
+      "url": "https://doi.org/10.14722/ndss.2024.24556",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Meng et al., NDSS 2024."
+  }
+}

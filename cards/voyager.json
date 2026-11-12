@@ -1,0 +1,47 @@
+{
+  "slug": "voyager",
+  "name": "Voyager",
+  "org": "NVIDIA, California Institute of Technology",
+  "year": 2023,
+  "domain": "robotics",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "Continually grows an executable JavaScript skill library in Minecraft via environment execution traces and a GPT-4 critic that decides task success.",
+  "loop": {
+    "proposes": "A code-generating LLM writes asynchronous Mineflayer JavaScript control skills to accomplish curriculum subgoals.",
+    "judged_by": "The Minecraft simulator returns execution errors and observations; a second GPT-4 instance acting as critic decides whether the task succeeded.",
+    "steers": "Verified skills are indexed into a persistent vector skill library and composed as subroutines for harder tasks."
+  },
+  "headline_result": "Unlocked 3.3x more unique items, traveled 2.3x longer distances, and reached key tech-tree milestones up to 15.3x faster than prior agent baselines.",
+  "caveat": "Relies on high-level Mineflayer pathfinding APIs rather than raw pixel-to-motor actuation.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "population-search"
+  ],
+  "beyond_harness_note": "A GPT-4 critic deciding task success gates admission into a growing, composable library of reusable JavaScript control programs.",
+  "proposal_object": "program",
+  "generative_model": "GPT-4 code generator and curriculum planner",
+  "algorithmic_authority": "Mineflayer simulator runtime and a GPT-4 critic (self-verification)",
+  "feedback_payload": "verifier-errors",
+  "update_target": "population+context",
+  "loop_stage": "continuous-operation",
+  "validity_scope": "empirical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Voyager: An Open-Ended Embodied Agent with Large Language Models (TMLR 2023 / arXiv:2305.16291)",
+      "url": "https://arxiv.org/abs/2305.16291",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Wang et al., arXiv:2305.16291."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "parent": null,
+  "direct_algogen_link": "conceptual-fit",
+  "youtube_id": null,
+  "lineage": "origin",
+  "evidence_level": "experiment",
+  "validity_scope": "formal",
+  "slug": "alphaverus",
+  "name": "AlphaVerus",
+  "org": "Carnegie Mellon University",
+  "year": 2024,
+  "domain": "code-verification",
+  "family": "verifier-guided-repair",
+  "one_liner": "A model translates programs into Verus, tree search repairs them with verifier feedback, and a filter keeps trustworthy results as examples.",
+  "loop": {
+    "proposes": "Verus translations of programs (from Dafny) and repaired versions, from a Llama 3.1 70B model",
+    "judged_by": "The Verus verifier, plus a filter that rejects translations whose specification or program is misaligned",
+    "steers": "Treefinement tree search fixes errors from verifier feedback; verified, filtered programs become prompt examples"
+  },
+  "headline_result": "With Llama 3.1 70B and no model fine-tuning, verified-code generation reaches 32.9% on HumanEval-Verus and 65.7% on MBPP-verified (pass@256), versus 27.1% and 35.9% for GPT-4o and 11.8% and 26.9% for Llama 3.1 70B.",
+  "caveat": "HumanEval-Verus and MBPP-verified are small, hand-adapted benchmarks, and the task is generating code plus proofs from specifications. Verification proves code matches the specification, so the misalignment filter matters.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "population-search",
+    "output-outlives-model",
+    "formal-kernel"
+  ],
+  "beyond_harness_note": "Verus judges validity, a tree of candidate repairs is searched, and a built-in filter guards against the model gaming the verifier.",
+  "proposal_object": "program",
+  "generative_model": "Llama 3.1 70B (frozen, no fine-tuning)",
+  "algorithmic_authority": "Verus verifier with a misalignment filter",
+  "feedback_payload": "verifier-errors",
+  "update_target": "context+search-tree",
+  "loop_stage": "inference",
+  "sources": [
+    {
+      "title": "AlphaVerus: Bootstrapping Formally Verified Code Generation through Self-Improving Translation and Treefinement",
+      "url": "https://arxiv.org/abs/2412.06176",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "verification": {
+    "status": "corrected",
+    "checked_on": "2026-11-03",
+    "notes": "Read abstract and Table 2 of the PDF text. Report said 'translation to verified code for HumanEval/MBPP-style tasks': the translation step builds exemplars from DafnyBench (Dafny to Verus); HumanEval and MBPP are the evaluation sets for generating verified code from specs. 'No fine-tuning' confirmed in the abstract. Authors include Aggarwal, Parno and Welleck; CMU affiliation is from my knowledge of them, not an affiliation line I read. Org confirmed from the arXiv HTML: all three authors at CMU (review 2026-11-03)."
+  }
+}

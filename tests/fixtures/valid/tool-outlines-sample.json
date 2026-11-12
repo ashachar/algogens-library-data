@@ -1,0 +1,27 @@
+{
+  "slug": "outlines",
+  "name": "Outlines",
+  "author": "dottxt-ai",
+  "kind": "library",
+  "repo_url": "https://github.com/dottxt-ai/outlines",
+  "install": "pip install outlines",
+  "one_liner": "Forces a model's output to match a type, regex, choice list or grammar, so the structure is valid by construction.",
+  "loop": {
+    "proposes": "the next token of text from a local or hosted model",
+    "judged_by": "a finite-state or grammar automaton built from the requested type, regex or grammar",
+    "steers": "tokens that would break the pattern are ruled out, so only valid continuations can be chosen"
+  },
+  "not_proved": "It guarantees the shape of the output (valid JSON, a regex match, one of the listed choices), not that the values inside are true or sensible.",
+  "license": "Apache-2.0",
+  "sources": [
+    {
+      "title": "Outlines repository",
+      "url": "https://github.com/dottxt-ai/outlines"
+    },
+    {
+      "title": "Outlines README",
+      "url": "https://raw.githubusercontent.com/dottxt-ai/outlines/main/README.md"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "opro",
+  "name": "OPRO (Optimization by PROmpting)",
+  "org": "Google DeepMind",
+  "year": 2023,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "Uses an LLM as an iterative black-box optimizer conditioned on a sorted trajectory of (solution, objective-score) pairs evaluated by an external oracle.",
+  "loop": {
+    "proposes": "An optimizer LLM proposes K new candidate solutions (routes, linear regression weights, or instructions) given the top-scoring history.",
+    "judged_by": "An exact objective evaluator computes the ground-truth cost (TSP tour length, MSE loss, or training accuracy) for every candidate.",
+    "steers": "The newly scored candidates are inserted into the sorted priority buffer, shifting the optimization window toward better objective values."
+  },
+  "headline_result": "Discovered prompts that boosted GSM8K accuracy by up to 8 percentage points over human baselines and solved small-scale TSP and linear regression trajectories.",
+  "caveat": "On large combinatorial instances (>50 TSP nodes), in-context coordinate proposals lag far behind dedicated Concorde or LKH solvers.",
+  "beyond_harness": [
+    "inverted-control",
+    "domain-authority-judge",
+    "population-search"
+  ],
+  "beyond_harness_note": "An external objective evaluator scores every proposed candidate and maintains the sorted optimization trajectory buffer.",
+  "proposal_object": "heuristic",
+  "generative_model": "PaLM 2 / GPT-4 optimizer model",
+  "algorithmic_authority": "Exact objective function evaluator and sorted trajectory buffer",
+  "feedback_payload": "score",
+  "update_target": "population+context",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Large Language Models as Optimizers (ICLR 2024 / arXiv:2309.03409)",
+      "url": "https://arxiv.org/abs/2309.03409",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Yang et al., ICLR 2024."
+  }
+}

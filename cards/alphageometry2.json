@@ -1,0 +1,50 @@
+{
+  "parent": "alphageometry",
+  "direct_algogen_link": "conceptual-fit",
+  "youtube_id": null,
+  "lineage": "successor",
+  "evidence_level": "experiment",
+  "validity_scope": "formal",
+  "slug": "alphageometry2",
+  "name": "AlphaGeometry2",
+  "org": "Google DeepMind",
+  "year": 2025,
+  "domain": "proofs",
+  "family": "proof-state-search",
+  "one_liner": "A stronger AlphaGeometry: a Gemini-based model proposes constructions, several search trees share what they learn, and a symbolic engine checks the proof.",
+  "loop": {
+    "proposes": "Auxiliary constructions for geometry problems, from a Gemini-architecture language model",
+    "judged_by": "An improved symbolic deduction engine",
+    "steers": "Parallel search trees share facts (SKEST), so one tree's findings guide the others"
+  },
+  "headline_result": "Solves 42 of 50 IMO geometry problems from 2000 to 2024 (IMO-AG-50); the paper states an overall solving rate of 84% on geometry problems from the last 25 years versus 54% for the original, and says AG2 surpasses an average gold medalist. The formal language now covers 88% of those problems, up from 66%.",
+  "caveat": "Geometry only. The paper reports progress toward, not completion of, a fully automated pipeline from natural-language problem statements. The AG2 system was also part of the IMO 2024 silver-medal-standard result.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "output-outlives-model",
+    "population-search",
+    "formal-kernel"
+  ],
+  "beyond_harness_note": "Same symbolic-engine-in-charge design as the original, now with a population of search trees that exchange knowledge.",
+  "proposal_object": "construction",
+  "generative_model": "Gemini-architecture language model trained on synthetic data",
+  "algorithmic_authority": "Symbolic deduction engine",
+  "feedback_payload": "proof-state",
+  "update_target": "search-tree",
+  "loop_stage": "inference",
+  "sources": [
+    {
+      "title": "Gold-medalist Performance in Solving Olympiad Geometry with AlphaGeometry2",
+      "url": "https://arxiv.org/abs/2502.03544",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Read the arXiv abstract and the PDF text (section stating '42 out of 50 of all 2000-2024 IMO geometry problems'; SKEST named in the contributions). Report claim of 'above average gold-medalist' matches the abstract wording. Set parent=alphageometry."
+  }
+}

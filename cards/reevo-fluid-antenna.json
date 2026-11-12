@@ -1,0 +1,56 @@
+{
+  "parent": "reevo",
+  "youtube_id": null,
+  "direct_algogen_link": "conceptual-fit",
+  "slug": "reevo-fluid-antenna",
+  "name": "ReEvo-designed memetic algorithm for secure fluid antenna systems",
+  "org": "Harbin Institute of Technology, Shenzhen",
+  "year": 2026,
+  "domain": "engineering",
+  "family": "program-evolution",
+  "one_liner": "An LLM evolves crossover, mutation and local-search operators offline against a wireless simulation, and the finished algorithm runs without any LLM.",
+  "loop": {
+    "proposes": "Crossover, mutation and local-search operator code for fluid antenna port selection, written by DeepSeek Reasoner",
+    "judged_by": "Best secure sum-rate an inner genetic algorithm reaches with the operators on training channels, via secure WMMSE",
+    "steers": "ReEvo's reflective evolution feeds performance comparisons back into the next round of operator code"
+  },
+  "headline_result": "At equal generation counts (100 generations), the evolved memetic algorithm reached 11.423 bit/s/Hz at 1 W (7.6% over a conventional GA) and 23.611 bit/s/Hz at 5 W (8.2% over a conventional GA), and about 4 to 6% above the two LLM-assisted GA baselines.",
+  "caveat": "Equal generations are not equal evaluation budgets, because local search adds evaluations, and error bars overlap with the LLM-GA baselines at some operating points. Results are simulated (10 users, one eavesdropper, 20x20 grid) in a preprint accepted by WCSP 2026.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "design-time",
+    "output-outlives-model",
+    "population-search",
+    "meta-evolution"
+  ],
+  "beyond_harness_note": "The LLM works only offline to design the search operators, and the deployed memetic algorithm needs no LLM queries.",
+  "proposal_object": "search-operator",
+  "generative_model": "Pretrained LLM (DeepSeek Reasoner) inside the ReEvo reflective-evolution framework",
+  "algorithmic_authority": "Wireless channel simulation with secure WMMSE beamforming scoring each port subset",
+  "feedback_payload": "verbal-reflection",
+  "update_target": "population",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "application",
+  "sources": [
+    {
+      "title": "Beyond LLM-GA: Secure Fluid Antenna Systems with ReEvo-Designed Memetic Algorithm (arXiv:2610.10235)",
+      "url": "https://arxiv.org/abs/2610.10235",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    },
+    {
+      "title": "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution",
+      "url": "https://arxiv.org/abs/2402.01145",
+      "kind": "paper",
+      "supports": "method background"
+    }
+  ],
+  "verification": {
+    "checked_on": "2026-11-03",
+    "status": "verified",
+    "notes": "arXiv id 2610.10235 resolves to the claimed title; v1 7 Oct 2026, v2 26 Oct 2026; comment 'Accepted by WCSP 2026'. Read abstract and HTML full text. Report said 'higher secure sum-rate than plain GA and LLM-GA at equal generations': correct, and now quantified. The page cites ReEvo as NeurIPS 2024 (Ye et al.) but does not print arXiv 2402.01145; that link is only background. Affiliations are not shown on the page, so org is left generic. Did not verify the ReEvo-evolved operators are open-sourced. Org confirmed from the arXiv HTML title block: all three authors at HIT Shenzhen (review 2026-11-03)."
+  }
+}

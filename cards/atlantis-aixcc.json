@@ -1,0 +1,54 @@
+{
+  "parent": null,
+  "direct_algogen_link": "conceptual-fit",
+  "youtube_id": null,
+  "lineage": "origin",
+  "evidence_level": "experiment",
+  "validity_scope": "empirical",
+  "slug": "atlantis-aixcc",
+  "name": "ATLANTIS (Team Atlanta, AIxCC winner)",
+  "org": "Team Atlanta",
+  "year": 2025,
+  "domain": "security",
+  "family": "verifier-guided-repair",
+  "one_liner": "Cyber reasoning system mixing LLM agents with fuzzers and program analysis; each LLM-made input or patch is tested by running it.",
+  "loop": {
+    "proposes": "Fuzz seeds, payload generator scripts and source patches, from LLM agents",
+    "judged_by": "Running the code: coverage, sanitizer crashes as proof of a bug, patch checks against crash and tests",
+    "steers": "Coverage feedback refines scripts (up to four rounds); failed patches guide the next try; seeds join a corpus"
+  },
+  "headline_result": "Won the DARPA AIxCC final at DEF CON 33 (August 2025) with 392.76 points; the team's paper reports 43 of 70 vulnerabilities found. DARPA's overall figures (all teams): 54 of 63 synthetic vulnerabilities found and 43 patched, 18 real-world bugs found, about $152 average per task.",
+  "caveat": "Scores and counts come from the team's own paper plus DARPA's page, which differ (70 versus 63 challenges after a DARPA correction). The competition used synthetic bugs inserted into open-source projects. Real-world finds are small in number.",
+  "beyond_harness": [
+    "inverted-control",
+    "domain-authority-judge",
+    "output-outlives-model",
+    "multi-fidelity"
+  ],
+  "beyond_harness_note": "The system is a program-analysis and fuzzing pipeline that calls LLM modules, and sanitizers and tests, not an LLM, decide whether a bug or patch counts.",
+  "proposal_object": "patch",
+  "generative_model": "Several commercial LLMs used by agents (models vary by module)",
+  "algorithmic_authority": "Fuzzers, sanitizers, PoV replay and project tests",
+  "feedback_payload": "test-results",
+  "update_target": "context",
+  "loop_stage": "inference",
+  "sources": [
+    {
+      "title": "ATLANTIS: AI-driven Threat Localization, Analysis, and Triage Intelligence System",
+      "url": "https://arxiv.org/abs/2509.14589",
+      "kind": "paper",
+      "supports": "loop, headline_result"
+    },
+    {
+      "title": "DARPA: AI Cyber Challenge marks pivotal inflection point for cyber defense",
+      "url": "https://www.darpa.mil/news/2025/aixcc-results",
+      "kind": "news",
+      "supports": "headline_result"
+    }
+  ],
+  "verification": {
+    "status": "corrected",
+    "checked_on": "2026-11-03",
+    "notes": "Read the arXiv abstract, the PDF text (Team Atlanta paper: Generator agent 'repeating up to four rounds', Evaluator runs PoV tests and internal test suites and reports failures back; Table 4 392.76 points, 43/70) and DARPA's results page. Note the discrepancy: the paper says 43/70, DARPA's corrected page says 63 challenges and its 54 found and 43 patched are all teams combined, so '43 of 70' must not be mixed with DARPA's totals. Place and prize ($4M) from DARPA. Not verified: team member institutions."
+  }
+}

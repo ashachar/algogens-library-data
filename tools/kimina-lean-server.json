@@ -1,0 +1,27 @@
+{
+  "slug": "kimina-lean-server",
+  "name": "Kimina Lean Server",
+  "author": "project-numina",
+  "kind": "tool",
+  "repo_url": "https://github.com/project-numina/kimina-lean-server",
+  "install": "pip install kimina-client",
+  "one_liner": "A server that checks Lean 4 code and proofs at scale, so a model's output gets a pass or fail from Lean.",
+  "loop": {
+    "proposes": "Lean 4 proofs and code from a model",
+    "judged_by": "The Lean REPL running the code, served over an HTTP API",
+    "steers": "The check results go back to the caller, which can retry or filter the model's output"
+  },
+  "not_proved": "A pass means Lean accepted the text it was given. It does not show the Lean statement says what the author meant. Running the server itself needs Lean and mathlib set up (the client pip package only talks to a server).",
+  "license": "MIT",
+  "sources": [
+    {
+      "title": "Kimina Lean Server README",
+      "url": "https://raw.githubusercontent.com/project-numina/kimina-lean-server/main/README.md"
+    },
+    {
+      "title": "Kimina Lean Server repo",
+      "url": "https://github.com/project-numina/kimina-lean-server"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

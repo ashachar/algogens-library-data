@@ -1,0 +1,49 @@
+{
+  "slug": "tgade",
+  "name": "T-GADE",
+  "org": "Osaka Metropolitan University",
+  "year": 2026,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "An LLM evolution framework that picks survivors by minimizing a 'free energy' so a temperature setting trades off quality against diversity.",
+  "loop": {
+    "proposes": "Structured artifacts (here, bin packing scoring heuristics) from LLM crossover, mutation and a self-repair step",
+    "judged_by": "Evaluation on online bin packing, measured as excess bins over the volume lower bound",
+    "steers": "Survival selection minimizes free energy F_T = <E> - T*H, with temperature T controlling the quality-diversity balance"
+  },
+  "headline_result": "In a preregistered seed-paired comparison at 400 total LLM calls on online bin packing, the HoxLM configuration won 9 of 10 runs against EoH, with a median sealed excess of 0.836% against 3.912%.",
+  "caveat": "Preprint (arXiv v2, 14 Oct 2026), one task, 10 seed pairs, and an EoH-aligned implementation. Not independently replicated.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model",
+    "design-time"
+  ],
+  "beyond_harness_note": "A physics-inspired selection rule over a population steers the search, and the evolved scoring rules are readable and run without the model.",
+  "proposal_object": "heuristic",
+  "generative_model": "Pretrained LLM, frozen (also used as a self-repair model, HoxLM)",
+  "algorithmic_authority": "Bin packing evaluation and free-energy survival selection",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "derivative",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "T-GADE: Thermodynamical Generative-AI-Driven Evolution of LLM Artifacts",
+      "url": "https://arxiv.org/abs/2609.12286",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Resolved arXiv:2609.12286 (Ogawa and Mori; v1 10 Sep 2026, v2 14 Oct 2026). Abstract numbers match the report's direction (better sample efficiency than EoH at equal calls); added the exact 9/10 and 0.836% vs 3.912% figures. Report's 'preprint' label confirmed. Affiliations not checked, so org lists the authors. Parent left null: the paper says its example is aligned with EoH but frames T-GADE as a general framework. Org confirmed from the arXiv HTML title block: Graduate School of Informatics, Osaka Metropolitan University (review 2026-11-03)."
+  }
+}

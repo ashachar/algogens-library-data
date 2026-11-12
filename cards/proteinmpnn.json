@@ -1,0 +1,48 @@
+{
+  "slug": "proteinmpnn",
+  "name": "ProteinMPNN",
+  "org": "University of Washington",
+  "year": 2022,
+  "domain": "chemistry",
+  "family": "oracle-trained-generation",
+  "parent": null,
+  "one_liner": "Message-passing graph neural network for inverse protein folding whose designed sequences are ranked by the model log probability, with AlphaFold2 structure prediction and wet-lab crystallization used to measure whether they fold.",
+  "loop": {
+    "proposes": "An SE(3)-invariant message-passing neural network decodes amino-acid sequences conditioned on a target 3D protein backbone.",
+    "judged_by": "The model log probability ranks designed sequences; AlphaFold2 / ESMFold single-sequence structure prediction (pLDDT and backbone RMSD) plus wet-lab SEC, cryo-EM, and X-ray crystallography measure whether they refold.",
+    "steers": "Tied-position symmetry constraints shape decoding, and designed sequences are ranked by the model log probability."
+  },
+  "headline_result": "Achieved 52.4% native sequence recovery (vs. 32.9% for Rosetta) and rescued previously failed de novo protein cyclic oligomers, nanoparticles, and binders in wet-lab crystallography.",
+  "caveat": "Assumes a designable target backbone; cannot fix a backbone with severe steric clashes on its own.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "population-search",
+    "non-llm-generator"
+  ],
+  "beyond_harness_note": "A message-passing 3D graph network proposes sequences that are ranked by the model log probability; AlphaFold refolding RMSD and X-ray crystallography measure whether they fold.",
+  "proposal_object": "protein",
+  "generative_model": "ProteinMPNN 3D message-passing neural network",
+  "algorithmic_authority": "The model log probability for ranking; AlphaFold2 refolding and X-ray crystallography / cryo-EM as measures of whether designs fold",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "inference",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Robust deep learning-based protein sequence design using ProteinMPNN (Science, 2022)",
+      "url": "https://doi.org/10.1126/science.add2187",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Dauparas et al., Science 378(6615), 2022."
+  }
+}

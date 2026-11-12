@@ -1,0 +1,47 @@
+{
+  "parent": null,
+  "youtube_id": null,
+  "direct_algogen_link": "conceptual-fit",
+  "slug": "augmented-hill-climb",
+  "name": "Augmented Hill-Climb",
+  "org": "University of Cambridge",
+  "year": 2022,
+  "domain": "chemistry",
+  "family": "oracle-trained-generation",
+  "one_liner": "A reinforcement-learning rule that trains a molecule generator on the top scorers per batch, so costly scores like docking are used less.",
+  "loop": {
+    "proposes": "SMILES strings from an RNN (also tested on a transformer) molecule generator",
+    "judged_by": "A scoring function evaluated on each sampled batch; the paper's tasks include docking objectives, with diversity filters",
+    "steers": "RL updates the generator with a hybrid of REINVENT's loss and Hill-Climb's top-scorer selection"
+  },
+  "headline_result": "On the authors' benchmark tasks, compared with REINVENT, optimization ability improved about 1.5-fold and sample efficiency about 45-fold, and Augmented Hill-Climb outperformed the other reinforcement learning strategies tested on six tasks.",
+  "caveat": "The gains are measured on the authors' benchmark tasks and docking objectives, not on lab-measured activity. It is a training rule inside the REINVENT-style setup rather than a separate system.",
+  "beyond_harness": [
+    "non-llm-generator",
+    "retrains-generator",
+    "domain-authority-judge"
+  ],
+  "beyond_harness_note": "The generator is a SMILES RNN or transformer whose weights are updated by the score, with docking-style scoring as the judge.",
+  "proposal_object": "molecule",
+  "generative_model": "SMILES RNN (and RL-stabilized transformer), updated by reinforcement learning",
+  "algorithmic_authority": "Task scoring functions including docking, plus diversity filters",
+  "feedback_payload": "reward",
+  "update_target": "weights",
+  "loop_stage": "training",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "experiment",
+  "lineage": "derivative",
+  "sources": [
+    {
+      "title": "Augmented Hill-Climb increases reinforcement learning efficiency for language-based de novo molecule generation (J Cheminformatics 14, 2022)",
+      "url": "https://jcheminf.biomedcentral.com/articles/10.1186/s13321-022-00646-z",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "verification": {
+    "checked_on": "2026-11-03",
+    "status": "verified",
+    "notes": "Abstract opened via Europe PMC (PMC9531503; the Springer URL redirects). Authors Thomas, O'Boyle, Bender, de Graaf; first-author affiliation printed as Centre for Molecular Informatics, University of Cambridge (org field uses that only). Numbers (1.5-fold, 45-fold, six tasks, transformer result) quoted from the abstract. The report's 'better sample efficiency than REINVENT's strategy' is correct and now carries the ~45-fold figure. Only the abstract was read, not the full methods."
+  }
+}

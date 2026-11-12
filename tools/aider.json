@@ -1,0 +1,31 @@
+{
+  "slug": "aider",
+  "name": "Aider",
+  "author": "Aider-AI",
+  "kind": "tool",
+  "repo_url": "https://github.com/Aider-AI/aider",
+  "install": "python -m pip install aider-install && aider-install",
+  "one_liner": "A terminal coding assistant that runs your linter and test command after each edit and asks the model to fix failures.",
+  "loop": {
+    "proposes": "Code edits to your repo",
+    "judged_by": "Your lint command and test command (non-zero exit code means failure)",
+    "steers": "Failure output is fed back so the model repairs the edit"
+  },
+  "not_proved": "A clean lint and test run shows only that those checks pass. Behavior the tests do not cover is unchecked, and the tests are only as good as you made them.",
+  "license": "Apache-2.0",
+  "sources": [
+    {
+      "title": "Aider README",
+      "url": "https://raw.githubusercontent.com/Aider-AI/aider/main/README.md"
+    },
+    {
+      "title": "Aider docs: Linting and testing",
+      "url": "https://aider.chat/docs/usage/lint-test.html"
+    },
+    {
+      "title": "Aider repo",
+      "url": "https://github.com/Aider-AI/aider"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

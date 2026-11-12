@@ -1,0 +1,100 @@
+{
+  "slug": "alphaevolve",
+  "name": "AlphaEvolve",
+  "org": "Google DeepMind",
+  "year": 2025,
+  "domain": "math",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "Gemini models rewrite code, evaluators score each version, and an evolutionary database decides which versions to build on.",
+  "loop": {
+    "proposes": "Edits to an existing program (algorithms, heuristics, constructions) written by an ensemble of Gemini models",
+    "judged_by": "One or more user-supplied automated evaluators that run each program and return scores",
+    "steers": "Higher-scoring programs are kept in a program database (MAP-Elites plus island populations) and sampled into later prompts"
+  },
+  "headline_result": "Applied to over 50 open math problems, AlphaEvolve matched the best known construction in about 75% of cases and found a better one in about 20%, including a kissing-number configuration of 593 spheres in 11 dimensions (previous record 592). It found a procedure to multiply two 4x4 complex-valued matrices with 48 scalar multiplications (Strassen's recursive method gives 49). At Google it recovered on average 0.7% of fleet-wide compute through a scheduling heuristic and gave a 23% average kernel speedup, about 1% less Gemini training time.",
+  "caveat": "The 48-multiplication result holds for complex-valued matrices (characteristic 0 fields), not as a general replacement for Strassen. Industry results are developer-reported and not independently replicated. Evaluators must give a machine-checkable score, and a later study found the system sometimes exploited weak evaluators.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model"
+  ],
+  "beyond_harness_note": "The evolutionary loop and evaluators are the solver, run over a database of many programs, and the results (algorithms, constructions, a deployed scheduling heuristic) work without the model.",
+  "proposal_object": "program",
+  "generative_model": "Gemini 2.0 Flash and Gemini 2.0 Pro ensemble, frozen",
+  "algorithmic_authority": "Automated evaluators (exact for many math constructions, simulators or benchmarks for engineering tasks)",
+  "feedback_payload": "score",
+  "update_target": "context+population",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "deployment",
+  "lineage": "successor",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "AlphaEvolve: A coding agent for scientific and algorithmic discovery",
+      "url": "https://arxiv.org/abs/2506.13131",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    },
+    {
+      "title": "AlphaEvolve paper PDF",
+      "url": "https://arxiv.org/pdf/2506.13131",
+      "kind": "paper",
+      "supports": "loop details"
+    },
+    {
+      "title": "AlphaEvolve impact update (Google DeepMind, 7 May 2026)",
+      "url": "https://deepmind.google/blog/alphaevolve-impact/",
+      "kind": "blog",
+      "supports": "industry results"
+    },
+    {
+      "title": "Mathematical exploration and discovery at scale (Georgiev, Gomez-Serrano, Tao, Wagner)",
+      "url": "https://arxiv.org/abs/2511.02864",
+      "kind": "paper",
+      "supports": "caveat, scale of math use"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "corrected",
+    "checked_on": "2026-11-03",
+    "notes": "Read the arXiv abstract and PDF text (Novikov et al., submitted 16 Jun 2025, 18 authors). Confirmed: Gemini 2.0 Flash+Pro ensemble; MAP-Elites plus island database; >50 problems, ~75% matched, ~20% improved; kissing number 593 vs 592; 48 multiplications for 4x4 complex-valued (first in 56 years over characteristic 0, Strassen gives 49); 0.7% fleet compute; 23% kernel speedup and 1% training time; improved SOTA for 14 matrix targets. Report said 'do not generalize' - consistent. Correction: the report's impact-strip line on Substrate says 'orders of magnitude' runtime speedup, but the DeepMind blog only says multi-fold with no exact figure. Impact blog dated 7 May 2026 and marks Klarna, Substrate, FM Logistic, WPP, Schrodinger as partner-reported; industry strip itself is outside this card's headline. Review 2026-11-03: headline numbers re-checked against the source."
+  },
+  "video_notes": [
+    {
+      "fact": "AlphaEvolve is a coding agent: Gemini models propose changes to a program, and automated evaluators score every new version.",
+      "source": "https://arxiv.org/abs/2506.13131"
+    },
+    {
+      "fact": "It uses two Gemini models together: Flash for fast, many ideas and Pro for fewer, deeper ones.",
+      "source": "https://arxiv.org/pdf/2506.13131"
+    },
+    {
+      "fact": "Good programs are stored in a database built from the MAP-Elites method plus separate island populations, and are fed back into later prompts.",
+      "source": "https://arxiv.org/pdf/2506.13131"
+    },
+    {
+      "fact": "On over 50 open math problems it matched the best known answer about 75% of the time and beat it about 20% of the time.",
+      "source": "https://arxiv.org/abs/2506.13131"
+    },
+    {
+      "fact": "It found 593 spheres touching a central sphere in 11 dimensions, one more than the previous record of 592.",
+      "source": "https://arxiv.org/pdf/2506.13131"
+    },
+    {
+      "fact": "It found a way to multiply two 4x4 complex-valued matrices with 48 multiplications, where the standard Strassen method needs 49. This is specific to complex-valued matrices.",
+      "source": "https://arxiv.org/abs/2506.13131"
+    },
+    {
+      "fact": "Inside Google, its scheduling heuristic recovers on average 0.7% of fleet-wide compute, and a kernel tweak gave a 23% average kernel speedup and about 1% shorter Gemini training.",
+      "source": "https://arxiv.org/pdf/2506.13131"
+    },
+    {
+      "fact": "A later study with Terence Tao reports the system sometimes cheated weak scoring code, so humans still check the results.",
+      "source": "https://arxiv.org/abs/2511.02864"
+    }
+  ]
+}

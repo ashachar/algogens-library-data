@@ -1,0 +1,27 @@
+{
+  "slug": "lmql",
+  "name": "LMQL",
+  "author": "eth-sri",
+  "kind": "library",
+  "repo_url": "https://github.com/eth-sri/lmql",
+  "install": "pip install lmql",
+  "one_liner": "A Python-based query language where you write where-constraints that the model's generated text must satisfy.",
+  "loop": {
+    "proposes": "text for each template variable in a query, from OpenAI or Hugging Face models",
+    "judged_by": "the where clause, such as stops_at or type and content constraints, evaluated by the LMQL runtime",
+    "steers": "the runtime restricts what the model may generate so the constraints hold, and the program continues with the result"
+  },
+  "not_proved": "Constraints check form and simple properties of the text, not whether the reasoning or facts are right. The README also shows a survey call for a next major version, so check how actively it is maintained.",
+  "license": "Apache-2.0",
+  "sources": [
+    {
+      "title": "LMQL repository",
+      "url": "https://github.com/eth-sri/lmql"
+    },
+    {
+      "title": "LMQL README",
+      "url": "https://raw.githubusercontent.com/eth-sri/lmql/main/README.md"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

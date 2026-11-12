@@ -1,0 +1,61 @@
+{
+  "parent": null,
+  "youtube_id": null,
+  "direct_algogen_link": "conceptual-fit",
+  "slug": "reinvent-4",
+  "name": "REINVENT 4 (with DockStream docking)",
+  "org": "AstraZeneca (Molecular AI)",
+  "year": 2024,
+  "domain": "chemistry",
+  "family": "oracle-trained-generation",
+  "one_liner": "A molecule-writing neural network is rewarded by a scoring function, which can include docking, and its weights are updated toward high scorers.",
+  "loop": {
+    "proposes": "SMILES strings for new small molecules, sampled from an RNN or transformer generator",
+    "judged_by": "A user-defined scoring function; here a DockStream docking score (Glide) plus drug-likeness (QED)",
+    "steers": "Reinforcement learning, run as staged (curriculum) learning, raises the probability of high-scoring molecules in the generator"
+  },
+  "headline_result": "In the paper's demonstration on PDK1 (PDB 2XCH), 50 epochs of staged learning with batch size 128 produced 119 hits out of 6,400 generated molecules (1.9%), where a hit means a docking score of -8 kcal/mol or better and QED of 0.7 or higher; the hits spanned 103 generic scaffolds.",
+  "caveat": "The PDK1 run is described by the authors as a hypothetical virtual screening exercise, and a good docking score is a computed estimate, not measured activity. Docking is one optional scoring component; DockStream alone is only a docking wrapper, not an AlgoGen, and its repository is no longer maintained.",
+  "beyond_harness": [
+    "non-llm-generator",
+    "retrains-generator",
+    "domain-authority-judge",
+    "output-outlives-model",
+    "physical-grounding"
+  ],
+  "beyond_harness_note": "The generator is a SMILES RNN or transformer rather than an LLM agent, docking acts as the judge, and the reward updates the generator's weights.",
+  "proposal_object": "molecule",
+  "generative_model": "RNN and transformer SMILES generators (priors pretrained, then fine-tuned by transfer and reinforcement learning)",
+  "algorithmic_authority": "Scoring function with docking (Vina, rDock, Glide, GOLD via DockStream) and RDKit property checks",
+  "feedback_payload": "reward",
+  "update_target": "weights",
+  "loop_stage": "training",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "sources": [
+    {
+      "title": "Reinvent 4: Modern AI-driven generative molecule design (J Cheminformatics 16, 2024)",
+      "url": "https://link.springer.com/article/10.1186/s13321-024-00812-5",
+      "kind": "paper",
+      "supports": "loop, headline_result"
+    },
+    {
+      "title": "Reinvent 4 full text (Europe PMC mirror, PMC10882833)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10882833/",
+      "kind": "paper",
+      "supports": "headline_result"
+    },
+    {
+      "title": "DockStream repository (README states no longer maintained)",
+      "url": "https://github.com/MolecularAI/DockStream",
+      "kind": "code",
+      "supports": "caveat"
+    }
+  ],
+  "verification": {
+    "checked_on": "2026-11-03",
+    "status": "verified",
+    "notes": "Opened the full text (Europe PMC PMC10882833; the Springer page itself redirects to a login cookie page) and the DockStream GitHub README. Confirmed authors Loeffler et al., AstraZeneca Molecular AI, 2024. DockStream is cited as the docking interface supporting AutoDock Vina, rDock, Hybrid, Glide and GOLD. PDK1 numbers (119/6400, 1.9%, 103 scaffolds, thresholds) taken from the paper's Fig. 5 text. Report said 'example: docking-guided design vs PDK1': correct but it is a demo, not a project result. DockStream repo confirmed unmaintained via README and archived flag (GitHub API). Review 2026-11-03: headline numbers re-checked against the source."
+  }
+}

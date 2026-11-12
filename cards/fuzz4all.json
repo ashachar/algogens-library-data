@@ -1,0 +1,48 @@
+{
+  "slug": "fuzz4all",
+  "name": "Fuzz4All",
+  "org": "University of Illinois Urbana-Champaign, ETH Zurich",
+  "year": 2024,
+  "domain": "security",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "Universal compiler and solver fuzzer that generates and mutates source-code fuzzing inputs with an LLM, seeding each iteration with a randomly chosen valid earlier input; coverage is the evaluation measure.",
+  "loop": {
+    "proposes": "An autoprompting and fuzzing LLM generates and mutates valid source inputs in C, C++, Go, Rust, Java, and SMT2.",
+    "judged_by": "Target compilers (GCC, Clang, rustc, Go) and solvers (Z3, CVC5) execute the inputs; crashes and output checks flag bugs.",
+    "steers": "The next iteration is seeded with a randomly chosen valid earlier input."
+  },
+  "headline_result": "Achieved 36.8% higher line coverage than language-specific fuzzers across 9 systems in 6 languages and found 98 bugs (64 confirmed previously unknown).",
+  "caveat": "LLM token generation is slower per input than bit-flip greybox fuzzers, trading raw throughput for semantic validity in complex input grammars.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "population-search"
+  ],
+  "beyond_harness_note": "A fuzzing loop seeds each iteration with a randomly chosen valid earlier input while calling the LLM as a cross-language input mutator.",
+  "proposal_object": "fuzz-target",
+  "generative_model": "StarCoder + GPT-4 autoprompting distiller",
+  "algorithmic_authority": "Compiler/SMT crash and output-check oracle",
+  "feedback_payload": "test-results",
+  "update_target": "population+context",
+  "loop_stage": "continuous-operation",
+  "validity_scope": "empirical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Fuzz4All: Universal Fuzzing with Large Language Models (ICSE 2024 / arXiv:2308.04748)",
+      "url": "https://arxiv.org/abs/2308.04748",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Xia et al., ICSE 2024."
+  }
+}

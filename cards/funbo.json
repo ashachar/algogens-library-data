@@ -1,0 +1,50 @@
+{
+  "slug": "funbo",
+  "name": "FunBO",
+  "org": "Google DeepMind",
+  "year": 2025,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": "funsearch",
+  "one_liner": "Extends FunSearch to discover novel Bayesian Optimization acquisition functions in Python code, evaluated across black-box optimization suites.",
+  "loop": {
+    "proposes": "An LLM mutates Python acquisition functions mapping Gaussian Process posterior mean and variance to utility scores.",
+    "judged_by": "A Bayesian Optimization benchmark harness runs full GP optimization loops with each candidate acquisition function on synthetic and hyperparameter tasks.",
+    "steers": "An island-model evolutionary database ranks acquisition functions by average simple regret and seeds the next prompt."
+  },
+  "headline_result": "Discovered acquisition functions that outperform Expected Improvement (EI) and Upper Confidence Bound (UCB) on unseen black-box optimization and HPO benchmarks.",
+  "caveat": "Evaluating each candidate acquisition function requires running multiple full Bayesian Optimization trajectories during the offline search.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "output-outlives-model",
+    "population-search",
+    "design-time",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "An evolutionary island algorithm calls the LLM offline to discover closed-form Python acquisition functions that subsequently run inside standard BO solvers.",
+  "proposal_object": "heuristic",
+  "generative_model": "Code-generating LLM inside an island evolutionary loop",
+  "algorithmic_authority": "Gaussian Process Bayesian Optimization benchmark evaluator",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "derivative",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "FunBO: Discovering Acquisition Functions for Bayesian Optimization with FunSearch (arXiv:2406.04824; ICML 2025 per PMLR v267)",
+      "url": "https://arxiv.org/abs/2406.04824",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Re-checked 2026-11-09 against Aglietti et al., arXiv:2406.04824 (abstract and PDF text): island-model database, GP posterior mean and variance inputs, simple-regret scoring, and EI/UCB comparisons all confirmed. Corrections: the card previously cited unrelated arXiv:2406.03024; affiliation is Google DeepMind (PDF title block), not Huawei Noah's Ark Lab and UCL; venue is ICML 2025 (PMLR v267), not ICML 2024, and the year field stays at the 2024 first posting."
+  }
+}

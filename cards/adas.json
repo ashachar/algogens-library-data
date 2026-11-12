@@ -1,0 +1,48 @@
+{
+  "slug": "adas",
+  "name": "ADAS (Automated Design of Agentic Systems)",
+  "org": "University of British Columbia, Vector Institute",
+  "year": 2024,
+  "domain": "ml-systems",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "Meta-agent search evolves Python agent workflows in code space, scoring each candidate on validation data and reporting on held-out test data.",
+  "loop": {
+    "proposes": "A meta-LLM writes complete multi-step agent architectures as executable Python forward() functions.",
+    "judged_by": "An automated benchmark harness executes each candidate workflow on validation tasks (ARC, DROP, GSM8K, MMLU) and computes exact accuracy.",
+    "steers": "Winning architectures and their validation scores are appended to an growing archive that conditions the next meta-generation step."
+  },
+  "headline_result": "Discovered agent architectures that outperform hand-designed baselines by up to 13.6 percentage points on ARC logic tasks and transfer across foundation models.",
+  "caveat": "Evaluated on validation splits of static benchmarks; executing arbitrary LLM-generated code requires sandboxing and incurs high API token cost.",
+  "beyond_harness": [
+    "inverted-control",
+    "output-outlives-model",
+    "population-search",
+    "meta-evolution"
+  ],
+  "beyond_harness_note": "The evolutionary archive loop calls the meta-model to synthesize new workflow programs and retains the discovered code artifacts.",
+  "proposal_object": "program",
+  "generative_model": "GPT-4 meta-agent",
+  "algorithmic_authority": "Sandboxed Python execution and validation benchmark evaluator",
+  "feedback_payload": "score",
+  "update_target": "population+context",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Automated Design of Agentic Systems (ICLR 2025 / arXiv:2408.08435)",
+      "url": "https://arxiv.org/abs/2408.08435",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Hu et al., arXiv:2408.08435."
+  }
+}

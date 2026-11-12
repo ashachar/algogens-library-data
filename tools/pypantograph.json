@@ -1,0 +1,31 @@
+{
+  "slug": "pypantograph",
+  "name": "PyPantograph",
+  "author": "stanford-centaur",
+  "kind": "library",
+  "repo_url": "https://github.com/stanford-centaur/PyPantograph",
+  "install": "uv add git+https://github.com/stanford-centaur/PyPantograph",
+  "one_liner": "Python interface to Lean 4 for running tactics step by step and checking a whole file matches its specification.",
+  "loop": {
+    "proposes": "Tactics and proof attempts from a prover model",
+    "judged_by": "Lean, driven step by step, plus a whole-file conformity check (check_track)",
+    "steers": "Resulting goals and errors feed the search for the next tactic"
+  },
+  "not_proved": "A passing check shows the proof fits the stated Lean specification. It does not show the specification itself is the right one.",
+  "license": "Apache-2.0",
+  "sources": [
+    {
+      "title": "PyPantograph README",
+      "url": "https://raw.githubusercontent.com/stanford-centaur/PyPantograph/main/README.md"
+    },
+    {
+      "title": "PyPantograph repo",
+      "url": "https://github.com/stanford-centaur/PyPantograph"
+    },
+    {
+      "title": "Pantograph paper",
+      "url": "https://arxiv.org/abs/2410.16429"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

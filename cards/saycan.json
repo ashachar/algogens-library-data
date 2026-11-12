@@ -1,0 +1,48 @@
+{
+  "slug": "saycan",
+  "name": "SayCan",
+  "org": "Google Research, Everyday Robots",
+  "year": 2022,
+  "domain": "robotics",
+  "family": "formalize-and-solve",
+  "parent": null,
+  "one_liner": "Multiplies LLM semantic task-step probabilities by RL value-function affordance scores to select physically feasible robot action plans.",
+  "loop": {
+    "proposes": "A language model scores candidate atomic robot skills by their semantic probability of advancing a high-level user instruction.",
+    "judged_by": "Pre-trained reinforcement-learning value functions (affordance critics) evaluate the exact probability that each skill will succeed from the current camera state.",
+    "steers": "Each step takes the highest-scoring skill by the joint product P(say) x V(can) until the termination token is reached; there is no beam or tree search."
+  },
+  "headline_result": "Executed 101 real-world mobile manipulation tasks in an office kitchen with 84% planning rate and 74% physical execution success.",
+  "caveat": "Bounded by the repertoire of pre-trained low-level manipulation skills and cannot recover if an early step irreversibly alters the scene without replanning.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "neuro-symbolic"
+  ],
+  "beyond_harness_note": "Bellman value-function affordance critics gate every proposed language-model step according to physical execution feasibility.",
+  "proposal_object": "construction",
+  "generative_model": "PaLM 540B semantic skill proposer",
+  "algorithmic_authority": "RL Bellman value-function affordance critics and physical robot controller",
+  "feedback_payload": "score",
+  "update_target": "search-tree",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances (CoRL 2022 / arXiv:2204.01691)",
+      "url": "https://arxiv.org/abs/2204.01691",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Ahn et al., CoRL 2022."
+  }
+}

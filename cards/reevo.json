@@ -1,0 +1,50 @@
+{
+  "slug": "reevo",
+  "name": "ReEvo (Reflective Evolution)",
+  "org": "Peking University, KAIST, Southeast University, Singapore Management University (AI4CO)",
+  "year": 2024,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "An evolutionary search over heuristics in which a second LLM role writes short and long 'reflections' that steer crossover and mutation.",
+  "loop": {
+    "proposes": "Heuristic code produced by LLM crossover and elitist mutation",
+    "judged_by": "Running the heuristic on problem instances to get an objective value",
+    "steers": "Short-term reflection compares parents; long-term reflection accumulates hints; both feed later prompts ('verbal gradient')"
+  },
+  "headline_result": "Across six combinatorial problems (TSP, CVRP, OP, MKP, BPP, DPP), with a budget of 100 heuristic evaluations and GPT-3.5 Turbo, ReEvo beats EoH on sample efficiency in five problems, and designed heuristics improved neural solvers, for example POMO's TSP1000 gap from about 52% to 29%. Its genetic algorithm for decap placement scored 12.98 vs 12.41 for the expert-designed one.",
+  "caveat": "Authors' benchmark set-ups with GPT-3.5 Turbo as the main model; 'state of the art' refers to the compared methods in the paper.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model",
+    "design-time",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "Evolutionary search is the solver over a population, and the product is a heuristic or operator that runs without the model.",
+  "proposal_object": "heuristic",
+  "generative_model": "Pretrained LLMs, frozen (GPT-3.5 Turbo, GPT-4 Turbo, Llama 3 70B compared)",
+  "algorithmic_authority": "Objective evaluation on problem instances",
+  "feedback_payload": "verbal-reflection",
+  "update_target": "context+population",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "derivative",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution",
+      "url": "https://arxiv.org/abs/2402.01145",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Resolved arXiv:2402.01145 (Ye, Wang, Cao, Berto, et al.; v1 2 Feb 2024; comment 'Accepted at NeurIPS 2024'). Numbers from the HTML. Report said 'competitive/SOTA' - the abstract says state-of-the-art and competitive across five algorithm types; kept to the specific numbers. Affiliations from the paper title block."
+  }
+}

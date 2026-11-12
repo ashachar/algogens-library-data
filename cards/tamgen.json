@@ -1,0 +1,47 @@
+{
+  "slug": "tamgen",
+  "name": "TamGen",
+  "org": "Microsoft Research",
+  "year": 2024,
+  "domain": "chemistry",
+  "family": "oracle-trained-generation",
+  "parent": null,
+  "one_liner": "Pocket-conditioned GPT chemical language model paired with docking/IC50 feedback loops to design tuberculosis ClpP protease inhibitors.",
+  "loop": {
+    "proposes": "A 3D-pocket-encoder + chemical-GPT decoder proposes SMILES structures conditioned on the target protein binding pocket and seed scaffolds.",
+    "judged_by": "RDKit synthetic accessibility, physics-based molecular docking, and wet-lab enzymatic IC50 and whole-cell M. tuberculosis assays evaluate candidates.",
+    "steers": "Top-scoring docked and assayed hits seed iterative scaffold refinement rounds."
+  },
+  "headline_result": "Designed novel Mycobacterium tuberculosis ClpP inhibitors validated in wet-lab assays with strong enzymatic inhibition (IC50 = 0.9 uM).",
+  "caveat": "Requires a known 3D crystal structure of the target binding site to encode pocket geometry.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "population-search"
+  ],
+  "beyond_harness_note": "Physics docking filters and wet-lab enzymatic IC50 assays judge and steer pocket-conditioned molecular generation.",
+  "proposal_object": "molecule",
+  "generative_model": "3D geometric pocket encoder + chemical GPT decoder",
+  "algorithmic_authority": "Molecular docking engine and wet-lab IC50 enzymatic assay",
+  "feedback_payload": "score",
+  "update_target": "population+context",
+  "loop_stage": "inference",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Target-aware molecular generation with TamGen (Nature Communications, 2024)",
+      "url": "https://doi.org/10.1038/s41467-024-53632-4",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Wu et al., Nature Communications 15, 2024."
+  }
+}

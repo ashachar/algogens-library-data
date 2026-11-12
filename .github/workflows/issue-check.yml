@@ -1,0 +1,43 @@
+name: Check submitted entry
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    if: contains(github.event.issue.labels.*.name, 'submission')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate the JSON entry in the issue, if one was given
+        id: validate
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          set +e
+          python3 scripts/check_issue.py > result.txt 2>&1
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          cat result.txt
+      - name: Post the result on the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CODE: ${{ steps.validate.outputs.code }}
+        run: |
+          {
+            if [ "$CODE" = "0" ]; then echo "Schema check: the JSON entry is valid."; \
+            elif [ "$CODE" = "2" ]; then echo "Schema check: no JSON entry was given, so a maintainer will write it from the form."; \
+            else echo "Schema check: the JSON entry has problems. Please edit the issue to fix them."; fi
+            echo
+            echo '```'
+            cat result.txt
+            echo '```'
+          } > comment.md
+          gh issue comment "${{ github.event.issue.number }}" --repo "${{ github.repository }}" --body-file comment.md

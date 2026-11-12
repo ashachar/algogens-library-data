@@ -1,0 +1,45 @@
+{
+  "parent": null,
+  "youtube_id": null,
+  "direct_algogen_link": "conceptual-fit",
+  "slug": "t3-planner",
+  "name": "T3 Planner",
+  "org": "Jia Li et al.",
+  "year": 2025,
+  "domain": "robotics",
+  "family": "verifier-guided-repair",
+  "one_liner": "An LLM proposes robot waypoints and controller code, a temporal-logic checker scores them, and failures go back until a plan passes.",
+  "loop": {
+    "proposes": "Subgoal waypoints, timed waypoints and a Python controller script, written by an LLM in three stages",
+    "judged_by": "Signal Temporal Logic robustness checks, a Python syntax check, and simulation of the controller on annotated cases",
+    "steers": "A failed output goes back to the LLM as the previous failed result, until all checks pass"
+  },
+  "headline_result": "In simulated household, chip-design and navigation scenarios, success rates with GPT-4o were 91.65%, 91.60% and 83.69%, against 56.67%, 61.29% and 50.00% for AutoTAMP with GPT-4o. The authors claim a 30 to 40% improvement.",
+  "caveat": "All scenarios are in a simulated 2D environment with no real-robot tests, and the paper gives no retry limit. The checker is a temporal-logic verifier, not model predictive control, and this is a single preprint with no venue listed.",
+  "beyond_harness": [
+    "domain-authority-judge"
+  ],
+  "beyond_harness_note": "A formal temporal-logic verifier, not an LLM judge, decides whether each proposed plan is valid.",
+  "proposal_object": "program",
+  "generative_model": "Pretrained LLMs (GPT-4o, DeepSeek-reasoner, Gemini-2.5-Pro), plus a distilled Qwen3-4B",
+  "algorithmic_authority": "Signal Temporal Logic robustness computation and simulation of the generated controller",
+  "feedback_payload": "verifier-errors",
+  "update_target": "context",
+  "loop_stage": "inference",
+  "validity_scope": "formal",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "sources": [
+    {
+      "title": "T3 Planner: A Self-Correcting LLM Framework for Robotic Motion Planning with Temporal Logic (arXiv:2510.16767)",
+      "url": "https://arxiv.org/abs/2510.16767",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "verification": {
+    "checked_on": "2026-11-03",
+    "status": "verified",
+    "notes": "Found by searching for LLM trajectory generators with a checker that feeds back. Read the arXiv abstract page and HTML full text. The checker is an STL verifier, so this does not satisfy the report's MPC/safety-filter wording; I found no primary source with an MPC checker feeding back into the next proposal. Evidence is thin (v1 only, authors unaffiliated on the page, simulation only). Table II numbers used; an ablation elsewhere quotes 96% for chip, which the paper does not reconcile. Include only if the site accepts a preprint-level robotics example. 'validity_scope: formal' applies to the STL checks, while controllers are validated by simulation. Org not printed in arXiv HTML or abstract; set to first author per rule, never guessed (review 2026-11-03)."
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "lean-star",
+  "name": "Lean-STaR",
+  "org": "Stanford University, Tsinghua University",
+  "year": 2024,
+  "domain": "proofs",
+  "family": "proof-state-search",
+  "parent": null,
+  "one_liner": "Bootstraps interleaved informal thoughts and formal Lean tactics via expert iteration and best-first proof search verified by the Lean kernel.",
+  "loop": {
+    "proposes": "A language model generates a rationale thought followed by a formal Lean tactic at each node of the proof tree.",
+    "judged_by": "The Lean proof assistant checks whether the tactic advances or closes the goal.",
+    "steers": "Best-first tree search explores multiple thought-tactic branches, and verified trajectories are used to fine-tune the model in STaR expert-iteration rounds."
+  },
+  "headline_result": "Improved miniF2F-test pass@64 in Lean from 30.8% to 46.3%, outperforming tactic-only search baselines.",
+  "caveat": "Generating natural-language thoughts before every tactic increases token count per node during tree search.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "retrains-generator",
+    "population-search",
+    "formal-kernel",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "Best-first proof search and Lean kernel verification filter thought-augmented tactic trajectories to retrain the generator.",
+  "proposal_object": "tactic",
+  "generative_model": "InternLM2-Math-Base 7B with thought-tactic policy",
+  "algorithmic_authority": "Lean theorem prover and best-first search tree",
+  "feedback_payload": "proof-state",
+  "update_target": "search-tree+weights",
+  "loop_stage": "training",
+  "validity_scope": "formal",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Lean-STaR: Learning to Interleave Thinking and Proving (ICLR 2025 / arXiv:2407.10040)",
+      "url": "https://arxiv.org/abs/2407.10040",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Lin et al., arXiv:2407.10040."
+  }
+}

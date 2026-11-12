@@ -1,0 +1,47 @@
+{
+  "slug": "diffcsp",
+  "name": "DiffCSP",
+  "org": "Tsinghua University, Renmin University of China",
+  "year": 2023,
+  "domain": "materials",
+  "family": "oracle-trained-generation",
+  "parent": null,
+  "one_liner": "Jointly diffuses unit-cell lattice matrices and fractional atomic coordinates under periodic E(3)-equivariant symmetry constraints.",
+  "loop": {
+    "proposes": "A periodic E(3)-equivariant denoising network jointly updates lattice vectors and fractional coordinates from a target composition.",
+    "judged_by": "Periodic crystal geometry validators, RMSD matchers, and DFT energy evaluations score the generated polymorphs.",
+    "steers": "Space-group symmetry constraints and multi-sample energy ranking select the lowest-energy valid crystal structure."
+  },
+  "headline_result": "Outperformed USPEX evolutionary crystal search and CDVAE on MP-20 and Perov-5 crystal structure prediction at a fraction of the compute time.",
+  "caveat": "Requires specifying the target unit-cell stoichiometry upfront unless paired with a composition generator.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "population-search",
+    "non-llm-generator"
+  ],
+  "beyond_harness_note": "Uses a periodic E(3)-equivariant diffusion model over fractional coordinates and lattice matrices, ranked by physical energy.",
+  "proposal_object": "crystal",
+  "generative_model": "Periodic E(3)-equivariant joint diffusion network",
+  "algorithmic_authority": "Space-group symmetry validator and DFT energy evaluator",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "inference",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Crystal Structure Prediction by Joint Equivariant Diffusion (NeurIPS 2023 / arXiv:2309.04475)",
+      "url": "https://arxiv.org/abs/2309.04475",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Jiao et al., NeurIPS 2023."
+  }
+}

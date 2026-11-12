@@ -1,0 +1,59 @@
+{
+  "parent": null,
+  "youtube_id": null,
+  "direct_algogen_link": "conceptual-fit",
+  "slug": "chemspaceal",
+  "name": "ChemSpaceAL",
+  "org": "Yale University (Batista group)",
+  "year": 2024,
+  "domain": "chemistry",
+  "family": "active-learning-generation",
+  "one_liner": "A GPT writes molecules, a sample from each cluster is docked and scored, and the model is fine-tuned on the best clusters.",
+  "loop": {
+    "proposes": "SMILES strings from a GPT-based molecular generator (100,000 unique molecules per iteration)",
+    "judged_by": "About 1,000 molecules sampled across clusters are docked with DiffDock and scored by contact-based interactions",
+    "steers": "Clusters are weighted by mean score into a training set, and the GPT is fine-tuned on it"
+  },
+  "headline_result": "In the paper's computational study on c-Abl kinase, the model learned to generate molecules similar to FDA-approved inhibitors without being shown them and reproduced two exactly (imatinib and bosutinib after five iterations). The method was also applied to the HNH domain of Cas9, which has no commercial small-molecule inhibitors.",
+  "caveat": "The judge is a learned docking model (DiffDock) plus a simple contact-count score, so this is predicted binding only. Matching known drugs is a retrospective sanity check, and no molecule was tested in a lab.",
+  "beyond_harness": [
+    "non-llm-generator",
+    "retrains-generator",
+    "physical-grounding"
+  ],
+  "beyond_harness_note": "A SMILES GPT (not an agent LLM) is fine-tuned each round on docking-scored samples, so feedback changes the generator's weights; the judge is a learned docking model, not a physical authority.",
+  "proposal_object": "molecule",
+  "generative_model": "GPT-style transformer trained on SMILES strings, fine-tuned each iteration",
+  "algorithmic_authority": "Docking (DiffDock) with an interaction-based scoring function; cluster-based sampling",
+  "feedback_payload": "score",
+  "update_target": "weights+training-data",
+  "loop_stage": "training",
+  "validity_scope": "surrogate",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "sources": [
+    {
+      "title": "ChemSpaceAL: An Efficient Active Learning Methodology Applied to Protein-Specific Molecular Generation (arXiv:2309.05853, PMC10516108)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10516108/",
+      "kind": "paper",
+      "supports": "loop, headline_result"
+    },
+    {
+      "title": "Peer-reviewed version, J Chem Inf Model 2024, doi 10.1021/acs.jcim.3c01456",
+      "url": "https://doi.org/10.1021/acs.jcim.3c01456",
+      "kind": "paper",
+      "supports": "year, abstract"
+    },
+    {
+      "title": "ChemSpaceAL code",
+      "url": "https://github.com/batistagroup/ChemSpaceAL",
+      "kind": "code",
+      "supports": "availability"
+    }
+  ],
+  "verification": {
+    "checked_on": "2026-11-03",
+    "status": "verified",
+    "notes": "Read the full text of PMC10516108 (the arXiv preprint, v2) via Europe PMC XML and the published JCIM abstract. Report corrections: (1) docking is DiffDock, a learned diffusion docking model, not physics docking, and scoring is a custom sum of attractive contact points; (2) RDKit descriptors are for the chemical-space proxy, and sampling is about 1% per cluster giving 1,000 molecules per iteration; (3) the paper says imatinib and bosutinib appear after five iterations. The report's year is ambiguous: preprint 2023, published JCIM 2024; card year now 2024 (J Chem Inf Model, 2024-01-30) per the corpus citation ledger."
+  }
+}

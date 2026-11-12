@@ -1,0 +1,47 @@
+{
+  "slug": "chain-of-experts",
+  "name": "Chain-of-Experts",
+  "org": "Zhejiang University, Huawei Noah's Ark Lab",
+  "year": 2024,
+  "domain": "optimization",
+  "family": "formalize-and-solve",
+  "parent": null,
+  "one_liner": "Multi-agent operations-research pipeline that translates natural-language optimization problems into LP/MIP code and repairs from program execution feedback.",
+  "loop": {
+    "proposes": "Specialized LLM roles extract mathematical terminology, formulate algebraic constraints, and emit Python PuLP/Gurobi solver code.",
+    "judged_by": "The Python interpreter and MIP solver execute the generated formulation and report syntax errors, infeasibility, or optimal objective values.",
+    "steers": "A conductor chooses which role acts next; on a failed run the roles reflect on execution feedback in reverse order until one is at fault."
+  },
+  "headline_result": "Reported to significantly outperform state-of-the-art LLM-based approaches on the LPWP and ComplexOR operations research benchmarks.",
+  "caveat": "If the formulation specialist misinterprets an implicit constraint in the word problem without causing solver infeasibility, the MIP solver solves the wrong model.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "domain-authority-judge",
+    "neuro-symbolic"
+  ],
+  "beyond_harness_note": "An exact linear/integer programming solver computes the solution while program execution feedback drives reverse-order reflection by the roles.",
+  "proposal_object": "specification",
+  "generative_model": "GPT-4 multi-role formulation agents",
+  "algorithmic_authority": "Gurobi / PuLP mixed-integer programming solver",
+  "feedback_payload": "verifier-errors",
+  "update_target": "context",
+  "loop_stage": "inference",
+  "validity_scope": "formal",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Chain-of-Experts: When LLMs Meet Complex Operations Research Problems (ICLR 2024 poster)",
+      "url": "https://iclr.cc/virtual/2024/poster/18977",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-09",
+    "notes": "Re-checked against Xiao et al., ICLR 2024 poster page (OpenReview HobyL1B9CZ); no arXiv id exists. Corrections: card previously cited unrelated arXiv:2310.06118; year set to the ICLR 2024 venue year; benchmarks are LPWP and ComplexOR (the abstract does not name NL4Opt or chain-of-thought/reflexion baselines); affiliation is Zhejiang University and Huawei Noah's Ark Lab (ICLR paper author block per search result), not Tsinghua. Multi-agent roles, conductor with forward construction and backward reflection confirmed. GPT-4 and the Gurobi/PuLP detail were not confirmed from the abstract."
+  }
+}

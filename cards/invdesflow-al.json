@@ -1,0 +1,54 @@
+{
+  "parent": null,
+  "youtube_id": null,
+  "direct_algogen_link": "conceptual-fit",
+  "slug": "invdesflow-al",
+  "name": "InvDesFlow-AL",
+  "org": "Renmin University of China",
+  "year": 2025,
+  "domain": "materials",
+  "family": "active-learning-generation",
+  "one_liner": "A diffusion model generates crystals, a committee of predictors and relaxation checks picks the best, and the model is fine-tuned on them.",
+  "loop": {
+    "proposes": "Crystal structures from a diffusion model (EGNN backbone) pretrained on Alex-MP-20 and GNoME crystals",
+    "judged_by": "Relaxation with DPA-2, then a committee score on formation energy and Ehull or on superconductor Tc",
+    "steers": "The top-scored generated crystals become the next fine-tuning set, repeated over multiple rounds"
+  },
+  "headline_result": "Generated average formation energy fell over five iterations (means -1.14, -2.03, -2.93, -3.56, -3.77; units not stated in the text). The authors report 1,598,551 materials with Ehull below 50 meV, and Li2AuH6 as a conventional superconductor with a transition temperature of about 140 K from first-principles electron-phonon calculations. Crystal structure prediction RMSE is 0.0423 angstrom, reported as a 32.96% improvement over existing generative models.",
+  "caveat": "The paper gives two counts for low-Ehull materials (1,598,551 in text, 1,610,600 in a figure caption) and does not say how Ehull is queried. The 140 K value is a calculation, not a measurement, and not every evaluation is DFT.",
+  "beyond_harness": [
+    "non-llm-generator",
+    "retrains-generator",
+    "population-search",
+    "multi-fidelity"
+  ],
+  "beyond_harness_note": "A diffusion model is fine-tuned over rounds on crystals chosen by relaxation and learned predictors, with many crystals generated per round; DFT is used explicitly only for the superconductor task.",
+  "proposal_object": "crystal",
+  "generative_model": "Diffusion model on atom types, lattice and fractional coordinates (EGNN)",
+  "algorithmic_authority": "DPA-2 relaxation, committee scoring, Bohrium Ehull query, DFT for the superconductor task",
+  "feedback_payload": "multi-fidelity",
+  "update_target": "weights+training-data",
+  "loop_stage": "training",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "experiment",
+  "lineage": "successor",
+  "sources": [
+    {
+      "title": "InvDesFlow-AL: active learning-based workflow for inverse design of functional materials (arXiv:2505.09203; npj Computational Materials 11, 364, 2025)",
+      "url": "https://arxiv.org/abs/2505.09203",
+      "kind": "paper",
+      "supports": "loop, headline_result"
+    },
+    {
+      "title": "npj Computational Materials article, doi 10.1038/s41524-025-01830-z",
+      "url": "https://doi.org/10.1038/s41524-025-01830-z",
+      "kind": "paper",
+      "supports": "venue"
+    }
+  ],
+  "verification": {
+    "checked_on": "2026-11-03",
+    "status": "verified",
+    "notes": "Read the arXiv v2 abstract and 100,000 characters of the HTML full text; journal reference (npj Comput Mater 11, 364) and DOI taken from the arXiv record, since nature.com redirects to a login handshake. Report corrections: generator is a diffusion model; Ehull source is the Bohrium platform and the paper does not say DFT; DFT is explicit only for the superconductor task; the two Ehull counts disagree inside the paper. Successor to InvDesFlow (arXiv:2409.08065), not opened. The last 26,000 characters of the HTML were not read. Org confirmed from the arXiv HTML title block; one author also at UCAS (review 2026-11-03)."
+  }
+}

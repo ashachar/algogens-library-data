@@ -1,0 +1,47 @@
+{
+  "slug": "baldur",
+  "name": "Baldur",
+  "org": "University of Massachusetts Amherst, Google",
+  "year": 2023,
+  "domain": "proofs",
+  "family": "verifier-guided-repair",
+  "parent": null,
+  "one_liner": "Generates whole-function Isabelle/HOL proofs and uses the prover error message to repair broken proofs.",
+  "loop": {
+    "proposes": "A language model generates a complete Isabelle/HOL proof script for a target theorem.",
+    "judged_by": "The Isabelle proof assistant executes the script and returns an error message when the proof fails.",
+    "steers": "A repair model conditions on the statement, the whole failed proof and the Isabelle error message to synthesize a corrected proof."
+  },
+  "headline_result": "Proved 47.9% of theorems in the Isabelle Archive of Formal Proofs benchmark (65.7% when combined with Thor Sledgehammer).",
+  "caveat": "Single-round error repair struggles on deep multi-lemma obligations where the initial proof sketch chooses the wrong induction variable.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "formal-kernel"
+  ],
+  "beyond_harness_note": "The Isabelle/HOL kernel acts as the formal oracle whose error messages drive whole-proof synthesis and repair.",
+  "proposal_object": "proof",
+  "generative_model": "Minerva-based proof generation and repair LLMs",
+  "algorithmic_authority": "Isabelle/HOL proof assistant and Sledgehammer ATP",
+  "feedback_payload": "verifier-errors",
+  "update_target": "context",
+  "loop_stage": "inference",
+  "validity_scope": "formal",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Baldur: Whole-Proof Generation and Repair with Large Language Models (ESEC/FSE 2023)",
+      "url": "https://arxiv.org/abs/2303.04910",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against First et al., ESEC/FSE 2023."
+  }
+}

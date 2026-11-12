@@ -1,0 +1,47 @@
+{
+  "slug": "crystallm",
+  "name": "CrystaLLM",
+  "org": "University of Bristol, University College London",
+  "year": 2024,
+  "domain": "materials",
+  "family": "verifier-guided-repair",
+  "parent": null,
+  "one_liner": "Autoregressive crystal language model with validity checks on generated CIFs, optional Monte Carlo tree search guided by a learned formation-energy network, and DFT on finished structures.",
+  "loop": {
+    "proposes": "A domain-trained transformer generates full CIF crystal descriptions conditioned on composition or space group.",
+    "judged_by": "Validity checks on generated CIFs; the optional Monte Carlo tree search is scored by a learned formation-energy network (ALIGNN); DFT is run on finished structures.",
+    "steers": "Optional Monte Carlo tree search guided by a learned formation-energy network steers generation."
+  },
+  "headline_result": "Rediscovered unseen experimental crystal structures and identified novel stable inorganic phases validated by ab initio DFT.",
+  "caveat": "Struggles on very large unit cells (>60 atoms) where token context length and space-group Wyckoff constraints become tight.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "population-search"
+  ],
+  "beyond_harness_note": "Validity checks on generated CIFs, a learned formation-energy network guiding optional tree search, and DFT on finished structures.",
+  "proposal_object": "crystal",
+  "generative_model": "Autoregressive CIF transformer (CrystaLLM)",
+  "algorithmic_authority": "CIF validity checks and a learned formation-energy network (ALIGNN); DFT on finished structures",
+  "feedback_payload": "verifier-errors",
+  "update_target": "population+search-tree",
+  "loop_stage": "inference",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Crystal structure generation with autoregressive large language modeling (Nature Communications, 2024)",
+      "url": "https://doi.org/10.1038/s41467-024-54639-7",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Antunes et al., Nature Communications 15, 2024."
+  }
+}

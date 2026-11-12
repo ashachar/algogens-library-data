@@ -1,0 +1,31 @@
+{
+  "slug": "llama-cpp-gbnf",
+  "name": "llama.cpp GBNF grammars",
+  "author": "ggml-org",
+  "kind": "tool",
+  "repo_url": "https://github.com/ggml-org/llama.cpp",
+  "install": "curl -LsSf https://llama.app/install.sh | sh",
+  "one_liner": "llama.cpp can restrict a local model's output to a formal grammar (GBNF), for example valid JSON or a chess move list.",
+  "loop": {
+    "proposes": "the next token from a local model run by llama.cpp",
+    "judged_by": "the GBNF grammar, passed with --grammar-file or --grammar, checked in code at each step",
+    "steers": "only tokens that keep the text inside the grammar can be sampled"
+  },
+  "not_proved": "The grammar guarantees syntax only. A chess-format grammar will accept an illegal or silly move as long as it is written in the right notation.",
+  "license": "MIT",
+  "sources": [
+    {
+      "title": "llama.cpp repository",
+      "url": "https://github.com/ggml-org/llama.cpp"
+    },
+    {
+      "title": "llama.cpp README (install options)",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/README.md"
+    },
+    {
+      "title": "GBNF guide",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/grammars/README.md"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

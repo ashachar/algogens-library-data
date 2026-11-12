@@ -1,0 +1,48 @@
+{
+  "slug": "titanfuzz",
+  "name": "TitanFuzz",
+  "org": "University of Illinois Urbana-Champaign",
+  "year": 2023,
+  "domain": "security",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "Evolutionary fuzzing of deep-learning libraries (PyTorch and TensorFlow) using infill language models as structure-aware AST mutation operators.",
+  "loop": {
+    "proposes": "A generative model (Codex) seeds multi-API tensor programs, and an infill model (InCoder) masks and regenerates spans around selected AST operators.",
+    "judged_by": "PyTorch and TensorFlow CPU/GPU execution engines, differential backends, and crash/NaN sanitizers evaluate every mutated program and log operator coverage.",
+    "steers": "An evolutionary fitness function combining API depth, dataflow graph edges, and new branch coverage selects seeds for the next mutation round."
+  },
+  "headline_result": "Achieved 50.84% (PyTorch) and 30.38% (TensorFlow) higher code coverage than state-of-the-art DL fuzzers and detected 65 bugs (41 confirmed previously unknown).",
+  "caveat": "Differential testing across CPU and GPU backends can trigger false-positive floating-point rounding discrepancies if tolerances are too tight.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "population-search"
+  ],
+  "beyond_harness_note": "An evolutionary coverage-guided fuzzing loop manages the seed corpus and invokes the infill LLM as a span-mutation operator.",
+  "proposal_object": "fuzz-target",
+  "generative_model": "Codex seed generator + InCoder span mutator",
+  "algorithmic_authority": "Dataflow/branch coverage analyzer and differential execution oracle",
+  "feedback_payload": "coverage",
+  "update_target": "population",
+  "loop_stage": "continuous-operation",
+  "validity_scope": "empirical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Large Language Models are Zero-Shot Fuzzers: Fuzzing Deep-Learning Libraries via Large Language Models (ISSTA 2023 / arXiv:2212.14834)",
+      "url": "https://arxiv.org/abs/2212.14834",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-09",
+    "notes": "Re-checked against Deng, Xia, Peng, Yang and Zhang, arXiv:2212.14834 (abstract, comment \"Accepted at ISSTA 2023\"). Corrections: card previously cited unrelated arXiv:2212.14836; the coverage figures were attached to the wrong libraries (paper: 30.38% TensorFlow, 50.84% PyTorch) and are code coverage, not API coverage. Codex generator and InCoder infill model confirmed. Fitness-function and differential-oracle details were not re-read in the paper body."
+  }
+}

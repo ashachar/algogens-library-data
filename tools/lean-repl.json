@@ -1,0 +1,27 @@
+{
+  "slug": "lean-repl",
+  "name": "Lean REPL",
+  "author": "leanprover-community",
+  "kind": "tool",
+  "repo_url": "https://github.com/leanprover-community/repl",
+  "install": "lake exe repl",
+  "one_liner": "A JSON read-eval-print loop for Lean 4 that returns errors, unfinished-proof markers and proof states for any input.",
+  "loop": {
+    "proposes": "Lean commands and tactics from a person or model",
+    "judged_by": "The Lean compiler and proof kernel",
+    "steers": "Error messages and remaining goals tell the caller what to try next"
+  },
+  "not_proved": "It reports what Lean accepts, not whether the theorem is the one you wanted. A proof containing sorry is flagged but not rejected as a command. The README gives lake exe repl as the run command, after building the repo.",
+  "license": "Apache-2.0",
+  "sources": [
+    {
+      "title": "Lean REPL README",
+      "url": "https://raw.githubusercontent.com/leanprover-community/repl/master/README.md"
+    },
+    {
+      "title": "Lean REPL repo",
+      "url": "https://github.com/leanprover-community/repl"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "math-verify",
+  "name": "Math-Verify",
+  "author": "huggingface",
+  "kind": "library",
+  "repo_url": "https://github.com/huggingface/Math-Verify",
+  "install": "pip install 'math-verify[antlr4_13_2]'",
+  "one_liner": "Rule-based checker that parses an LLM's math answer and tests it against the gold answer, usable as a reward.",
+  "loop": {
+    "proposes": "nothing; it checks answers a model has already written",
+    "judged_by": "parsing and symbolic comparison of the model answer against the gold answer, in code",
+    "steers": "its pass/fail result can serve as the reward when training a model, as the README recommends for reward verification"
+  },
+  "not_proved": "It checks that a final answer matches the reference, not that the reasoning is sound, and unusual answer formats can be missed or mismatched.",
+  "license": "Apache-2.0",
+  "sources": [
+    {
+      "title": "Math-Verify README",
+      "url": "https://github.com/huggingface/Math-Verify"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

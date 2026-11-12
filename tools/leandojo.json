@@ -1,0 +1,31 @@
+{
+  "slug": "leandojo",
+  "name": "LeanDojo",
+  "author": "lean-dojo",
+  "kind": "library",
+  "repo_url": "https://github.com/lean-dojo/LeanDojo",
+  "install": "pip install lean-dojo",
+  "one_liner": "Python library that lets a program or model try proof steps in Lean and read back the new proof state or the error.",
+  "loop": {
+    "proposes": "Proof steps (tactics) from a prover model",
+    "judged_by": "The Lean proof checker running the step",
+    "steers": "Lean's accepted or rejected result and the new goal guide the next step"
+  },
+  "not_proved": "A proof Lean accepts is correct only for the theorem as stated in Lean. Whether the statement matches the intended claim is not checked. The README says this original library is deprecated in favor of LeanDojo-v2.",
+  "license": "MIT",
+  "sources": [
+    {
+      "title": "LeanDojo README",
+      "url": "https://raw.githubusercontent.com/lean-dojo/LeanDojo/main/README.md"
+    },
+    {
+      "title": "LeanDojo repo",
+      "url": "https://github.com/lean-dojo/LeanDojo"
+    },
+    {
+      "title": "LeanDojo-v2 repo",
+      "url": "https://github.com/lean-dojo/LeanDojo-v2"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

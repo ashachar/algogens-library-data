@@ -1,0 +1,60 @@
+{
+  "slug": "funsearch",
+  "name": "FunSearch",
+  "org": "Google DeepMind",
+  "year": 2023,
+  "domain": "math",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "An LLM writes small programs that build a solution, an evaluator scores them, and the best programs go back into the prompt.",
+  "loop": {
+    "proposes": "Python functions (inside a fixed skeleton) that construct cap sets or pack bins",
+    "judged_by": "An automated evaluator that runs each program and scores its output",
+    "steers": "Best programs are shown in later prompts; islands of programs are periodically reseeded"
+  },
+  "headline_result": "On the cap set problem, FunSearch found a cap set of size 512 in 8 dimensions, larger than any previously known, and raised the lower bound on the asymptotic cap set capacity to 2.2202 (previous best 2.2180). On online bin packing it evolved heuristics that beat first fit and best fit on the OR-Library sets OR1-OR4 and on Weibull instances.",
+  "caveat": "Results are for two problem families with a cheap, graded score, and only 4 of 140 cap-set runs reached 512 (Supplementary Information A.3), though once found the construction is deterministically verified and reusable without the model. The public repo is a reference implementation only: it has no LLM, no sandbox and no distributed system.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model"
+  ],
+  "beyond_harness_note": "The evolutionary search and evaluator do the solving, over a population of programs, and the winning program is a standalone artifact that runs without the model.",
+  "proposal_object": "program",
+  "generative_model": "Pretrained LLM, frozen (Codey, a PaLM 2 based code model, used without fine-tuning)",
+  "algorithmic_authority": "Program evaluator in a sandbox",
+  "feedback_payload": "score",
+  "update_target": "context+population",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Mathematical discoveries from program search with large language models",
+      "url": "https://www.nature.com/articles/s41586-023-06924-6",
+      "kind": "paper",
+      "supports": "headline_result, loop, generative_model"
+    },
+    {
+      "title": "FunSearch: Making new discoveries in mathematical sciences using LLMs (DeepMind blog)",
+      "url": "https://deepmind.google/discover/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/",
+      "kind": "blog",
+      "supports": "loop"
+    },
+    {
+      "title": "google-deepmind/funsearch (code)",
+      "url": "https://github.com/google-deepmind/funsearch",
+      "kind": "code",
+      "supports": "caveat"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "submitted",
+    "checked_on": "2026-11-12",
+    "notes": "Sample submission used by the schema self-test."
+  }
+}

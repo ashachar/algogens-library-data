@@ -1,0 +1,48 @@
+{
+  "slug": "draft-sketch-prove",
+  "name": "Draft, Sketch, and Prove (DSP)",
+  "org": "Meta AI, Peking University",
+  "year": 2022,
+  "domain": "proofs",
+  "family": "proof-state-search",
+  "parent": null,
+  "one_liner": "Maps informal mathematical proofs into formal Isabelle/HOL proof sketches and discharges the open subgoals with Sledgehammer ATPs.",
+  "loop": {
+    "proposes": "An LLM drafts an informal mathematical proof and translates it into a formal Isabelle/HOL proof sketch with open `sledgehammer` subgoals.",
+    "judged_by": "Isabelle/HOL and automated theorem provers (E, SPASS, Vampire, Z3, CVC4 via Sledgehammer) verify each intermediate step.",
+    "steers": "Sketches are sampled independently; a problem counts as solved if any sketch is completed."
+  },
+  "headline_result": "Solved 39.3% of miniF2F test theorems in Isabelle/HOL, a more than 10 percentage point jump over prior direct tactic-generation baselines.",
+  "caveat": "If the high-level proof sketch omits a bridge lemma too large for Sledgehammer to close within its timeout, the whole sketch fails.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "domain-authority-judge",
+    "output-outlives-model",
+    "formal-kernel"
+  ],
+  "beyond_harness_note": "The LLM supplies the high-level proof skeleton while superposition and SMT theorem provers (Sledgehammer) discharge the leaf obligations.",
+  "proposal_object": "proof",
+  "generative_model": "Minerva / Codex formal sketch generator",
+  "algorithmic_authority": "Isabelle/HOL kernel and Sledgehammer automated theorem provers",
+  "feedback_payload": "proof-state",
+  "update_target": "population",
+  "loop_stage": "inference",
+  "validity_scope": "formal",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Draft, Sketch, and Prove: Guiding Formal Theorem Provers with Informal Proofs (arXiv:2210.12283, first posted 2022-10-21)",
+      "url": "https://arxiv.org/abs/2210.12283",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Jiang et al., ICLR 2023. Year corrected 2023 to 2022 (first posting); ICLR 2023 is not printed on the arXiv page, so it was removed from the source title (ledger)."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "parent": null,
+  "youtube_id": null,
+  "direct_algogen_link": "conceptual-fit",
+  "slug": "eureka",
+  "name": "Eureka",
+  "org": "NVIDIA, UPenn, Caltech, UT Austin",
+  "year": 2023,
+  "domain": "robotics",
+  "family": "program-evolution",
+  "one_liner": "An LLM writes robot reward code, simulated RL scores it, and a text summary of training guides the next rewards.",
+  "loop": {
+    "proposes": "Reward-function code written by GPT-4 from the simulator's source code and a task description (16 candidates per iteration)",
+    "judged_by": "RL (PPO in Isaac Gym) trains a policy on each reward; a ground-truth fitness function scores it",
+    "steers": "The best reward and a text summary of each reward component during training go back into the prompt"
+  },
+  "headline_result": "Across 29 open-source RL environments with 10 robot morphologies, in simulation, the abstract reports Eureka outperforming expert human-written rewards on 83% of tasks, with an average normalized improvement of 52%. It also used its rewards in a curriculum to get a simulated Shadow Hand to perform pen spinning.",
+  "caveat": "Results are in simulation, with human reward baselines from the benchmark authors and a fixed fitness function. Searching costs 5 independent runs of 5 iterations with 16 samples each, many RL trainings per task.",
+  "beyond_harness": [
+    "inverted-control",
+    "domain-authority-judge",
+    "output-outlives-model",
+    "population-search",
+    "physical-grounding"
+  ],
+  "beyond_harness_note": "A physics simulator and RL training decide reward quality, and the product is a reward function that stays useful without the LLM.",
+  "proposal_object": "reward-function",
+  "generative_model": "GPT-4 (gpt-4-0314), frozen",
+  "algorithmic_authority": "RL training in Isaac Gym with a ground-truth task fitness function",
+  "feedback_payload": "verbal-reflection",
+  "update_target": "context",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "sources": [
+    {
+      "title": "Eureka: Human-Level Reward Design via Coding Large Language Models (ICLR 2024)",
+      "url": "https://arxiv.org/abs/2310.12931",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    },
+    {
+      "title": "Eureka project page and code",
+      "url": "https://eureka-research.github.io/",
+      "kind": "code",
+      "supports": "availability"
+    }
+  ],
+  "verification": {
+    "checked_on": "2026-11-03",
+    "status": "verified",
+    "notes": "Read the arXiv abstract and the full PDF text. Confirmed: NVIDIA, UPenn, Caltech, UT Austin; ICLR 2024; 5 iterations, K=16 samples per iteration, 5 independent runs per environment; gpt-4-0314; reward reflection; 83% and 52% from the abstract; 29 environments (9 Isaac plus 20 Dexterity). Eureka matches or exceeds humans on all Isaac tasks and 15 of 20 Dexterity tasks. Added from the robotics-gap list, not in the report's 27 entries. Review 2026-11-03: headline numbers re-checked against the source."
+  }
+}

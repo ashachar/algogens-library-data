@@ -1,0 +1,48 @@
+{
+  "parent": null,
+  "direct_algogen_link": "conceptual-fit",
+  "youtube_id": null,
+  "lineage": "origin",
+  "evidence_level": "experiment",
+  "validity_scope": "formal",
+  "slug": "goedel-prover",
+  "name": "Goedel-Prover",
+  "org": "Princeton Language and Intelligence (Princeton University), with Tsinghua University, Amazon, Meta FAIR and Numina",
+  "year": 2025,
+  "domain": "proofs",
+  "family": "oracle-trained-generation",
+  "one_liner": "A Lean 4 prover trained in rounds: each prover writes proofs, Lean checks them, and verified proofs train the next one.",
+  "loop": {
+    "proposes": "Lean 4 proofs for 1.64 million formalized statements",
+    "judged_by": "The Lean compiler, which checks each candidate proof",
+    "steers": "Verified proofs join the training set and the next, stronger prover is trained on them (expert iteration)"
+  },
+  "headline_result": "Goedel-Prover-SFT reaches 57.6% Pass@32 on miniF2F, 7.6 points above DeepSeek-Prover-V1.5-RL; the paper's abstract reports over 60% Pass@32 after RL including DPO, 7 PutnamBench problems at Pass@512, and proofs for 29.7K Lean Workbook problems versus 15.7K for prior provers.",
+  "caveat": "Its best-result claims are dated April 2025 and use Pass@32 or Pass@512, so budgets differ from some rivals. The paper text says 8 iterations while a table lists Iter-9. The abstract does not describe the compiler signal beyond verification.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "retrains-generator",
+    "output-outlives-model",
+    "formal-kernel"
+  ],
+  "beyond_harness_note": "Lean-verified proofs become the training data for the next generator, so feedback changes the model, and the proofs are checkable without it.",
+  "proposal_object": "proof",
+  "generative_model": "DeepSeek-Prover-V1.5-Base fine-tuned over successive rounds",
+  "algorithmic_authority": "Lean compiler",
+  "feedback_payload": "new-data",
+  "update_target": "weights+training-data",
+  "loop_stage": "training",
+  "sources": [
+    {
+      "title": "Goedel-Prover: A Frontier Model for Open-Source Automated Theorem Proving",
+      "url": "https://arxiv.org/abs/2502.07640",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Read the abstract page and the paper's expert-iteration text via fetch. Added as one of the two extra provers; it has no inference-time search, so it passes the filter through its training loop. Affiliations as the fetch reported them. Org confirmed from the arXiv HTML title block; per-author mapping not checked (review 2026-11-03). Review 2026-11-03: headline numbers re-checked against the source."
+  }
+}

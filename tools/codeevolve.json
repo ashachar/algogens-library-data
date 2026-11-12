@@ -1,0 +1,23 @@
+{
+  "slug": "codeevolve",
+  "name": "CodeEvolve",
+  "author": "inter-co",
+  "kind": "loop",
+  "repo_url": "https://github.com/inter-co/science-codeevolve",
+  "install": "git clone https://github.com/inter-co/science-codeevolve.git && cd science-codeevolve && conda env create -f environment.yml",
+  "one_liner": "Open-source evolutionary coding agent: LLMs rewrite code, sandboxed evaluation scores it, islands and an archive steer.",
+  "loop": {
+    "proposes": "LLM-written code variants",
+    "judged_by": "sandboxed execution of the candidate with fitness extracted from the evaluation results",
+    "steers": "island-based genetic algorithm with migration, plus an optional MAP-Elites archive, selects parents"
+  },
+  "not_proved": "A fitness number shows a candidate does well under the given evaluator, not that it is the best solution or that the evaluator is complete.",
+  "license": "Apache-2.0",
+  "sources": [
+    {
+      "title": "CodeEvolve README",
+      "url": "https://github.com/inter-co/science-codeevolve"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

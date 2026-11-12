@@ -1,0 +1,49 @@
+{
+  "parent": null,
+  "direct_algogen_link": "conceptual-fit",
+  "youtube_id": null,
+  "lineage": "origin",
+  "evidence_level": "experiment",
+  "validity_scope": "formal",
+  "slug": "alphaproof",
+  "name": "AlphaProof",
+  "org": "Google DeepMind",
+  "year": 2025,
+  "domain": "proofs",
+  "family": "proof-state-search",
+  "one_liner": "An AlphaZero-style agent learns to prove competition problems in Lean by reinforcement learning and trains on variants of hard problems.",
+  "loop": {
+    "proposes": "Lean proofs, built step by step, for millions of auto-formalized problems",
+    "judged_by": "The Lean proof assistant, which verifies every proof",
+    "steers": "Verified outcomes train the model; for hard problems, test-time RL learns from millions of related variants"
+  },
+  "headline_result": "At IMO 2024 the system with AlphaProof as its core engine solved three of the five non-geometry problems, including the hardest one; combined with AlphaGeometry 2 this reached a score equivalent to a silver medallist, with multi-day computation.",
+  "caveat": "Problems were formalized into Lean before the system worked on them, and the paper reports multi-day computation, so this is far from a competition-time-limit result. The Nature paper's claim is the RL method; the medal-level score is the combined system.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "retrains-generator",
+    "output-outlives-model",
+    "formal-kernel",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "Lean's verdicts train the model by reinforcement learning, including at test time on problem variants, and the output is a machine-checked proof.",
+  "proposal_object": "proof",
+  "generative_model": "AlphaZero-inspired agent trained on millions of auto-formalized problems",
+  "algorithmic_authority": "Lean proof assistant",
+  "feedback_payload": "reward",
+  "update_target": "weights+search-tree",
+  "loop_stage": "training",
+  "sources": [
+    {
+      "title": "Olympiad-level formal mathematical reasoning with reinforcement learning",
+      "url": "https://www.nature.com/articles/s41586-025-09833-y",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Opened the Nature page (published 2025-11-12) and read the abstract. Candidate confirmed to exist as a Nature paper. Did not read the methods; details of search internals not claimed."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "shinkaevolve",
+  "name": "ShinkaEvolve",
+  "author": "SakanaAI",
+  "kind": "loop",
+  "repo_url": "https://github.com/SakanaAI/ShinkaEvolve",
+  "install": "pip install shinka-evolve",
+  "one_liner": "Sakana AI's program-evolution framework: an LLM edits code, an evaluation script scores it, an archive guides the search.",
+  "loop": {
+    "proposes": "LLM-written code edits",
+    "judged_by": "an evaluation program you point it at (eval_program_path)",
+    "steers": "an archive of successful solutions shared across evolutionary islands decides what to evolve next"
+  },
+  "not_proved": "A better score means the program beats earlier candidates on your evaluation script, not that the result is optimal or generalizes beyond what that script tests.",
+  "license": "Apache-2.0",
+  "sources": [
+    {
+      "title": "ShinkaEvolve README",
+      "url": "https://github.com/SakanaAI/ShinkaEvolve"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "alphatensor",
+  "name": "AlphaTensor",
+  "org": "Google DeepMind",
+  "year": 2022,
+  "domain": "math",
+  "family": "offline-solver-discovery",
+  "parent": null,
+  "one_liner": "A reinforcement learning agent plays a tensor decomposition game with Monte Carlo Tree Search to discover faster exact matrix multiplication algorithms.",
+  "loop": {
+    "proposes": "Rank-1 tensor factors (triplets of vectors u, v, w) proposed by a neural policy and value network",
+    "judged_by": "Exact algebraic tensor subtraction and Monte Carlo Tree Search that checks whether the residual tensor reaches zero",
+    "steers": "Completed zero-residual decompositions and synthetic tensor demonstrations train the network and guide further tree search"
+  },
+  "headline_result": "In Nature (2022), AlphaTensor discovered a 4x4 matrix multiplication algorithm using 47 multiplications in modulo-2 arithmetic (Z_2), beating Strassen's 1969 construction of 49 in that field, and improved the best known rank across more than 70 matrix sizes up to 5x5. By adding hardware runtime to the reward, it also found algorithms 10% to 20% faster than human and compiler baselines on NVIDIA V100 GPUs and Google TPU v2.",
+  "caveat": "The 47-multiplication 4x4 result holds in Z_2 (modulo-2 arithmetic); in standard arithmetic on 4x4 matrices AlphaTensor matched Strassen's 49 and improved larger sizes such as 5x5 (96 vs 98). Each tensor decomposition verifies exact algebraic identity only for the fixed matrix dimensions tested.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "retrains-generator",
+    "population-search",
+    "non-llm-generator",
+    "output-outlives-model",
+    "design-time",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "Monte Carlo Tree Search and exact tensor algebra run the search, train a custom torso-policy-value network rather than an LLM, and output an exact multiplication algorithm that executes without AI.",
+  "proposal_object": "program",
+  "generative_model": "Custom transformer-based torso, policy and value network trained with reinforcement learning and synthetic demonstrations (not an LLM)",
+  "algorithmic_authority": "Exact algebraic tensor-rank verifier and Monte Carlo Tree Search, plus target GPU/TPU runtime benchmarker",
+  "feedback_payload": "reward",
+  "update_target": "search-tree+weights+training-data",
+  "loop_stage": "offline-design",
+  "validity_scope": "formal",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Discovering faster matrix multiplication algorithms with reinforcement learning (Nature, 2022)",
+      "url": "https://www.nature.com/articles/s41586-022-05172-4",
+      "kind": "paper",
+      "supports": "headline_result, loop, caveat, generative_model"
+    },
+    {
+      "title": "google-deepmind/alphatensor (code and discovered factorizations)",
+      "url": "https://github.com/google-deepmind/alphatensor",
+      "kind": "code",
+      "supports": "headline_result, output-outlives-model"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-06",
+    "notes": "Verified against Fawzi et al., Nature 610, 47-53 (2022), doi:10.1038/s41586-022-05172-4, and the google-deepmind/alphatensor repository. Confirmed 47 multiplications for 4x4 in Z_2 vs 49 in standard arithmetic, 96 vs 98 for 5x5 in standard arithmetic, >70 matrix sizes improved, and 10-20% hardware speedups on V100 and TPU v2."
+  }
+}

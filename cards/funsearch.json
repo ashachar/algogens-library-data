@@ -1,0 +1,90 @@
+{
+  "slug": "funsearch",
+  "name": "FunSearch",
+  "org": "Google DeepMind",
+  "year": 2023,
+  "domain": "math",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "An LLM writes small programs that build a solution, an evaluator scores them, and the best programs go back into the prompt.",
+  "loop": {
+    "proposes": "Python functions (inside a fixed skeleton) that construct cap sets or pack bins",
+    "judged_by": "An automated evaluator that runs each program and scores its output",
+    "steers": "Best programs are shown in later prompts; islands of programs are periodically reseeded"
+  },
+  "headline_result": "On the cap set problem, FunSearch found a cap set of size 512 in 8 dimensions, larger than any previously known, and raised the lower bound on the asymptotic cap set capacity to 2.2202 (previous best 2.2180). On online bin packing it evolved heuristics that beat first fit and best fit on the OR-Library sets OR1-OR4 and on Weibull instances.",
+  "caveat": "Results are for two problem families with a cheap, graded score, and only 4 of 140 cap-set runs reached 512 (Supplementary Information A.3), though once found the construction is deterministically verified and reusable without the model. The public repo is a reference implementation only: it has no LLM, no sandbox and no distributed system.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model"
+  ],
+  "beyond_harness_note": "The evolutionary search and evaluator do the solving, over a population of programs, and the winning program is a standalone artifact that runs without the model.",
+  "proposal_object": "program",
+  "generative_model": "Pretrained LLM, frozen (Codey, a PaLM 2 based code model, used without fine-tuning)",
+  "algorithmic_authority": "Program evaluator in a sandbox",
+  "feedback_payload": "score",
+  "update_target": "context+population",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Mathematical discoveries from program search with large language models",
+      "url": "https://www.nature.com/articles/s41586-023-06924-6",
+      "kind": "paper",
+      "supports": "headline_result, loop, generative_model"
+    },
+    {
+      "title": "FunSearch: Making new discoveries in mathematical sciences using LLMs (DeepMind blog)",
+      "url": "https://deepmind.google/discover/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/",
+      "kind": "blog",
+      "supports": "loop"
+    },
+    {
+      "title": "google-deepmind/funsearch (code)",
+      "url": "https://github.com/google-deepmind/funsearch",
+      "kind": "code",
+      "supports": "caveat"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-06",
+    "notes": "Opened Nature page (published online 14 Dec 2023; Nature 625, 468-475, 2024; authors Romera-Paredes et al.), the DeepMind blog and the GitHub README. Confirmed 512 in n=8, capacity 2.2202 vs prior 2.2180 (Tyrrell 2023), bin packing vs first/best fit on OR1-OR4 and Weibull, Codey (PaLM 2 family) without fine-tuning, islands model (every 4 h worst half of islands reseeded; typical run 15 samplers, 150 CPU evaluators). The number of islands m is not stated. Report claim about the repo lacking LLMs, sandbox and distributed infra confirmed by the README. Year: online 2023, print 2024. Review 2026-11-03: headline numbers re-checked against the source. Review 2026-11-06: removed the size of the earlier record cap set, which no primary source states (not in the Nature text, the Supplementary Information or the DeepMind blog); the card now says 'larger than any previously known'. Only 4 of 140 runs reached 512 (SI A.3)."
+  },
+  "video_notes": [
+    {
+      "fact": "FunSearch does not ask the AI for an answer. It asks for a short program that builds the answer.",
+      "source": "https://www.nature.com/articles/s41586-023-06924-6"
+    },
+    {
+      "fact": "The AI is a pretrained code model (Codey, from the PaLM 2 family) used as is, with no extra training.",
+      "source": "https://www.nature.com/articles/s41586-023-06924-6"
+    },
+    {
+      "fact": "An automated evaluator runs every program and scores it, which guards against made-up or wrong ideas.",
+      "source": "https://deepmind.google/discover/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/"
+    },
+    {
+      "fact": "The best programs are added back to the pool and shown to the AI next time, so the search improves round after round.",
+      "source": "https://deepmind.google/discover/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/"
+    },
+    {
+      "fact": "In the cap set puzzle it found a set of 512 points in 8 dimensions, larger than any previously known, and made the largest improvement in 20 years to the lower bound on cap set capacity, raising it to 2.2202.",
+      "source": "https://www.nature.com/articles/s41586-023-06924-6"
+    },
+    {
+      "fact": "For packing items into bins as they arrive, it found a rule that beat the classic first-fit and best-fit rules on standard test sets.",
+      "source": "https://www.nature.com/articles/s41586-023-06924-6"
+    },
+    {
+      "fact": "The winning programs can be read and reused without the AI. The public GitHub code leaves out the AI model and the sandbox.",
+      "source": "https://github.com/google-deepmind/funsearch"
+    }
+  ]
+}

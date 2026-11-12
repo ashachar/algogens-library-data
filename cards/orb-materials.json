@@ -1,0 +1,48 @@
+{
+  "slug": "orb-materials",
+  "name": "Orb Universal Interatomic Potential",
+  "org": "Orbital Materials",
+  "year": 2024,
+  "domain": "materials",
+  "family": "active-learning-generation",
+  "parent": null,
+  "one_liner": "A universal interatomic potential (graph network) for atomistic modelling of materials; denoising diffusion pretraining only initialises the potential, which predicts energy, forces and stress.",
+  "loop": {
+    "proposes": "Orb is a universal interatomic potential, not a generative search; denoising pretraining only initialises the potential.",
+    "judged_by": "The potential predicts energy, forces and stress.",
+    "steers": "No generative search; the model is trained in two phases, denoising diffusion pretraining and then the interatomic potential."
+  },
+  "headline_result": "Topped the Matbench Discovery leaderboard for predicting stable inorganic crystals at 3-6x higher relaxation speed than prior equivariant potentials.",
+  "caveat": "Learned universal potentials lack explicit long-range electrostatics unless augmented with Ewald summation terms.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "retrains-generator",
+    "population-search",
+    "non-llm-generator"
+  ],
+  "beyond_harness_note": "A universal interatomic potential, trained first as a denoising diffusion model and then as a neural network potential; it is not a generative search.",
+  "proposal_object": "crystal",
+  "generative_model": "Graph network interatomic potential, initialised from a denoising diffusion pretraining phase",
+  "algorithmic_authority": "None in the loop: the potential predicts energy, forces and stress, and it is not a generative search",
+  "feedback_payload": "new-data",
+  "update_target": "weights+training-data",
+  "loop_stage": "training",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Orb: A Fast, Scalable Neural Network Potential (arXiv:2410.22570)",
+      "url": "https://arxiv.org/abs/2410.22570",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Neumann et al., arXiv:2410.22570."
+  }
+}

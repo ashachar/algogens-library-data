@@ -1,0 +1,47 @@
+{
+  "slug": "chemcrow",
+  "name": "ChemCrow",
+  "org": "EPFL, University of Rochester",
+  "year": 2024,
+  "domain": "chemistry",
+  "family": "verifier-guided-repair",
+  "parent": null,
+  "one_liner": "Couples an LLM planner with 18 deterministic cheminformatics, retrosynthesis, and safety verification tools.",
+  "loop": {
+    "proposes": "An LLM proposes multi-step synthesis plans, SMILES structures, and reaction queries.",
+    "judged_by": "Deterministic RDKit validators, RXN4Chemistry retrosynthesis engines, and controlled-substance safety checkers verify chemical validity and feasibility.",
+    "steers": "Tool outputs return to the model at each step; the validation of the robotic platform is iterated until the procedure is valid."
+  },
+  "headline_result": "Autonomously planned and executed wet-lab syntheses of an insect repellent, three organocatalysts, and a novel chromophore.",
+  "caveat": "Synthesis success remains bounded by the coverage of the underlying retrosynthesis templates and reagent inventory.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "physical-grounding"
+  ],
+  "beyond_harness_note": "A controlled-chemical check and an explosive check screen a requested molecule before synthesis planning or execution; robotic synthesis executes routes, it does not verify them.",
+  "proposal_object": "molecule",
+  "generative_model": "GPT-4 chemical synthesis planner",
+  "algorithmic_authority": "RDKit, RXN4Chemistry retrosynthesis engine, and robotic wet-lab execution",
+  "feedback_payload": "verifier-errors",
+  "update_target": "context",
+  "loop_stage": "inference",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Augmenting large language models with chemistry tools (Nature Machine Intelligence, 2024)",
+      "url": "https://doi.org/10.1038/s42256-024-00832-8",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Bran et al., Nature Machine Intelligence 6, 2024."
+  }
+}

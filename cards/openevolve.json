@@ -1,0 +1,54 @@
+{
+  "slug": "openevolve",
+  "name": "OpenEvolve",
+  "org": "algorithmicsuperintelligence (open-source community project)",
+  "year": 2025,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": "alphaevolve",
+  "one_liner": "An open-source take on AlphaEvolve: LLMs mutate programs, your evaluator scores them, and a MAP-Elites and island database keeps diverse winners.",
+  "loop": {
+    "proposes": "Code changes in marked EVOLVE-BLOCK regions, written by an ensemble of LLMs from any compatible API",
+    "judged_by": "A user-written evaluator that scores each program; errors and other evaluator output are kept as artifacts",
+    "steers": "Scores place programs in a MAP-Elites grid across island populations; errors and evaluator output feed the next prompt"
+  },
+  "headline_result": "The project reports 2-3x speedups on GPU kernels (MLX Metal) and a circle packing for n=26 that its README calls state of the art, plus sorting and signal-processing examples. These are the project's own claims; the README gives no numeric circle-packing score.",
+  "caveat": "All results are project-reported and not independently replicated here. The README gives no numbers for most examples. It is an engineering framework, not a paper.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model"
+  ],
+  "beyond_harness_note": "The evolutionary loop with its MAP-Elites and island database does the search, and the evolved program is a plain artifact usable without the model.",
+  "proposal_object": "program",
+  "generative_model": "Pluggable LLM ensemble, frozen (any OpenAI-compatible API or supported CLI)",
+  "algorithmic_authority": "User-defined evaluator (tests, benchmarks, profilers)",
+  "feedback_payload": "score",
+  "update_target": "context+population",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "code",
+  "lineage": "derivative",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "algorithmicsuperintelligence/openevolve (README)",
+      "url": "https://github.com/algorithmicsuperintelligence/openevolve",
+      "kind": "code",
+      "supports": "loop, headline_result, license"
+    },
+    {
+      "title": "OpenEvolve architecture notes (CLAUDE.md)",
+      "url": "https://github.com/algorithmicsuperintelligence/openevolve/blob/main/CLAUDE.md",
+      "kind": "code",
+      "supports": "MAP-Elites and islands"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Read the upstream README: MAP-Elites, islands with migration, LLM ensembles, artifact feedback, Apache-2.0. Confirmed via HTTP 301 that github.com/codelion/openevolve redirects to algorithmicsuperintelligence/openevolve (GitHub API: created 2025-05-15). Report said 'sorting, circle packing, kernel optimization' - README mentions adaptive sorting, signal processing, circle packing n=26 and MLX Metal kernels (2-3x). No paper to cite; evidence level is code. Third-party description of the MAP-Elites/island design also appears in ThetaEvolve (arXiv:2511.23473), not opened in full."
+  }
+}

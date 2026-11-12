@@ -1,0 +1,47 @@
+{
+  "slug": "flowmm",
+  "name": "FlowMM",
+  "org": "Meta AI",
+  "year": 2024,
+  "domain": "materials",
+  "family": "oracle-trained-generation",
+  "parent": "diffcsp",
+  "one_liner": "Riemannian flow matching on crystal flat tori and symmetric lattice manifolds with stability computed by CHGNet and DFT relaxations on generated samples.",
+  "loop": {
+    "proposes": "A Riemannian flow-matching network integrates geodesic vector fields on the periodic torus of fractional coordinates and SPD lattice representations.",
+    "judged_by": "Symmetry-aware structural matchers, CHGNet force-field relaxations, and VASP DFT calculations evaluate thermodynamic stability (E_hull) on generated samples.",
+    "steers": "DFT and CHGNet relaxations compute stability metrics on generated samples; the flow is trained on a fixed dataset."
+  },
+  "headline_result": "Achieved state-of-the-art thermodynamic stability and 3x faster integration steps than diffusion baselines on MP-20 and MPTS-52.",
+  "caveat": "Like other crystal generators, requires downstream DFT phonon calculations to confirm dynamic vibrational stability at finite temperature.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "population-search",
+    "non-llm-generator"
+  ],
+  "beyond_harness_note": "Riemannian flow matching on crystal manifolds generates candidate lattices whose stability is computed afterwards with CHGNet and DFT relaxations.",
+  "proposal_object": "crystal",
+  "generative_model": "Riemannian flow-matching crystal network",
+  "algorithmic_authority": "Crystallographic manifold constraints and VASP DFT evaluator",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "inference",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "code",
+  "lineage": "successor",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "FlowMM: Generating Materials with Riemannian Flow Matching (ICML 2024 / arXiv:2406.04713)",
+      "url": "https://arxiv.org/abs/2406.04713",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Miller et al., ICML 2024."
+  }
+}

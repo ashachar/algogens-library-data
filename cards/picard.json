@@ -1,0 +1,48 @@
+{
+  "slug": "picard",
+  "name": "PICARD",
+  "org": "Element AI, ServiceNow Research",
+  "year": 2021,
+  "domain": "code-verification",
+  "family": "proof-state-search",
+  "parent": null,
+  "one_liner": "Constrained beam search that rejects invalid tokens at every decoding step using an incremental Haskell SQL parser and database schema type-checker.",
+  "loop": {
+    "proposes": "A sequence-to-sequence language model (T5) proposes top-k next tokens across active beam hypotheses.",
+    "judged_by": "An incremental monadic parser and relational schema checker verify lexical, syntactic, and column/table scoping validity on every partial prefix.",
+    "steers": "Invalid token continuations are masked to negative infinity before beam pruning, keeping only grammar- and schema-valid queries in the beam."
+  },
+  "headline_result": "Boosted T5-3B exact-match and execution accuracy on Spider and CoSQL benchmarks by 4-7 percentage points and eliminated 98% of syntax and schema errors.",
+  "caveat": "Enforces grammatical and schema well-formedness, but cannot prevent a semantically plausible query that filters on the wrong column value.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "population-search"
+  ],
+  "beyond_harness_note": "An incremental formal parser and relational type-checker gate every step of beam search, pruning invalid prefixes online.",
+  "proposal_object": "program",
+  "generative_model": "T5-3B sequence-to-sequence model",
+  "algorithmic_authority": "Incremental monadic SQL parser and relational schema type-checker",
+  "feedback_payload": "verifier-errors",
+  "update_target": "search-tree",
+  "loop_stage": "inference",
+  "validity_scope": "formal",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "PICARD: Parsing Incrementally for Constrained Auto-Regressive Decoding from Language Models (EMNLP 2021 / arXiv:2109.05093)",
+      "url": "https://arxiv.org/abs/2109.05093",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Scholak et al., EMNLP 2021."
+  }
+}

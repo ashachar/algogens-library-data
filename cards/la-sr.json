@@ -1,0 +1,49 @@
+{
+  "slug": "la-sr",
+  "name": "LaSR (Library-Augmented Symbolic Regression)",
+  "org": "Cornell University, Massachusetts Institute of Technology",
+  "year": 2024,
+  "domain": "science",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "Interleaves genetic programming and BFGS constant optimization (PySR) with LLM-synthesized abstract concept libraries for equation discovery.",
+  "loop": {
+    "proposes": "An LLM abstracts recurring sub-expressions from top equations into reusable symbolic concepts and seeds mutated expression trees.",
+    "judged_by": "A high-performance symbolic regression engine (PySR) optimizes numerical constants via BFGS and scores MSE accuracy and complexity on scientific datasets.",
+    "steers": "Tournament selection and Pareto-front complexity filtering retain the fittest symbolic equations and evolve the concept library."
+  },
+  "headline_result": "Recovered significantly more exact ground-truth physical laws on the Feynman Symbolic Regression Benchmark than standalone PySR or LLM-only baselines.",
+  "caveat": "Calling an LLM inside evolutionary epochs increases wall-clock runtime compared to pure Julia genetic programming.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "output-outlives-model",
+    "population-search",
+    "neuro-symbolic"
+  ],
+  "beyond_harness_note": "The PySR evolutionary + BFGS numerical optimizer runs the population loop and queries the LLM to evolve abstract symbolic building blocks.",
+  "proposal_object": "equation",
+  "generative_model": "LLM symbolic concept and mutation generator",
+  "algorithmic_authority": "PySR genetic programming and BFGS numerical optimizer",
+  "feedback_payload": "score",
+  "update_target": "population+context",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Symbolic Regression with a Learned Concept Library (arXiv:2409.09359)",
+      "url": "https://arxiv.org/abs/2409.09359",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Grayeli et al., arXiv:2409.09359. Title corrected to the printed title (ledger)."
+  }
+}

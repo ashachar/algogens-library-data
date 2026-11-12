@@ -1,0 +1,48 @@
+{
+  "parent": "reinvent-4",
+  "youtube_id": null,
+  "direct_algogen_link": "conceptual-fit",
+  "slug": "lib-invent-docking-rfxscore",
+  "name": "Lib-INVENT with docking and RFXscore",
+  "org": "Sanofi",
+  "year": 2022,
+  "domain": "chemistry",
+  "family": "oracle-trained-generation",
+  "one_liner": "A scaffold-decorating molecule generator is rewarded with Glide docking and a trained rescoring model, and its weights are updated toward high scorers.",
+  "loop": {
+    "proposes": "Decorations (substituents) added to a factor Xa scaffold, written as SMILES by Lib-INVENT, a REINVENT variant",
+    "judged_by": "Glide XP docking, ligand efficiency, the RFXscore rescoring model, QED and a factor Xa QSAR model",
+    "steers": "Reinforcement learning updates the generator's agent network; a diversity filter penalises repeats"
+  },
+  "headline_result": "In a factor Xa case study, docking followed by RFXscore gave the best results, especially when diverse structures fitting a binding site were wanted; RFXscore plus the factor Xa model left the most compounds after MM/GBSA and other filters. RFXscore had a test r2 of 0.494 and MAE of 1.086.",
+  "caveat": "MM/GBSA was applied afterwards as an independent check, not as a training reward. Everything is computed binding, with no lab measurements, and the target is a single well-studied protein (factor Xa).",
+  "beyond_harness": [
+    "non-llm-generator",
+    "retrains-generator",
+    "domain-authority-judge",
+    "multi-fidelity"
+  ],
+  "beyond_harness_note": "A SMILES generator is trained by a reward built from docking and a learned rescoring model rather than being prompted.",
+  "proposal_object": "molecule",
+  "generative_model": "Lib-INVENT RNN prior and agent (scaffold decoration)",
+  "algorithmic_authority": "Glide XP docking, RFXscore rescoring, MM/GBSA post-check",
+  "feedback_payload": "reward",
+  "update_target": "weights",
+  "loop_stage": "training",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "experiment",
+  "lineage": "application",
+  "sources": [
+    {
+      "title": "Optimizing interactions to protein binding sites by integrating docking-scoring strategies into generative AI methods (Frontiers in Chemistry 2022)",
+      "url": "https://www.frontiersin.org/articles/10.3389/fchem.2022.1012507/full",
+      "kind": "paper",
+      "supports": "loop, headline_result"
+    }
+  ],
+  "verification": {
+    "checked_on": "2026-11-03",
+    "status": "verified",
+    "notes": "Opened the Frontiers full text (first 100,000 characters). Authors Sauer, Matter, Hessler, Grebner (Sanofi), published 19 Oct 2022. Confirmed: Glide XP and ligand efficiency, RFXscore, QED and fXa QSAR used as rewards; MM/GBSA (OPLS3e, threshold -70 kcal/mol) and MedChem filters applied afterwards, matching the report's note that MM/GBSA is not in every step (it is never a training reward). The report's 'Glide docking + scoring in the reward' is correct. Parent set to reinvent-4 per instruction, though Lib-INVENT originates in a 2021 paper not opened here."
+  }
+}

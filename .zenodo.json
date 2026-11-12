@@ -1,0 +1,15 @@
+{
+  "upload_type": "dataset",
+  "title": "AlgoGens Library: a dataset of systems where generative models propose and algorithms judge",
+  "description": "<p>The AlgoGens Library lists published systems in which a generative model proposes candidates, an algorithm or another authority (a proof assistant, a verifier, a simulator, an evaluator) judges them, and the judgment steers the next proposals. Each card records the loop, the headline result as stated in its primary source, what the result does not prove, a classification along fixed fields, and the sources checked. The dataset also lists installable open-source tools built on the same pattern.</p><p>Browse it at <a href=\"https://algogens.org/library/\">algogens.org/library</a>.</p>",
+  "creators": [
+    {"name": "Shachar, Amir", "affiliation": "Riskernel"}
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "keywords": ["AlgoGens", "generative AI", "algorithms", "program search", "automated theorem proving", "verifier-guided generation", "agent harness"],
+  "related_identifiers": [
+    {"identifier": "arXiv:2403.01426", "relation": "references", "scheme": "arxiv"},
+    {"identifier": "https://algogens.org/library/", "relation": "isDocumentedBy", "scheme": "url"}
+  ]
+}

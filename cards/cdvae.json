@@ -1,0 +1,46 @@
+{
+  "slug": "cdvae",
+  "name": "CDVAE (Crystal Diffusion Variational Autoencoder)",
+  "org": "Massachusetts Institute of Technology",
+  "year": 2022,
+  "domain": "materials",
+  "family": "oracle-trained-generation",
+  "parent": null,
+  "one_liner": "Periodic SE(3)-invariant variational autoencoder and Langevin dynamics generator whose latent optimization is guided by a learned property predictor.",
+  "loop": {
+    "proposes": "A periodic GNN decoder predicts unit-cell lattice parameters, stoichometry, and denoises atomic coordinates via annealed Langevin dynamics.",
+    "judged_by": "A learned property predictor guides latent optimization; validity checks (symmetry, bond distance, charge neutrality) and a separate learned energy model evaluate finished samples.",
+    "steers": "Gradient ascent in latent space steers sampling toward lower formation energy."
+  },
+  "headline_result": "Generated valid periodic crystal structures across carbon, perovskite, and Materials Project benchmarks with high structural and compositional validity.",
+  "caveat": "Latent-space property optimization relies on a learned surrogate predictor.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "non-llm-generator"
+  ],
+  "beyond_harness_note": "Uses a periodic SE(3)-equivariant diffusion VAE rather than an LLM, steered by a learned property predictor and evaluated with validity checks and a learned energy model.",
+  "proposal_object": "crystal",
+  "generative_model": "Periodic SE(3)-equivariant diffusion VAE",
+  "algorithmic_authority": "Crystallographic validity checker and a learned energy model",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "inference",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Crystal Diffusion Variational Autoencoder for Periodic Material Generation (ICLR 2022)",
+      "url": "https://arxiv.org/abs/2110.06197",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Xie et al., ICLR 2022."
+  }
+}

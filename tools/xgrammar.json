@@ -1,0 +1,27 @@
+{
+  "slug": "xgrammar",
+  "name": "XGrammar",
+  "author": "mlc-ai",
+  "kind": "library",
+  "repo_url": "https://github.com/mlc-ai/xgrammar",
+  "install": "pip install xgrammar",
+  "one_liner": "Fast constrained-decoding engine that keeps LLM output inside a JSON schema, regex or context-free grammar.",
+  "loop": {
+    "proposes": "the next token from an inference engine such as vLLM or SGLang",
+    "judged_by": "a compiled grammar matcher that checks which tokens keep the output grammatical",
+    "steers": "invalid tokens are masked out before sampling, so the output always follows the grammar"
+  },
+  "not_proved": "It guarantees structural correctness only, not that the content is accurate. A grammar that is too loose still lets nonsense through.",
+  "license": "Apache-2.0",
+  "sources": [
+    {
+      "title": "XGrammar repository",
+      "url": "https://github.com/mlc-ai/xgrammar"
+    },
+    {
+      "title": "XGrammar README",
+      "url": "https://raw.githubusercontent.com/mlc-ai/xgrammar/main/README.md"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "darwin-godel-machine",
+  "name": "Darwin Godel Machine",
+  "org": "Sakana AI and University of British Columbia (Jeff Clune lab)",
+  "year": 2025,
+  "domain": "ml-systems",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "A coding agent rewrites its own code, tests each version on coding benchmarks, and keeps an archive of versions to branch from.",
+  "loop": {
+    "proposes": "A modified version of the agent's own code (tools, prompts, workflows), written by a frozen foundation model",
+    "judged_by": "Running the new agent on coding benchmarks (SWE-bench Verified, Polyglot) and recording pass rates",
+    "steers": "Parents come from an archive of agents, weighted by score and few children; children join it"
+  },
+  "headline_result": "Over 80 iterations, the best agent rose from 20.0% to 50.0% on SWE-bench (Verified) and from 14.2% to 30.7% on Polyglot (abstract figures; the paper's Section 4.4 gives 14.0% as the Polyglot start).",
+  "caveat": "It stays below the best closed-source systems on SWE-bench and is limited by the underlying model. The run took about two weeks with significant API cost. The authors report that the agent sometimes faked test results, and that when rewarded for avoiding this it sometimes removed the detection markers (per Sakana's blog). Archive maintenance and parent selection are fixed, not self-modified.",
+  "beyond_harness": [
+    "inverted-control",
+    "population-search",
+    "output-outlives-model",
+    "meta-evolution"
+  ],
+  "beyond_harness_note": "A population archive of agent variants is searched with benchmark tests as the judge, and the final agent is a code artifact; note the evolved object is itself an agent, so it is closer to a harness that rewrites itself.",
+  "proposal_object": "patch",
+  "generative_model": "Frozen foundation model (Claude 3.5 Sonnet for self-modification; Claude 3.5 Sonnet or o3-mini for evaluation)",
+  "algorithmic_authority": "Benchmark test suites run in a sandbox",
+  "feedback_payload": "test-results",
+  "update_target": "population",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents",
+      "url": "https://arxiv.org/abs/2505.22954",
+      "kind": "paper",
+      "supports": "headline_result, loop, caveat"
+    },
+    {
+      "title": "Sakana AI: The Darwin Godel Machine",
+      "url": "https://sakana.ai/dgm/",
+      "kind": "blog",
+      "supports": "safety findings"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Resolved arXiv:2505.22954 (Zhang, Hu, Lu, Lange, Clune; v1 29 May 2025, v3 12 Mar 2026). Report listed nothing; added as a candidate. Passes the filter: generator is an LLM, algorithmic judge is benchmark test results, the archive is updated by results. Org (Sakana AI and UBC) is from the task brief and the Sakana blog, not read on the arXiv page. Numbers: 20.0 to 50.0 and 14.2 to 30.7 from abstract; 80 iterations and models from the HTML. Did not read cost appendix. Org confirmed from Sakana AI announcement (sakana.ai/dgm: collaboration with Clune lab at UBC); arXiv page lists no affiliations (review 2026-11-03). Review 2026-11-03: headline numbers re-checked against the source."
+  }
+}

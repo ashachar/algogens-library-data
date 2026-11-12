@@ -1,0 +1,51 @@
+{
+  "slug": "tpsr",
+  "name": "TPSR (Transformer-based Planning for Symbolic Regression)",
+  "org": "Virginia Tech, Meta AI",
+  "year": 2023,
+  "domain": "science",
+  "family": "proof-state-search",
+  "parent": null,
+  "one_liner": "Wraps Monte Carlo Tree Search and BFGS numerical constant optimization around a pre-trained symbolic regression transformer.",
+  "loop": {
+    "proposes": "A pre-trained symbolic regression transformer (E2E / NeSymReS) provides prior probabilities over next mathematical operators in a prefix expression tree.",
+    "judged_by": "Once a complete equation skeleton is reached, BFGS optimizes its continuous constants and computes complexity-regularized NMSE fit on the dataset.",
+    "steers": "UCB tree search backpropagates the exact numerical fit reward to steer subsequent expression-tree expansions."
+  },
+  "headline_result": "Significantly improved symbolic equation recovery and extrapolation R^2 on SRBench and Feynman physics datasets over beam search or sampling.",
+  "caveat": "Running BFGS constant optimization at leaf rollouts adds numerical overhead compared to single-pass forward decoding.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "population-search",
+    "non-llm-generator",
+    "neuro-symbolic",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "Monte Carlo Tree Search and BFGS numerical optimization control decoding over a pre-trained symbolic transformer.",
+  "proposal_object": "equation",
+  "generative_model": "Pre-trained symbolic regression transformer (E2E)",
+  "algorithmic_authority": "Monte Carlo Tree Search and BFGS numerical optimizer",
+  "feedback_payload": "reward",
+  "update_target": "search-tree",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Transformer-based Planning for Symbolic Regression (NeurIPS 2023 / arXiv:2303.06833)",
+      "url": "https://arxiv.org/abs/2303.06833",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Shojaee et al., NeurIPS 2023."
+  }
+}

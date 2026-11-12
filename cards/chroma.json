@@ -1,0 +1,47 @@
+{
+  "slug": "chroma",
+  "name": "Chroma",
+  "org": "Generate Biomedicines",
+  "year": 2023,
+  "domain": "chemistry",
+  "family": "oracle-trained-generation",
+  "parent": null,
+  "one_liner": "Programmable protein diffusion model steered by exact geometric, symmetry, and energy-potential conditioners and wet-lab validation.",
+  "loop": {
+    "proposes": "A polymer-physics-informed graph diffusion model samples 3D protein backbones and all-atom sequences in O(N) time.",
+    "judged_by": "Analytic point-group symmetry projectors, distance restraints, AlphaFold refolding consistency, and X-ray crystallography judge candidate proteins.",
+    "steers": "Bayes-rule score conditioning steers reverse-diffusion trajectories directly toward the specified symmetry or substructure constraints."
+  },
+  "headline_result": "Designed 310 proteins across point-group symmetries, programmable shapes, and protein classes, with crystallographic structures matching design to 1.0-1.4 Angstrom backbone RMSD.",
+  "caveat": "Conditioning on extreme geometric shapes can reduce natural sequence designability if the score guidance weight is set too high.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "non-llm-generator"
+  ],
+  "beyond_harness_note": "Analytic symmetry constraints and structural refolding oracles steer a non-LLM 3D protein diffusion process.",
+  "proposal_object": "protein",
+  "generative_model": "Polymer-graph SE(3) diffusion model",
+  "algorithmic_authority": "Geometric symmetry projectors, refolding filters, and X-ray crystallography",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "inference",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Illuminating protein space with a programmable generative model (Nature, 2023)",
+      "url": "https://doi.org/10.1038/s41586-023-06728-8",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Ingraham et al., Nature 623, 2023."
+  }
+}

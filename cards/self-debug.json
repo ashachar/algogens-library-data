@@ -1,0 +1,46 @@
+{
+  "slug": "self-debug",
+  "name": "Self-Debugging with Execution Feedback",
+  "org": "Google DeepMind, University of California, Berkeley",
+  "year": 2023,
+  "domain": "code-verification",
+  "family": "verifier-guided-repair",
+  "parent": null,
+  "one_liner": "Iterative program synthesis loop driven by unit-test execution traces, compiler diagnostics, and line-by-line rubber-duck code explanation.",
+  "loop": {
+    "proposes": "A code LLM synthesizes a candidate program (Python, C++, or SQL) and generates a line-by-line behavioral explanation.",
+    "judged_by": "The language runtime and unit-test suite execute the candidate program and return exact assertion failures, stack traces, or syntax errors.",
+    "steers": "Execution error messages paired with the behavioral trace condition the next repair iteration until all tests pass."
+  },
+  "headline_result": "Improved pass@1 by up to 12 percentage points across TransCoder C++-to-Python translation, Spider text-to-SQL, and MBPP Python synthesis.",
+  "caveat": "Correctness is bounded by the unit-test suite available during the debugging loop.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model"
+  ],
+  "beyond_harness_note": "Deterministic compiler and unit-test execution traces gate termination and steer iterative code repair.",
+  "proposal_object": "program",
+  "generative_model": "Codex / PaLM-2 / StarCoder",
+  "algorithmic_authority": "Interpreter runtime and unit-test execution oracle",
+  "feedback_payload": "test-results",
+  "update_target": "context",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Teaching Large Language Models to Self-Debug (ICLR 2024 / arXiv:2304.05128)",
+      "url": "https://arxiv.org/abs/2304.05128",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Chen et al., ICLR 2024."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "alphacode",
+  "name": "AlphaCode",
+  "org": "Google DeepMind",
+  "year": 2022,
+  "domain": "code-verification",
+  "family": "verifier-guided-repair",
+  "parent": null,
+  "one_liner": "Samples millions of candidate programs per competitive programming problem, filters by example tests, and clusters by synthetic input behavior.",
+  "loop": {
+    "proposes": "An encoder-decoder transformer generates a large pool of candidate C++ and Python solutions from the problem description.",
+    "judged_by": "A sandboxed execution engine filters out candidates that fail public example tests (>99% pruned) and runs the survivors on generated test inputs to cluster equivalent behaviors.",
+    "steers": "Behavioral clustering selects one representative program from each of the largest equivalence classes for final submission."
+  },
+  "headline_result": "Placed in the top 54.3% of human participants across 10 recent Codeforces competitions, the first AI system to reach competitive human rank.",
+  "caveat": "Relies on sampling hundreds of thousands of programs per problem; passing public example tests does not prove correctness on hidden edge cases.",
+  "beyond_harness": [
+    "inverted-control",
+    "domain-authority-judge",
+    "population-search",
+    "multi-fidelity"
+  ],
+  "beyond_harness_note": "Large-scale execution filtering and behavioral equivalence clustering select among a massive population of candidate programs.",
+  "proposal_object": "program",
+  "generative_model": "41B encoder-decoder code transformer",
+  "algorithmic_authority": "Sandboxed test execution and input-output equivalence clustering",
+  "feedback_payload": "test-results",
+  "update_target": "population",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Competition-level code generation with AlphaCode (Science, 2022)",
+      "url": "https://doi.org/10.1126/science.abq1158",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Li et al., Science 378(6624), 2022."
+  }
+}

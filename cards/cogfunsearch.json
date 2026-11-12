@@ -1,0 +1,54 @@
+{
+  "slug": "cogfunsearch",
+  "name": "CogFunSearch",
+  "org": "Google DeepMind with Janelia Research Campus, Rockefeller University, Max Planck Institute for Biological Cybernetics, Princeton University, UCL and Columbia University",
+  "year": 2025,
+  "domain": "science",
+  "family": "program-evolution",
+  "parent": "funsearch",
+  "one_liner": "FunSearch adapted to write short, readable programs that model how humans, rats and fruit flies choose.",
+  "loop": {
+    "proposes": "Python programs that predict a subject's next choice from its past choices and rewards",
+    "judged_by": "Scoring each program on how well it predicts recorded human, rat and fruit-fly choices",
+    "steers": "The best-scoring programs are fed back into the prompt, as in FunSearch"
+  },
+  "headline_result": "In a bioRxiv preprint, on rat choices in a 2-armed drifting bandit task (data from Miller et al. 2021), CogFunSearch reliably found programs that beat the best existing cognitive model the authors compared against, both when improving supplied programs and when starting from scratch.",
+  "caveat": "A simple unconstrained neural network predicted significantly better than both the classic models and the discovered programs, so interpretability is gained at some cost in accuracy. Preprint, one task family.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model"
+  ],
+  "beyond_harness_note": "The evolutionary loop finds a model of behavior, and the discovered program is a readable scientific artifact usable without the LLM.",
+  "proposal_object": "program",
+  "generative_model": "Pretrained LLM, frozen (inherited from FunSearch)",
+  "algorithmic_authority": "Held-out predictive score of each program on behavioral data",
+  "feedback_payload": "score",
+  "update_target": "context+population",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "application",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Automated Discovery of Interpretable Cognitive Programs underlying Reward-guided behavior (DeepMind publication page)",
+      "url": "https://deepmind.google/research/publications/130468/",
+      "kind": "paper",
+      "supports": "headline_result, caveat"
+    },
+    {
+      "title": "Discovering Symbolic Cognitive Models from Human and Animal Behavior (bioRxiv 2025.02.05.636732)",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.02.05.636732v1.full.pdf",
+      "kind": "paper",
+      "supports": "loop"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "corrected",
+    "checked_on": "2026-11-03",
+    "notes": "Opened the DeepMind publication page (authors Castro Rivadeneira, Stachenfeld, Miller, Tomasev, et al.; bioRxiv, 6 Feb 2025). Report claim confirmed: beats an existing cognitive model; the unconstrained NN does better. Corrections: it is a bioRxiv preprint, not a peer-reviewed paper; the bioRxiv title is 'Discovering Symbolic Cognitive Models from Human and Animal Behavior' (DeepMind page uses a different title); data covered humans, rats and flies per a secondary summary. The bioRxiv PDF itself was not opened. Domain set to science since the target is neuroscience, not math. Org confirmed from the bioRxiv full text (review 2026-11-03); the DeepMind page was not re-opened."
+  }
+}

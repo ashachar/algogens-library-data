@@ -1,0 +1,27 @@
+{
+  "slug": "guardrails-ai",
+  "name": "Guardrails AI",
+  "author": "guardrails-ai",
+  "kind": "library",
+  "repo_url": "https://github.com/guardrails-ai/guardrails",
+  "install": "pip install guardrails-ai",
+  "one_liner": "Python framework that runs validators on LLM inputs and outputs and decides what to do when a check fails.",
+  "loop": {
+    "proposes": "an LLM response, or a user input headed to the model",
+    "judged_by": "validators in an input or output Guard, such as RegexMatch, plus custom validators you write",
+    "steers": "each validator has an on_fail action, for example raising an exception, which blocks or redirects the output"
+  },
+  "not_proved": "A validator only proves the one property it checks. Some hub validators (for example toxic-language checks) are themselves model-based, so they are not pure code judges.",
+  "license": "Apache-2.0",
+  "sources": [
+    {
+      "title": "Guardrails repository",
+      "url": "https://github.com/guardrails-ai/guardrails"
+    },
+    {
+      "title": "Guardrails README",
+      "url": "https://raw.githubusercontent.com/guardrails-ai/guardrails/main/README.md"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

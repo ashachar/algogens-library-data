@@ -1,0 +1,47 @@
+{
+  "slug": "pocket2mol",
+  "name": "Pocket2Mol",
+  "org": "Peking University",
+  "year": 2022,
+  "domain": "chemistry",
+  "family": "oracle-trained-generation",
+  "parent": null,
+  "one_liner": "E(3)-equivariant autoregressive 3D molecular generator inside protein binding pockets, which samples ligands atom by atom inside the pocket; docking (QVina) scores evaluate finished molecules.",
+  "loop": {
+    "proposes": "An E(3)-equivariant graph neural network places frontier atoms, 3D coordinates, and covalent bonds step by step inside a protein pocket.",
+    "judged_by": "Docking (QVina) scores evaluate finished molecules.",
+    "steers": "Ligands are sampled atom by atom inside the pocket."
+  },
+  "headline_result": "Generated drug-like 3D molecules with more realistic torsion angles and stronger Vina binding scores than 3D voxel baselines on CrossDocked2020.",
+  "caveat": "Autoregressive atom-by-atom placement can accumulate geometric error if an early frontier atom is poorly positioned.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "population-search",
+    "non-llm-generator"
+  ],
+  "beyond_harness_note": "An E(3)-equivariant 3D geometric network samples ligands atom by atom inside the pocket, and docking (QVina) scores evaluate finished molecules.",
+  "proposal_object": "molecule",
+  "generative_model": "E(3)-equivariant autoregressive 3D GNN",
+  "algorithmic_authority": "QVina docking score, used to evaluate finished molecules",
+  "feedback_payload": "score",
+  "update_target": "search-tree+population",
+  "loop_stage": "inference",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Pocket2Mol: Efficient Molecular Sampling Based on 3D Protein Pockets (ICML 2022 / arXiv:2205.07249)",
+      "url": "https://arxiv.org/abs/2205.07249",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Peng et al., ICML 2022."
+  }
+}

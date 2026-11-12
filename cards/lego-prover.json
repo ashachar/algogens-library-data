@@ -1,0 +1,49 @@
+{
+  "slug": "lego-prover",
+  "name": "LEGO-Prover",
+  "org": "Tsinghua University, The Chinese University of Hong Kong",
+  "year": 2023,
+  "domain": "proofs",
+  "family": "proof-state-search",
+  "parent": "draft-sketch-prove",
+  "one_liner": "Grows a persistent library of verified Isabelle/HOL helper lemmas while proving theorems block-by-block.",
+  "loop": {
+    "proposes": "A prover LLM decomposes a theorem into candidate helper lemmas and formal Isabelle proof sketches, while an evolvar LLM mutates verified lemmas in the skill library.",
+    "judged_by": "The Isabelle/HOL kernel and Sledgehammer verify every proposed lemma and proof sketch.",
+    "steers": "Verified lemmas are indexed into a growing modular skill library and retrieved via semantic search to simplify subsequent theorems."
+  },
+  "headline_result": "Raised miniF2F-valid pass@100 to 57.0% and miniF2F-test to 50.0% in Isabelle/HOL, accumulating thousands of reusable verified lemmas.",
+  "caveat": "Library quality depends on pruning redundant or overly specialized lemmas so retrieval stays sharp.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "domain-authority-judge",
+    "output-outlives-model",
+    "population-search",
+    "formal-kernel"
+  ],
+  "beyond_harness_note": "The Isabelle/HOL kernel gates admission into a persistent, evolving library of formally verified mathematical lemmas.",
+  "proposal_object": "proof",
+  "generative_model": "GPT-3.5 / LLaMA-2 prover and lemma-evolver agents",
+  "algorithmic_authority": "Isabelle/HOL proof kernel and Sledgehammer ATP",
+  "feedback_payload": "proof-state",
+  "update_target": "population+context",
+  "loop_stage": "inference",
+  "validity_scope": "formal",
+  "evidence_level": "code",
+  "lineage": "successor",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "LEGO-Prover: Neural Theorem Proving with Growing Libraries (ICLR 2024 / arXiv:2310.00656)",
+      "url": "https://arxiv.org/abs/2310.00656",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Wang et al., ICLR 2024."
+  }
+}

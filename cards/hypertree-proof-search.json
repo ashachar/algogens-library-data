@@ -1,0 +1,51 @@
+{
+  "slug": "hypertree-proof-search",
+  "name": "HyperTree Proof Search (HTPS)",
+  "org": "Meta AI",
+  "year": 2022,
+  "domain": "proofs",
+  "family": "proof-state-search",
+  "parent": null,
+  "one_liner": "Online AlphaZero-style MCTS over proof hypergraphs in Lean and Metamath, training tactic policy and value networks from their own searches.",
+  "loop": {
+    "proposes": "A transformer policy network proposes multiple Lean or Metamath tactics at open goals in an AND-OR proof hypergraph.",
+    "judged_by": "The formal proof kernel checks every tactic step and splits conjunctive subgoals into hypergraph children.",
+    "steers": "PUCT hypergraph tree search balances exploration and value estimates, and the policy and value models train online on data from their own searches."
+  },
+  "headline_result": "Solved 82.6% of Metamath set.mm test theorems and 41.0% of miniF2F-curriculum theorems in Lean, discovering shorter proofs than human ground truth.",
+  "caveat": "AND-OR hypergraph expansion requires all sibling subgoals of a tactic to close before a parent goal is proved.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "retrains-generator",
+    "population-search",
+    "formal-kernel",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "An online PUCT hypergraph search algorithm calls the neural policy/value networks and trains them online on data from its own searches.",
+  "proposal_object": "tactic",
+  "generative_model": "Online-trained encoder-decoder tactic and value transformers",
+  "algorithmic_authority": "Lean / Metamath kernel and PUCT AND-OR hypergraph search",
+  "feedback_payload": "proof-state",
+  "update_target": "search-tree+weights",
+  "loop_stage": "training",
+  "validity_scope": "formal",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "HyperTree Proof Search for Neural Theorem Proving (NeurIPS 2022 / arXiv:2205.11491)",
+      "url": "https://arxiv.org/abs/2205.11491",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Lample et al., NeurIPS 2022."
+  }
+}

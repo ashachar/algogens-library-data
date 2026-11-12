@@ -1,0 +1,56 @@
+{
+  "slug": "mattergen",
+  "name": "MatterGen",
+  "org": "Microsoft Research",
+  "year": 2025,
+  "domain": "materials",
+  "family": "oracle-trained-generation",
+  "parent": null,
+  "one_liner": "A joint 3D diffusion model generates atom types, coordinates and periodic lattices conditioned on target properties, and Density Functional Theory relaxations verify stability and property values.",
+  "loop": {
+    "proposes": "3D periodic crystal structures (atom species, fractional coordinates and lattice vectors) sampled by an equivariant diffusion model with property adapter modules",
+    "judged_by": "Machine-learned interatomic potential pre-screening followed by Density Functional Theory (DFT) structural relaxation, convex-hull stability and property calculation",
+    "steers": "Adapters are fine-tuned on a labelled dataset; generated candidates are pre-relaxed with MatterSim and checked with DFT afterwards."
+  },
+  "headline_result": "In Nature (2025), MatterGen more than doubled the fraction of generated inorganic structures that are both novel and thermodynamically stable (within 0.1 eV/atom of the DFT convex hull) compared with prior generative baselines, and reduced root-mean-square atomic displacement during DFT relaxation by more than 50%. In a targeted high-bulk-modulus search, the authors synthesized a generated compound (TaCr2O6) in the lab whose measured bulk modulus (169 GPa) matched the target within 20%.",
+  "caveat": "Stability and property rates are primarily evaluated in 0 K DFT simulations rather than wet-lab synthesis; only one candidate structure (TaCr2O6, which turned out to be a disordered solid solution in experiment) was synthesized in the paper.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "retrains-generator",
+    "population-search",
+    "non-llm-generator",
+    "output-outlives-model",
+    "multi-fidelity"
+  ],
+  "beyond_harness_note": "An equivariant 3D diffusion model generates crystals directly in continuous and discrete symmetry spaces, and DFT physics calculations check generated candidates afterwards, while the adapters are fine-tuned on a labelled dataset.",
+  "proposal_object": "crystal",
+  "generative_model": "Equivariant score-based diffusion model over atom types, coordinates and periodic lattices with fine-tuned adapter modules (not an LLM)",
+  "algorithmic_authority": "MatterSim pre-relaxation and Density Functional Theory (DFT) convex-hull and property evaluation, plus X-ray diffraction and nanoindentation on the synthesized sample",
+  "feedback_payload": "multi-fidelity",
+  "update_target": "weights+population",
+  "loop_stage": "training",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "A generative model for inorganic materials design (Nature, 2025)",
+      "url": "https://www.nature.com/articles/s41586-025-08628-5",
+      "kind": "paper",
+      "supports": "headline_result, loop, caveat"
+    },
+    {
+      "title": "microsoft/mattergen (code and pretrained weights)",
+      "url": "https://github.com/microsoft/mattergen",
+      "kind": "code",
+      "supports": "loop, evidence_level"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-06",
+    "notes": "Verified against Zeni, Pinsler, Zügner et al., Nature 639, 624-632 (2025), doi:10.1038/s41586-025-08628-5, and microsoft/mattergen. Confirmed >2x novel+stable rate, >50% lower RMSD to DFT local minimum, and experimental synthesis of TaCr2O6 (measured bulk modulus 169 GPa, within 20% of 200 GPa target)."
+  }
+}

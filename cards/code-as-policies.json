@@ -1,0 +1,47 @@
+{
+  "slug": "code-as-policies",
+  "name": "Code as Policies",
+  "org": "Google Research",
+  "year": 2022,
+  "domain": "robotics",
+  "family": "formalize-and-solve",
+  "parent": null,
+  "one_liner": "Translates natural-language robot commands into hierarchical Python policy code that calls deterministic perception and motion-control primitives.",
+  "loop": {
+    "proposes": "A code-generation LLM recursively synthesizes Python policy functions and helper routines from a user instruction.",
+    "judged_by": "A sandboxed Python interpreter, NumPy/Shapely spatial geometry calculators, and low-level robot impedance controllers execute the policy.",
+    "steers": "Closed-loop visual and geometric state queries inside the generated control loops adjust robot trajectories online."
+  },
+  "headline_result": "Executed spatial-geometric manipulation, drawing, and tabletop rearrangement tasks on physical Franka Panda and UR5e robot arms without task-specific training.",
+  "caveat": "Assumes that the perception primitives (object detectors and pose estimators) accurately ground the variable names referenced in the generated code.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "output-outlives-model",
+    "neuro-symbolic"
+  ],
+  "beyond_harness_note": "The LLM compiles instructions into executable geometric control code whose loops and spatial math run deterministically on the robot.",
+  "proposal_object": "program",
+  "generative_model": "Codex / PaLM code-generation model",
+  "algorithmic_authority": "Shapely computational geometry library and classical robot motion controller",
+  "feedback_payload": "test-results",
+  "update_target": "context",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Code as Policies: Language Model Programs for Embodied Control (ICRA 2023 / arXiv:2209.07753)",
+      "url": "https://arxiv.org/abs/2209.07753",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Liang et al., ICRA 2023."
+  }
+}

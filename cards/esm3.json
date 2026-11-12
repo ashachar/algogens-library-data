@@ -1,0 +1,48 @@
+{
+  "slug": "esm3",
+  "name": "ESM3",
+  "org": "EvolutionaryScale",
+  "year": 2025,
+  "domain": "chemistry",
+  "family": "oracle-trained-generation",
+  "parent": null,
+  "one_liner": "Multimodal masked generative model over protein sequence, 3D structure, and function, aligned with geometric and wet-lab fluorescence feedback.",
+  "loop": {
+    "proposes": "A 98B multimodal protein model iteratively unmasks sequence, 3D backbone coordinates, and catalytic/functional tokens.",
+    "judged_by": "All-atom geometric consistency metrics (TM-score, active-site RMSD), preference alignment rewards, and wet-lab chromophore fluorescence assays judge candidates.",
+    "steers": "Chain-of-thought structural decoding and direct preference alignment on verified structures steer generation toward folded functional proteins."
+  },
+  "headline_result": "Generated esmGFP, a glowing fluorescent protein sharing only 58% sequence identity with the closest known fluorescent protein (~500 million years of evolutionary divergence).",
+  "caveat": "Wet-lab expression success rates vary strongly by target protein fold and cellular host environment.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "retrains-generator",
+    "non-llm-generator"
+  ],
+  "beyond_harness_note": "3D geometric consistency verifiers and wet-lab functional assays filter and align a multimodal protein generator.",
+  "proposal_object": "protein",
+  "generative_model": "ESM3 98B multimodal masked protein model",
+  "algorithmic_authority": "3D structural consistency verifier and wet-lab fluorescence assay",
+  "feedback_payload": "reward",
+  "update_target": "weights+population",
+  "loop_stage": "inference",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Simulating 500 million years of evolution with a language model (Science, 2025)",
+      "url": "https://doi.org/10.1126/science.ads0018",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Hayes et al., Science 387, 2025. Year corrected 2024 to 2025 (Science published 2025-02-21; 2024 was the preprint) per the corpus citation ledger."
+  }
+}

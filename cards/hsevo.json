@@ -1,0 +1,50 @@
+{
+  "slug": "hsevo",
+  "name": "HSEvo",
+  "org": "Hanoi University of Science and Technology and George Mason University",
+  "year": 2024,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "A heuristic-design loop that adds a harmony-search step and diversity measurements to a genetic algorithm run by an LLM.",
+  "loop": {
+    "proposes": "Heuristic code from LLM crossover and mutation, plus harmony-search refinement of numeric parameters",
+    "judged_by": "Running the heuristic on benchmark instances for an objective value, plus two diversity metrics",
+    "steers": "Objective and diversity scores steer selection to balance exploration and convergence"
+  },
+  "headline_result": "The authors propose two diversity metrics and use them to compare FunSearch, EoH and ReEvo. They report EoH has higher diversity but unstable scores, ReEvo has good scores but poor diversity, and that HSEvo reaches high diversity and good objective scores while staying cost-effective.",
+  "caveat": "The abstract gives no numeric gains, and results are on the authors' black-box heuristic-design benchmarks. 'Cost-effective' is the authors' wording.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model",
+    "design-time",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "A genetic algorithm plus harmony search drives a population of heuristics, and the final heuristic runs without the model.",
+  "proposal_object": "heuristic",
+  "generative_model": "Pretrained LLM, frozen",
+  "algorithmic_authority": "Benchmark evaluation of heuristic code and diversity metrics",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "derivative",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "HSEvo: Elevating Automatic Heuristic Design with Diversity-Driven Harmony Search and Genetic Algorithm Using LLMs",
+      "url": "https://arxiv.org/abs/2412.14995",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Resolved arXiv:2412.14995 (Dat, Doan, Binh; v1 19 Dec 2024; HUST and George Mason University; 18 pages). Only the abstract was read, so no numbers are stated. Report description 'harmony search + GA, diversity metrics' confirmed."
+  }
+}

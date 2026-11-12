@@ -1,0 +1,47 @@
+{
+  "slug": "synchromesh",
+  "name": "Synchromesh",
+  "org": "Microsoft Research",
+  "year": 2022,
+  "domain": "code-verification",
+  "family": "verifier-guided-repair",
+  "parent": null,
+  "one_liner": "Pairs target-similarity retrieval with Constrained Semantic Decoding (CSD), using an incremental parser and type/scope engine to enforce valid code.",
+  "loop": {
+    "proposes": "A code language model predicts next-token distributions for domain-specific languages (SQL, Vega-Lite, SMCalFlow).",
+    "judged_by": "An incremental Context-Free Grammar parser and dynamic semantic validator (table/column scope, type compatibility) compute the regex of valid next tokens.",
+    "steers": "Invalid tokens are masked at every decoding step so the sampler only explores syntactically and semantically valid AST completions."
+  },
+  "headline_result": "Eliminated syntax, type, and scope errors across SQL, Vega-Lite visualization specs, and calendar DSLs while boosting execution accuracy.",
+  "caveat": "Requires authoring an incremental grammar and completion-engine specification for each target domain language.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge"
+  ],
+  "beyond_harness_note": "An incremental grammar and type-checking completion engine constrains autoregressive token generation at every step.",
+  "proposal_object": "program",
+  "generative_model": "Codex / GPT-3 with constrained token masking",
+  "algorithmic_authority": "Incremental CFG parser and static type/scope completion engine",
+  "feedback_payload": "verifier-errors",
+  "update_target": "search-tree",
+  "loop_stage": "inference",
+  "validity_scope": "formal",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Synchromesh: Reliable Code Generation from Pre-trained Language Models (ICLR 2022 / arXiv:2201.11227)",
+      "url": "https://arxiv.org/abs/2201.11227",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Poesia et al., ICLR 2022."
+  }
+}

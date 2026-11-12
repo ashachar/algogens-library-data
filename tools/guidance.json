@@ -1,0 +1,27 @@
+{
+  "slug": "guidance",
+  "name": "Guidance",
+  "author": "guidance-ai",
+  "kind": "library",
+  "repo_url": "https://github.com/guidance-ai/guidance",
+  "install": "pip install guidance",
+  "one_liner": "Python library that steers a model while it writes, using regex, choice lists and grammars to constrain each generated piece.",
+  "loop": {
+    "proposes": "text for each gen() slot in a program, from Transformers, llama.cpp or other backends",
+    "judged_by": "regex, select() options and grammar constraints enforced in code during generation",
+    "steers": "output that does not fit the constraint is blocked at decode time, and the program continues from the valid text"
+  },
+  "not_proved": "It guarantees the output fits the declared pattern or choices, not that the chosen answer is correct. A model can still pick the wrong option from a valid list.",
+  "license": "MIT",
+  "sources": [
+    {
+      "title": "Guidance repository",
+      "url": "https://github.com/guidance-ai/guidance"
+    },
+    {
+      "title": "Guidance README",
+      "url": "https://raw.githubusercontent.com/guidance-ai/guidance/main/README.md"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

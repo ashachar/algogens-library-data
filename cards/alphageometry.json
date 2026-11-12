@@ -1,0 +1,50 @@
+{
+  "parent": null,
+  "direct_algogen_link": "conceptual-fit",
+  "youtube_id": null,
+  "lineage": "origin",
+  "evidence_level": "experiment",
+  "validity_scope": "formal",
+  "slug": "alphageometry",
+  "name": "AlphaGeometry",
+  "org": "Google DeepMind",
+  "year": 2024,
+  "domain": "proofs",
+  "family": "proof-state-search",
+  "one_liner": "A language model suggests extra points and lines for a geometry figure, and a symbolic engine checks what follows.",
+  "loop": {
+    "proposes": "Auxiliary constructions (new points and lines) for an Olympiad geometry problem",
+    "judged_by": "A symbolic deduction engine that derives all consequences and decides whether the goal is proved",
+    "steers": "The enlarged figure goes back to the language model for the next construction, under beam search"
+  },
+  "headline_result": "In the paper's evaluation on a test set of 30 olympiad-level geometry problems (IMO-AG-30), AlphaGeometry solves 25, versus ten for the earlier Wu's method baseline and 18 for the strongest baseline (DD + AR + human-designed heuristics). Symbolic deduction with algebra (DD + AR) alone solves 14.",
+  "caveat": "The 30-problem set is geometry only, translated into the system's own formal language. The language model is trained once on synthetic data before the search runs; it is not retrained by the search results. A later study (Sinha et al., arXiv:2404.06405) reports that Wu's method alone solves 15 of the same 30 problems, so the ten-problem baseline is contested.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "output-outlives-model",
+    "population-search",
+    "formal-kernel"
+  ],
+  "beyond_harness_note": "The symbolic engine does the proving and calls the language model only when it is stuck, and the result is a human-readable proof that stands without the model.",
+  "proposal_object": "construction",
+  "generative_model": "Transformer language model trained from scratch on synthetic theorems and proofs",
+  "algorithmic_authority": "Symbolic deduction engine (DD + AR)",
+  "feedback_payload": "proof-state",
+  "update_target": "search-tree",
+  "loop_stage": "inference",
+  "sources": [
+    {
+      "title": "Solving olympiad geometry without human demonstrations (Trinh et al.)",
+      "url": "https://www.nature.com/articles/s41586-023-06747-5",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "verification": {
+    "status": "corrected",
+    "checked_on": "2026-11-03",
+    "notes": "Opened the Nature page (published 2024-01-17). Report said 'from 14 (deduction only) to 25 of 30'. Both numbers are in the Nature paper itself, not the AG2 paper, but 14 is DD + AR; the paper says algebraic deduction added seven to reach 14, so plain DD alone is lower (about 7). The language model added 11 more (14 to 25). Wu's method solved ten and the strongest baseline 18. The report's pointer to arXiv:2502.03544 is the AlphaGeometry2 paper, not the original. No mention of Algogen. Review 2026-11-03: headline numbers re-checked against the source."
+  }
+}

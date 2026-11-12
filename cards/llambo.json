@@ -1,0 +1,49 @@
+{
+  "slug": "llambo",
+  "name": "LLAMBO",
+  "org": "University of Cambridge, Huawei Noah's Ark Lab",
+  "year": 2024,
+  "domain": "optimization",
+  "family": "active-learning-generation",
+  "parent": null,
+  "one_liner": "Integrates LLM conditional sampling into a Bayesian Optimization loop as a zero-shot warm-starter, surrogate model, and acquisition sampler.",
+  "loop": {
+    "proposes": "An LLM conditioned on the optimization history and problem metadata proposes candidate hyperparameter configurations.",
+    "judged_by": "True black-box objective evaluations (training and scoring ML models on Bayesmark / HPOBench) measure validation loss.",
+    "steers": "Expected Improvement utility scores rank candidate configurations and append the evaluated (x, f(x)) pair to the active-learning history."
+  },
+  "headline_result": "Outperformed Gaussian Process and Random Forest Bayesian Optimization baselines in the low-trial regime across 25 Bayesmark tasks.",
+  "caveat": "In high-dimensional continuous spaces (>20 variables) with ratusan of trials, classical numerical GP kernels overtake in-context LLM surrogates.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "multi-fidelity",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "A sequential Bayesian Optimization active-learning loop queries the LLM for candidate proposals and scores them on the black-box objective.",
+  "proposal_object": "specification",
+  "generative_model": "GPT-3.5 in-context surrogate and candidate sampler",
+  "algorithmic_authority": "Expected Improvement acquisition ranker and black-box objective evaluator",
+  "feedback_payload": "score",
+  "update_target": "context+population",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Large Language Models to Enhance Bayesian Optimization (ICLR 2024 / arXiv:2402.03921)",
+      "url": "https://arxiv.org/abs/2402.03921",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Liu et al., ICLR 2024."
+  }
+}

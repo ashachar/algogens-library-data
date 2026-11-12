@@ -1,0 +1,94 @@
+name: Submit your system or tool
+description: Suggest a research system or an installable tool for the AlgoGens Library.
+title: "[Submission] "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The library lists systems where a generative model proposes candidates, an algorithm or another authority judges them, and that judgment steers the next proposals. Read the field guide in [SCHEMA.md](https://github.com/ashachar/algogens-library-data/blob/main/SCHEMA.md) before you start.
+
+        Every claim needs a public source. We check each submission against its sources before it goes in, and we may shorten or correct the wording.
+  - type: dropdown
+    id: entry-type
+    attributes:
+      label: Entry type
+      options:
+        - Research system (a card)
+        - Installable tool (the Tools shelf)
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: FunSearch
+    validations:
+      required: true
+  - type: input
+    id: org
+    attributes:
+      label: Organization or authors
+      placeholder: Google DeepMind
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary sources
+      description: Paper, code repository or official documentation. One link per line.
+      placeholder: https://www.nature.com/articles/s41586-023-06924-6
+    validations:
+      required: true
+  - type: textarea
+    id: loop
+    attributes:
+      label: The loop
+      description: Three short lines. What does the model propose? What judges it? How does the judgment steer the next round?
+      placeholder: |
+        Proposes: Python functions that build cap sets
+        Judged by: an evaluator that runs each program and scores the result
+        Steers: top-scoring programs go back into the prompt
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Headline result
+      description: Only what the primary source states, with its numbers and conditions.
+    validations:
+      required: true
+  - type: textarea
+    id: caveat
+    attributes:
+      label: What it does not prove
+      description: One or two sentences. Budget, benchmark scope, self-reported numbers, and so on.
+    validations:
+      required: true
+  - type: input
+    id: install
+    attributes:
+      label: Install line and license (tools only)
+      placeholder: "pip install outlines (Apache-2.0)"
+  - type: dropdown
+    id: relation
+    attributes:
+      label: Your relation to the work
+      options:
+        - I am an author or maintainer
+        - I am not involved in it
+    validations:
+      required: true
+  - type: textarea
+    id: json
+    attributes:
+      label: JSON entry (optional)
+      description: If you can, paste a full entry that follows schema/card.schema.json or schema/tool.schema.json. A bot checks it against the schema and comments with the result.
+      render: json
+  - type: checkboxes
+    id: license
+    attributes:
+      label: License
+      options:
+        - label: I agree that the text I submit can be published under CC BY 4.0 as part of the AlgoGens Library dataset.
+          required: true

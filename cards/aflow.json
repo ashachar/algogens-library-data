@@ -1,0 +1,49 @@
+{
+  "slug": "aflow",
+  "name": "AFlow (Automating Agentic Workflow Generation)",
+  "org": "DeepWisdom, Hong Kong University of Science and Technology",
+  "year": 2024,
+  "domain": "ml-systems",
+  "family": "program-evolution",
+  "parent": "adas",
+  "one_liner": "Monte Carlo Tree Search over code-represented workflows iteratively mutates and evaluates multi-agent pipelines.",
+  "loop": {
+    "proposes": "An LLM mutates a selected workflow node by adding, removing, or rewiring prompt and tool operators in Python code.",
+    "judged_by": "A benchmark execution engine runs the modified workflow on the validation split and records empirical score and execution trace.",
+    "steers": "MCTS backpropagates validation scores up the workflow tree and selects the next node by soft mixed-probability selection."
+  },
+  "headline_result": "Outperforms hand-crafted and automated workflow baselines by 5.7% average across six coding and math benchmarks while enabling smaller models to beat GPT-4o.",
+  "caveat": "Workflow search requires dozens of validation evaluations per benchmark, and overfits if the validation slice is too small.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "output-outlives-model",
+    "population-search",
+    "meta-evolution"
+  ],
+  "beyond_harness_note": "MCTS controls the search over code graphs, calling the LLM as a mutation operator and keeping the top-scoring workflow program.",
+  "proposal_object": "program",
+  "generative_model": "Claude 3.5 Sonnet / GPT-4o mutation operator",
+  "algorithmic_authority": "Monte Carlo Tree Search and benchmark execution evaluator",
+  "feedback_payload": "score",
+  "update_target": "search-tree+context",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "code",
+  "lineage": "derivative",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "AFlow: Automating Agentic Workflow Generation (ICLR 2025 / arXiv:2410.10762)",
+      "url": "https://arxiv.org/abs/2410.10762",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Zhang et al., arXiv:2410.10762."
+  }
+}

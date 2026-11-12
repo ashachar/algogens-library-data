@@ -1,0 +1,48 @@
+{
+  "slug": "codet",
+  "name": "CodeT",
+  "org": "Microsoft Research",
+  "year": 2022,
+  "domain": "code-verification",
+  "family": "verifier-guided-repair",
+  "parent": null,
+  "one_liner": "Samples both candidate programs and synthetic test suites, then runs a RANSAC dual-execution consensus algorithm to select the best program.",
+  "loop": {
+    "proposes": "A code language model independently generates N candidate implementation programs and M candidate unit-test assertions from the problem prompt.",
+    "judged_by": "A sandboxed execution engine runs all N x M program-test pairs to build a bipartite pass/fail consistency matrix.",
+    "steers": "A RANSAC-style consensus algorithm identifies the bipartite clique maximizing (#passing_programs x #passed_tests) and selects its representative program."
+  },
+  "headline_result": "Raised pass@1 on HumanEval to 65.8% (+18.8 points over Codex greedy decoding) and improved MBPP and APPS accuracy by over 15 points.",
+  "caveat": "If the LLM shares a systematic misconception across both its generated implementations and its generated tests, the consensus clique can still favour a flawed behavior.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "multi-fidelity"
+  ],
+  "beyond_harness_note": "A deterministic RANSAC bipartite consensus algorithm searches the N x M execution matrix to select the most consistent program cluster.",
+  "proposal_object": "program",
+  "generative_model": "Codex / InCoder code generator",
+  "algorithmic_authority": "Sandboxed execution matrix and RANSAC bipartite consensus solver",
+  "feedback_payload": "test-results",
+  "update_target": "population",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "CodeT: Code Generation with Generated Tests (ICLR 2023 / arXiv:2207.10397)",
+      "url": "https://arxiv.org/abs/2207.10397",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Chen et al., ICLR 2023."
+  }
+}

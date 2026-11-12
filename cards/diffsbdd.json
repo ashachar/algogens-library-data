@@ -1,0 +1,48 @@
+{
+  "slug": "diffsbdd",
+  "name": "DiffSBDD",
+  "org": "EPFL, University of Oxford",
+  "year": 2024,
+  "domain": "chemistry",
+  "family": "oracle-trained-generation",
+  "parent": null,
+  "one_liner": "SE(3)-equivariant 3D conditional diffusion model for structure-based drug design coupled with AutoDock Vina docking and evolutionary optimization.",
+  "loop": {
+    "proposes": "An SE(3)-equivariant diffusion model generates 3D ligand atom coordinates and types directly inside a target protein binding pocket.",
+    "judged_by": "RDKit chemical validity checks, synthetic accessibility (SA), QED drug-likeness, and AutoDock Vina / QuickVina2 physics docking score each ligand.",
+    "steers": "An evolutionary partial-noising and denoising loop mutates top-scoring ligands and selects candidates with higher binding affinity and QED."
+  },
+  "headline_result": "Generated pocket-specific 3D ligands with stronger Vina binding scores and drug-likeness than autoregressive 3D baselines on CrossDocked2020.",
+  "caveat": "Rigid-pocket docking scores do not account for induced-fit protein conformational changes or explicit water bridges.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "domain-authority-judge",
+    "population-search",
+    "non-llm-generator"
+  ],
+  "beyond_harness_note": "An evolutionary docking loop drives an SE(3)-equivariant 3D molecular diffusion generator to optimize pocket binding affinity.",
+  "proposal_object": "molecule",
+  "generative_model": "SE(3)-equivariant 3D pocket-conditioned diffusion network",
+  "algorithmic_authority": "RDKit chemical validator and QuickVina2 / AutoDock Vina physics docking oracle",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "inference",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Structure-based drug design with equivariant diffusion models (Nature Computational Science, 2024)",
+      "url": "https://doi.org/10.1038/s43588-024-00737-x",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Schneuing et al., Nature Computational Science 4, 2024. Year corrected 2023 to 2024 (Nature Computational Science 4, 2024-12) per the ledger."
+  }
+}

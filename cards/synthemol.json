@@ -1,0 +1,51 @@
+{
+  "slug": "synthemol",
+  "name": "SyntheMol",
+  "org": "Stanford University, McMaster University",
+  "year": 2024,
+  "domain": "chemistry",
+  "family": "proof-state-search",
+  "parent": null,
+  "one_liner": "Monte Carlo Tree Search over 132,000 molecular building blocks and 13 validated chemical reactions, guided by an antibacterial activity predictor and wet-lab assays.",
+  "loop": {
+    "proposes": "Tree expansion combines REAL-space molecular building blocks under validated chemical reaction templates.",
+    "judged_by": "Reaction compatibility rules verify synthetic tractability at every node, while a Chemprop GNN/MLP oracle scores antibacterial activity against Acinetobacter baumannii.",
+    "steers": "MCTS upper-confidence rollouts focus combinatorial search on high-scoring, Tanimoto-diverse reaction pathways before wet-lab synthesis and MIC testing."
+  },
+  "headline_result": "Searched a combinatorial space of 30 billion synthesizable molecules to discover 6 structurally novel compounds with potent wet-lab antibacterial activity against A. baumannii.",
+  "caveat": "Search space is restricted to 1-2 step combinatorial reactions from the Enamine REAL building-block catalog.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "output-outlives-model",
+    "population-search",
+    "non-llm-generator",
+    "multi-fidelity"
+  ],
+  "beyond_harness_note": "Monte Carlo Tree Search over formal reaction templates calls a GNN property predictor and validates top candidates in wet-lab bacterial growth assays.",
+  "proposal_object": "molecule",
+  "generative_model": "Chemprop GNN value oracle + reaction-template MCTS",
+  "algorithmic_authority": "SMARTS chemical reaction validator, MCTS, and wet-lab MIC assay",
+  "feedback_payload": "score",
+  "update_target": "search-tree",
+  "loop_stage": "inference",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Generative AI for designing and validating easily synthesizable and structurally novel antibiotics (Nature Machine Intelligence, 2024)",
+      "url": "https://doi.org/10.1038/s42256-024-00809-7",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Swanson et al., Nature Machine Intelligence 6, 2024."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "alphacode-2",
+  "name": "AlphaCode 2",
+  "org": "Google DeepMind",
+  "year": 2023,
+  "domain": "code-verification",
+  "family": "verifier-guided-repair",
+  "parent": "alphacode",
+  "one_liner": "Pairs Gemini Pro code generation with execution filtering, behavioral clustering, and a learned scoring model to rank competitive programming solutions.",
+  "loop": {
+    "proposes": "A family of fine-tuned Gemini Pro models samples up to one million diverse C++ candidate programs per problem.",
+    "judged_by": "Sandboxed execution prunes about 95% of samples that fail the public example tests or do not compile, then clusters survivors on synthetic inputs.",
+    "steers": "A second Gemini scoring model ranks the top cluster representatives; there is no repair step."
+  },
+  "headline_result": "Solved 43% of Codeforces Division 1+2 problems and ranked at the 85th percentile of human competitors.",
+  "caveat": "High inference compute budget per problem; correctness remains bounded by test coverage rather than formal proof.",
+  "beyond_harness": [
+    "inverted-control",
+    "domain-authority-judge",
+    "population-search",
+    "multi-fidelity"
+  ],
+  "beyond_harness_note": "Execution-based pruning and dynamic input-output clustering filter a million-candidate population down to 10 submissions.",
+  "proposal_object": "program",
+  "generative_model": "Fine-tuned Gemini Pro",
+  "algorithmic_authority": "Sandboxed C++ execution filter and behavioral clustering engine",
+  "feedback_payload": "test-results",
+  "update_target": "population",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "successor",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "AlphaCode 2 Technical Report (Google DeepMind, 2023)",
+      "url": "https://storage.googleapis.com/deepmind-media/AlphaCode2/AlphaCode2_Tech_Report.pdf",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against AlphaCode Team, Google DeepMind Technical Report 2023."
+  }
+}

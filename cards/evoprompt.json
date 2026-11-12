@@ -1,0 +1,48 @@
+{
+  "slug": "evoprompt",
+  "name": "EvoPrompt",
+  "org": "Tsinghua University, Microsoft Research",
+  "year": 2023,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "Connects evolutionary algorithms (Genetic Algorithm and Differential Evolution) with an LLM crossover/mutation operator scored on validation sets.",
+  "loop": {
+    "proposes": "An LLM performs evolutionary crossover and differential mutation on parent discrete instructions to generate child candidates.",
+    "judged_by": "A deterministic evaluation harness scores each child candidate across a development dataset and computes exact task metrics.",
+    "steers": "Roulette-wheel selection and population elitism keep top-scoring candidates for the next evolutionary generation."
+  },
+  "headline_result": "Outperformed human-engineered and gradient-free prompt baselines by up to 25% across 31 NLP and reasoning datasets.",
+  "caveat": "Can overfit to a small development split if validation examples do not cover the test distribution.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "meta-evolution"
+  ],
+  "beyond_harness_note": "A Genetic Algorithm or Differential Evolution loop controls population selection and calls the LLM strictly as a semantic crossover/mutation operator.",
+  "proposal_object": "heuristic",
+  "generative_model": "GPT-3.5 / Alpaca evolutionary crossover operator",
+  "algorithmic_authority": "Genetic Algorithm / Differential Evolution controller and benchmark evaluator",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "EvoPrompt: Connecting LLMs with Evolutionary Algorithms Yields Powerful Prompt Optimizers (ICLR 2024 / arXiv:2309.08532)",
+      "url": "https://arxiv.org/abs/2309.08532",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Guo et al., ICLR 2024. Title corrected to the printed title (ledger)."
+  }
+}

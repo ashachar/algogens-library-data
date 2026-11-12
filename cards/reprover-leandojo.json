@@ -1,0 +1,49 @@
+{
+  "parent": null,
+  "direct_algogen_link": "conceptual-fit",
+  "youtube_id": null,
+  "lineage": "origin",
+  "evidence_level": "experiment",
+  "validity_scope": "formal",
+  "slug": "reprover-leandojo",
+  "name": "ReProver (LeanDojo)",
+  "org": "LeanDojo team (Kaiyu Yang et al.)",
+  "year": 2023,
+  "domain": "proofs",
+  "family": "proof-state-search",
+  "one_liner": "A retrieval-augmented language model proposes the next Lean tactic, and best-first search runs each tactic in Lean to get new proof states.",
+  "loop": {
+    "proposes": "Lean tactics, from a language model that first retrieves relevant premises from the math library",
+    "judged_by": "The Lean environment, driven through LeanDojo, which runs each tactic and reports the new state or an error",
+    "steers": "Best-first search expands the most promising proof states and feeds each new state back to the tactic generator"
+  },
+  "headline_result": "On the LeanDojo Benchmark test set, pass@1 is 51.2% (random split) and 26.3% (novel_premises split) with retrieval, versus 47.6% and 23.2% without retrieval and 29.0% and 7.4% for zero-shot GPT-4. Also 26.5% on miniF2F and 13.8% on ProofNet (pass@1, 10 minute wall-time limit per theorem).",
+  "caveat": "Main experiments use Lean 3 (Lean 4 results are in an appendix not covered here). The tactic generator is trained once, offline, on extracted proofs; search results do not update its weights. The paper's claim is about open, cheap training (one GPU week), not top accuracy.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "inverted-control",
+    "output-outlives-model",
+    "population-search",
+    "formal-kernel"
+  ],
+  "beyond_harness_note": "A search algorithm drives the proof and calls the model for candidate tactics; Lean decides validity and the output proof needs no model to check.",
+  "proposal_object": "tactic",
+  "generative_model": "Retrieval-augmented transformer tactic generator, trained on LeanDojo data",
+  "algorithmic_authority": "Lean proof assistant via LeanDojo",
+  "feedback_payload": "proof-state",
+  "update_target": "search-tree",
+  "loop_stage": "inference",
+  "sources": [
+    {
+      "title": "LeanDojo: Theorem Proving with Retrieval-Augmented Language Models",
+      "url": "https://arxiv.org/abs/2306.15626",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Report gave only a GitHub org page; the paper is arXiv:2306.15626 (2023-06-27), which I opened (abstract plus results via HTML). Report says NeurIPS 2023; venue not confirmed by me. Numbers read from the paper's tables. Report said 'Counts as the prover, not the benchmark': agreed, card is for ReProver; it passes the filter because best-first search over Lean states steers generation, though weights are not updated by it."
+  }
+}

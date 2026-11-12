@@ -1,0 +1,49 @@
+{
+  "parent": null,
+  "youtube_id": null,
+  "direct_algogen_link": "conceptual-fit",
+  "slug": "crystal-active-learning-con-cdvae",
+  "name": "Active learning for conditional crystal inverse design",
+  "org": "The University of Hong Kong",
+  "year": 2025,
+  "domain": "materials",
+  "family": "active-learning-generation",
+  "one_liner": "A crystal generator proposes alloys with a target stiffness, a three-stage screen checks them up to DFT, and verified structures retrain it.",
+  "loop": {
+    "proposes": "Alloy crystal structures from Con-CDVAE conditioned on a target bulk modulus",
+    "judged_by": "Three screens: a CGCNN pre-filter, molecular dynamics with MACE-MP-0 (within 20%, stable), then DFT",
+    "steers": "Structures passing DFT, with computed bulk moduli, join the training set and the generator is fine-tuned"
+  },
+  "headline_result": "For a 350 GPa bulk modulus target, in a range sparse in the training data, three active learning iterations lowered the mean absolute percentage error of generated crystals from about 0.4 to 0.2 (CGCNN-evaluated). DFT bulk moduli of new structures averaged 343.54 GPa (standard deviation 27.20) after the first iteration and 356.52 GPa (standard deviation 18.61) after the second.",
+  "caveat": "The error trend is measured with the same kind of GNN used in the screen, and DFT is a calculation rather than a lab result. It is a case study on one property (bulk modulus) of alloys, and no structure was synthesized.",
+  "beyond_harness": [
+    "non-llm-generator",
+    "retrains-generator",
+    "domain-authority-judge",
+    "output-outlives-model",
+    "multi-fidelity"
+  ],
+  "beyond_harness_note": "A crystal VAE (not an LLM) is retrained on structures that a DFT-backed screening pipeline accepted.",
+  "proposal_object": "crystal",
+  "generative_model": "Con-CDVAE conditional crystal variational autoencoder, fine-tuned each iteration",
+  "algorithmic_authority": "CGCNN pre-filter, MACE-MP-0 molecular dynamics, DFT (via APEX workflows)",
+  "feedback_payload": "multi-fidelity",
+  "update_target": "weights+training-data",
+  "loop_stage": "training",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "sources": [
+    {
+      "title": "Active Learning for Conditional Inverse Design with Crystal Generation and Foundation Atomic Models (arXiv:2502.16984)",
+      "url": "https://arxiv.org/abs/2502.16984",
+      "kind": "paper",
+      "supports": "loop, headline_result"
+    }
+  ],
+  "verification": {
+    "checked_on": "2026-11-03",
+    "status": "verified",
+    "notes": "arXiv id resolves to the claimed title (Li, Liu, Ye, Srolovitz, Wen; HKU; submitted 24 Feb 2025). Read the full PDF text. Report corrections: the paper says 'alloy' crystals specifically; the bulk-modulus accuracy is judged by CGCNN, with DFT used for validation and training labels; MD uses MACE-MP-0 in LAMMPS. The MAPE 0.4 to 0.2 is the paper's phrase for the average; a separate 0.14 value is quoted for the 350 GPa condition at Iter2. It is a preprint (no venue shown)."
+  }
+}

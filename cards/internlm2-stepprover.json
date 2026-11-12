@@ -1,0 +1,51 @@
+{
+  "slug": "internlm2-stepprover",
+  "name": "InternLM2-StepProver",
+  "org": "Shanghai Artificial Intelligence Laboratory",
+  "year": 2024,
+  "domain": "proofs",
+  "family": "proof-state-search",
+  "parent": null,
+  "one_liner": "Expert iteration over 20,000+ Lean 4 Mathlib repositories combining a critic-guided best-first tree search in which Lean executes each tactic the prover proposes.",
+  "loop": {
+    "proposes": "An 8B tactic model proposes Lean 4 proof steps conditioned on the current goal state.",
+    "judged_by": "Lean executes each tactic the prover proposes, and a trained critic network estimates the distance (number of steps) to close the remaining subgoals.",
+    "steers": "Critic-guided best-first tree search expands open states, and completed proofs are fed back into expert iteration to retrain both prover and critic."
+  },
+  "headline_result": "Reached 65.9% pass@64 on miniF2F-test and 54.5% on ProofNet, and proved 177 PutnamBench problems in Lean 4.",
+  "caveat": "Requires thousands of CPU hours of Lean 4 environment interaction during expert-iteration data collection.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "retrains-generator",
+    "population-search",
+    "formal-kernel",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "Critic-guided tree search and Lean execution of each proposed tactic drive both inference-time proof search and multi-round expert iteration.",
+  "proposal_object": "tactic",
+  "generative_model": "InternLM2-StepProver 8B tactic and critic models",
+  "algorithmic_authority": "Lean 4 (executes each proposed tactic) and critic-guided best-first tree search",
+  "feedback_payload": "proof-state",
+  "update_target": "search-tree+weights",
+  "loop_stage": "training",
+  "validity_scope": "formal",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "InternLM2.5-StepProver: Advancing Automated Theorem Proving via Critic-Guided Search (arXiv:2410.15700)",
+      "url": "https://arxiv.org/abs/2410.15700",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Wu et al., arXiv:2410.15700. Title corrected to the printed title (ledger)."
+  }
+}

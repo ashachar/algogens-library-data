@@ -1,0 +1,27 @@
+{
+  "slug": "llm4ad",
+  "name": "LLM4AD",
+  "author": "Optima-CityU",
+  "kind": "library",
+  "repo_url": "https://github.com/Optima-CityU/LLM4AD",
+  "install": "pip install llm4ad",
+  "one_liner": "Platform for LLM-driven algorithm design: search methods like EoH and FunSearch, scored by task evaluators.",
+  "loop": {
+    "proposes": "LLM-written candidate algorithms",
+    "judged_by": "task evaluation code (e.g. bin packing evaluators), run in separate processes with optional timeouts",
+    "steers": "search methods such as EoH and FunSearch pick which candidates are refined"
+  },
+  "not_proved": "A good score shows an algorithm works on the benchmark instances used, not that it is the best possible or holds on other instances.",
+  "license": "BSD-2-Clause",
+  "sources": [
+    {
+      "title": "LLM4AD README",
+      "url": "https://github.com/Optima-CityU/LLM4AD"
+    },
+    {
+      "title": "LLM4AD docs",
+      "url": "https://llm4ad-doc.readthedocs.io/en/latest/"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "llm-plus-p",
+  "name": "LLM+P (Large Language Models + Classical Planners)",
+  "org": "University of Texas at Austin and Sony AI",
+  "year": 2023,
+  "domain": "robotics",
+  "family": "formalize-and-solve",
+  "parent": null,
+  "one_liner": "An LLM translates a natural-language planning problem into a formal PDDL problem file, and the Fast Downward classical planner computes a sound or minimum-cost plan.",
+  "loop": {
+    "proposes": "A PDDL problem specification (objects, initial state and goal predicates) translated from natural language by GPT-4",
+    "judged_by": "The Fast Downward classical symbolic planner (classical planners LAMA and FDSS) running against the domain action schema",
+    "steers": "Fast Downward searches the symbolic state space to return a verified plan, which is translated back into natural language"
+  },
+  "headline_result": "Across seven standard International Planning Competition (IPC) domains including Blocksworld, Barman, Floortile, Grippers, Storage, Termes and Tyreworld (20 tasks per domain), LLM+P with GPT-4 and in-context examples solved the majority of tasks with valid, cost-minimizing plans, whereas direct GPT-4 plan generation failed on almost all tasks in Barman, Floortile, Storage and Termes.",
+  "caveat": "LLM+P requires a human expert to supply the PDDL domain file (action preconditions and effects) in advance, and its one-shot translator has no validator-repair loop when the LLM emits syntax errors, undeclared objects or inverted goal predicates.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "domain-authority-judge",
+    "output-outlives-model",
+    "neuro-symbolic"
+  ],
+  "beyond_harness_note": "The LLM does not search for action sequences at all; it compiles natural language into PDDL so Fast Downward can perform sound symbolic search.",
+  "proposal_object": "specification",
+  "generative_model": "GPT-4 (frozen) with in-context PDDL problem examples",
+  "algorithmic_authority": "Fast Downward classical symbolic planner",
+  "feedback_payload": "test-results",
+  "update_target": "context",
+  "loop_stage": "inference",
+  "validity_scope": "formal",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "LLM+P: Empowering Large Language Models with Optimal Planning Proficiency",
+      "url": "https://arxiv.org/abs/2304.11477",
+      "kind": "paper",
+      "supports": "headline_result, loop, caveat"
+    },
+    {
+      "title": "Cranial-XIX/llm-pddl (code)",
+      "url": "https://github.com/Cranial-XIX/llm-pddl",
+      "kind": "code",
+      "supports": "loop, evidence_level"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-06",
+    "notes": "Verified against Bo Liu et al., arXiv:2304.11477 (2023) and the Cranial-XIX/llm-pddl repository. Confirmed the 7 IPC benchmark domains (20 problems each), use of Fast Downward (SEQ-OPT-FDSS-1 / LAMA), requirement of a human-provided domain PDDL file, and failure modes from one-shot PDDL translation errors."
+  }
+}

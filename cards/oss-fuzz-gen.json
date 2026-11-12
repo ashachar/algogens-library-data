@@ -1,0 +1,45 @@
+{
+  "parent": null,
+  "direct_algogen_link": "conceptual-fit",
+  "youtube_id": null,
+  "lineage": "origin",
+  "evidence_level": "experiment",
+  "validity_scope": "empirical",
+  "slug": "oss-fuzz-gen",
+  "name": "OSS-Fuzz-Gen (LLM fuzz target generation)",
+  "org": "Google (OSS-Fuzz)",
+  "year": 2023,
+  "domain": "security",
+  "family": "verifier-guided-repair",
+  "one_liner": "An LLM writes a fuzz target for under-fuzzed code, OSS-Fuzz builds and runs it, and build errors go back to the model.",
+  "loop": {
+    "proposes": "Fuzz targets (C/C++ entry points) for functions that Fuzz Introspector flags as under-fuzzed",
+    "judged_by": "OSS-Fuzz build; whether the target calls the function, start-up crashes and new line coverage are reported metrics",
+    "steers": "Build errors go back to a code-fixer prompt; repeated rounds fix errors"
+  },
+  "headline_result": "Google's page reports 14 of 31 tested OSS-Fuzz projects compiled new targets and increased coverage (gains 0 to 31%; tinyxml2 line coverage 38% to 69%), and a similar target in OpenSSL rediscovered CVE-2022-3602.",
+  "caveat": "The page calls this a preliminary investigation on a small set of C/C++ benchmarks with an unnamed Google model. The 14 are the projects that succeeded and the selection of the 31 is not fully explained. Calling-the-function, crash and coverage results are reported metrics; the page does not say they feed back into the model.",
+  "beyond_harness": [
+    "output-outlives-model"
+  ],
+  "beyond_harness_note": "The product is a fuzz target that keeps running in OSS-Fuzz without the model, but the in-loop checker here is the OSS-Fuzz build, not a formal authority; calling the function, start-up crashes and coverage are reported metrics.",
+  "proposal_object": "fuzz-target",
+  "generative_model": "Google LLMs (model not named on the page)",
+  "algorithmic_authority": "OSS-Fuzz build tooling; calling the function, start-up crashes and coverage are reported metrics",
+  "feedback_payload": "verifier-errors",
+  "update_target": "context",
+  "loop_stage": "inference",
+  "sources": [
+    {
+      "title": "Fuzz target generation using LLMs (OSS-Fuzz research docs)",
+      "url": "https://google.github.io/oss-fuzz/research/llms/target_generation/",
+      "kind": "docs",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "verification": {
+    "status": "corrected",
+    "checked_on": "2026-11-03",
+    "notes": "Opened Google's OSS-Fuzz research page; undated but linked to an August 2023 announcement. Brief said 'build and coverage feedback loop': the page only documents build errors (and a not-calling-target error) returned to the LLM; coverage is a measurement, not shown as feedback. Later versions of the open-source repo may differ and were not checked. 'OSS-Fuzz-gen' 2023 year is inferred from the linked announcement."
+  }
+}

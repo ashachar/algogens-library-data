@@ -1,0 +1,49 @@
+{
+  "parent": null,
+  "direct_algogen_link": "conceptual-fit",
+  "youtube_id": null,
+  "lineage": "origin",
+  "evidence_level": "experiment",
+  "validity_scope": "formal",
+  "slug": "deepseek-prover-v1-5",
+  "name": "DeepSeek-Prover-V1.5 with RMaxTS",
+  "org": "DeepSeek",
+  "year": 2024,
+  "domain": "proofs",
+  "family": "proof-state-search",
+  "one_liner": "A Lean 4 prover is trained with proof-checker feedback, then searched with a tree search that rewards reaching new proof states.",
+  "loop": {
+    "proposes": "Lean 4 proofs and proof steps from a language model",
+    "judged_by": "The Lean 4 proof assistant, which accepts or rejects each proof and each step",
+    "steers": "Lean outcomes are the RL reward; at inference, RMaxTS tree search rewards new states to pick branches"
+  },
+  "headline_result": "With RL plus RMaxTS at a sample budget of 32 x 6400 (mixture of two guiding prompts) it reaches 63.5% on miniF2F-test; on the ProofNet test set it reaches 25.3% at a budget of 4 x 6400. The paper calls both new state of the art at publication.",
+  "caveat": "Numbers depend heavily on sample budget: the same model gets 50.0% to 54.9% at 32 to 3200 samples without search. The ProofNet validation set was used for expert iteration, so the test column is the clean one.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "retrains-generator",
+    "population-search",
+    "output-outlives-model",
+    "formal-kernel"
+  ],
+  "beyond_harness_note": "Lean is the judge, its verdicts retrain the model weights, and a tree of many partial proofs is searched; the finished proof is checkable without the model.",
+  "proposal_object": "proof",
+  "generative_model": "DeepSeek-Prover-V1.5 (DeepSeekMath-Base fine-tuned for Lean 4)",
+  "algorithmic_authority": "Lean 4 proof assistant",
+  "feedback_payload": "reward",
+  "update_target": "weights+search-tree",
+  "loop_stage": "inference",
+  "sources": [
+    {
+      "title": "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search",
+      "url": "https://arxiv.org/abs/2408.08152",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "verification": {
+    "status": "corrected",
+    "checked_on": "2026-11-03",
+    "notes": "Read abstract and Tables 1 and 2 in the PDF text. 63.5% (miniF2F-test) and 25.3% (ProofNet test) are correct but the report omitted conditions: 63.5% is RL + RMaxTS at 32 x 6400 samples with the mixture strategy; ProofNet 25.3% is 4 x 6400. Authors list starts Huajian Xin, DeepSeek."
+  }
+}

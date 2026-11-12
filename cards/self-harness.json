@@ -1,0 +1,52 @@
+{
+  "parent": null,
+  "direct_algogen_link": "conceptual-fit",
+  "youtube_id": null,
+  "lineage": "origin",
+  "evidence_level": "experiment",
+  "validity_scope": "empirical",
+  "slug": "self-harness",
+  "name": "Self-Harness",
+  "org": "Shanghai Artificial Intelligence Laboratory",
+  "year": 2026,
+  "domain": "ml-systems",
+  "family": "verifier-guided-repair",
+  "one_liner": "An agent mines its failed runs, edits its own harness, and keeps an edit only if benchmark pass counts do not drop.",
+  "loop": {
+    "proposes": "Minimal edits to the agent's harness (its instructions and scaffolding), from the same fixed model",
+    "judged_by": "Benchmark verifiers on held-in and held-out splits; an edit passes only if neither split worsens and one improves",
+    "steers": "Failure patterns mined from traces drive the next proposals; accepted edits are merged and rejected ones stay out"
+  },
+  "headline_result": "The paper reports that for three base models (MiniMax M2.5, Qwen3.5-35B-A3B, GLM-5) across three benchmarks (Terminal-Bench-2.0, SWE-bench Verified, AppWorld) every final harness improves both held-in and held-out pass rates, with relative gains of up to 132%. On Terminal-Bench-2.0 held-out, MiniMax M2.5 went 40.5% to 61.9% and Qwen3.5-35B-A3B 23.8% to 38.1%.",
+  "caveat": "A candidate is promoted only if it improves the held-in or the held-out pass count without lowering the other, so the held-out split is not an untouched test of generalization. The Terminal-Bench work uses a 64-task subset of 89. The authors say edits may reflect benchmark-specific patterns and that higher-stakes changes need stronger gates. The text reports slightly different figures in two places.",
+  "beyond_harness": [
+    "output-outlives-model",
+    "meta-evolution"
+  ],
+  "beyond_harness_note": "The product is a harness, which is the thing an agent harness is made of; the loop mostly shows a harness improving itself rather than going beyond one.",
+  "proposal_object": "patch",
+  "generative_model": "Fixed base LLM (MiniMax M2.5, Qwen3.5-35B-A3B or GLM-5), no weight updates",
+  "algorithmic_authority": "Benchmark task verifiers and a pass-count acceptance rule",
+  "feedback_payload": "test-results",
+  "update_target": "context",
+  "loop_stage": "offline-design",
+  "sources": [
+    {
+      "title": "Self-Harness: Harnesses That Improve Themselves",
+      "url": "https://arxiv.org/abs/2606.09498",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    },
+    {
+      "title": "Self-Harness (HTML, full text)",
+      "url": "https://arxiv.org/html/2606.09498v1",
+      "kind": "paper",
+      "supports": "validation rule, caveats"
+    }
+  ],
+  "verification": {
+    "status": "corrected",
+    "checked_on": "2026-11-03",
+    "notes": "Read the arXiv abstract page (v1 submitted 2026-06-08; latest v3 2026-08-20) and the v1 full text. Validation is algorithmic: a pass-count rule on verifier-graded splits (delta in >= 0, delta ho >= 0, at least one > 0), no LLM judge, so it passes the brief's condition. The table gives Qwen held-in +138% relative while the abstract says up to 132%; I used the abstract figure for the headline. SWE-bench and AppWorld numbers not read. VentureBeat coverage not opened. Org field is a placeholder, affiliations were not on the pages read. Org: the only affiliation printed in the arXiv HTML is Shanghai AI Laboratory; first author Hangfan Zhang (review 2026-11-03)."
+  }
+}

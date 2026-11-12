@@ -1,0 +1,50 @@
+{
+  "slug": "mind-evolution",
+  "name": "Mind Evolution",
+  "org": "Google DeepMind, University of California, San Diego",
+  "year": 2025,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "Island-model evolutionary search in natural language paired with programmatic constraint evaluators to solve multi-constraint planning tasks.",
+  "loop": {
+    "proposes": "An LLM generates, recombines, and refines candidate travel plans, schedules, and cipher solutions across parallel evolutionary islands.",
+    "judged_by": "A programmatic evaluator scores each plan and returns textual feedback on violated constraints.",
+    "steers": "Boltzmann tournament selection, island migration, and elitism propagate high-scoring plans into the next generation."
+  },
+  "headline_result": "Solved >95% of TravelPlanner and Natural Plan multi-constraint benchmarks with Gemini 1.5 Flash, surpassing Best-of-N and sequential Reflexion by wide margins.",
+  "caveat": "Requires a programmatic constraint evaluator for the target planning domain to score candidate solutions accurately.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "population-search",
+    "meta-evolution",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "A multi-island genetic algorithm with programmatic constraint evaluators drives selection, crossover, and migration across generations.",
+  "proposal_object": "construction",
+  "generative_model": "Gemini 1.5 Flash / Pro evolutionary operators",
+  "algorithmic_authority": "Programmatic constraint checker and island genetic algorithm",
+  "feedback_payload": "verifier-errors",
+  "update_target": "population+context",
+  "loop_stage": "inference",
+  "validity_scope": "formal",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Evolving Deeper LLM Thinking (arXiv:2501.09891)",
+      "url": "https://arxiv.org/abs/2501.09891",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Lee et al., arXiv:2501.09891."
+  }
+}

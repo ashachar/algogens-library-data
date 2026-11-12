@@ -1,0 +1,50 @@
+{
+  "parent": null,
+  "direct_algogen_link": "conceptual-fit",
+  "youtube_id": null,
+  "lineage": "origin",
+  "evidence_level": "experiment",
+  "validity_scope": "formal",
+  "slug": "bfs-prover",
+  "name": "BFS-Prover",
+  "org": "ByteDance Seed",
+  "year": 2025,
+  "domain": "proofs",
+  "family": "proof-state-search",
+  "one_liner": "A plain best-first search over Lean tactics, with a model retrained each round on the proofs and compiler errors the search produced.",
+  "loop": {
+    "proposes": "Lean 4 tactics for the current proof state, from a language model",
+    "judged_by": "The Lean 4 compiler through LeanDojo, which runs each tactic and reports success or an error",
+    "steers": "Best-first search ranks states by log probability; expert iteration retrains on proofs (SFT) and error pairs (DPO)"
+  },
+  "headline_result": "Reaches 72.95% on the miniF2F test set as an accumulative score; the single-run figure is 70.83% +/- 0.89 at a budget of 2048 x 2 x 600 (Lean 4.7.0). The authors say this shows plain best-first search can compete when scaled.",
+  "caveat": "The 72.95% is a cumulative (union across runs and settings) score, not one fixed-budget run. Its claims date from early 2025 and are compared with provers that used different budgets.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "retrains-generator",
+    "population-search",
+    "output-outlives-model",
+    "formal-kernel",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "Compiler verdicts retrain the generator between rounds while a search tree is explored; the proofs it outputs are machine-checkable without it.",
+  "proposal_object": "tactic",
+  "generative_model": "7B policy language model (open-sourced as BFS-Prover-V1-7B)",
+  "algorithmic_authority": "Lean 4 compiler via LeanDojo",
+  "feedback_payload": "verifier-errors",
+  "update_target": "weights+search-tree+training-data",
+  "loop_stage": "training",
+  "sources": [
+    {
+      "title": "BFS-Prover: Scalable Best-First Tree Search for LLM-based Automatic Theorem Proving",
+      "url": "https://arxiv.org/abs/2502.03438",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "verification": {
+    "status": "corrected",
+    "checked_on": "2026-11-03",
+    "notes": "Read abstract and Table 1 text. 72.95% confirmed but it is labelled 'accumulative'; the fixed-budget number is 70.83%. Org inferred from the model's Hugging Face home (ByteDance-Seed) given in the abstract; the author list was not checked for affiliation. Finding that BFS can match fancier search matches the abstract. Org confirmed: paper prints Seed Foundation Code and Applied Machine Learning, ByteDance (review 2026-11-03)."
+  }
+}

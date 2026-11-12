@@ -1,0 +1,50 @@
+{
+  "slug": "eoh",
+  "name": "EoH (Evolution of Heuristics)",
+  "org": "City University of Hong Kong, Huawei Noah's Ark Lab, Southern University of Science and Technology",
+  "year": 2024,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "An LLM writes each heuristic as a short idea in words plus code, and both evolve together under performance-based selection.",
+  "loop": {
+    "proposes": "Heuristics as a natural-language 'thought' plus code, made by five LLM prompt operators",
+    "judged_by": "Running the code on benchmark instances and measuring fitness",
+    "steers": "Fitness drives selection of parents for the next generation of a fixed-size population"
+  },
+  "headline_result": "On online bin packing, EoH with about 2,000 LLM queries (GPT-3.5-turbo) averaged a 1.18% gap to the lower bound over six test sets, against 2.23% for FunSearch (which the paper says needs around 1 million queries), 4.13% for best fit and 4.51% for first fit. It also reached the best-known tour on three TSPLib instances (pr124, kroA150, u159) and led on Taillard flow-shop sets.",
+  "caveat": "Main experiments use GPT-3.5-turbo on three classic problems. Comparisons are on the authors' own set-ups, and FunSearch's query count is quoted from its published runs, not re-run.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model",
+    "design-time",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "The evolutionary loop is the solver over a population, and the output is a heuristic that runs without any model.",
+  "proposal_object": "heuristic",
+  "generative_model": "Pretrained LLM, frozen (GPT-3.5-turbo in main runs; Gemini Pro, CodeLlama, DeepSeek compared)",
+  "algorithmic_authority": "Benchmark evaluation of the heuristic code",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Evolution of Heuristics: Towards Efficient Automatic Algorithm Design Using Large Language Model",
+      "url": "https://arxiv.org/abs/2401.02051",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Resolved arXiv:2401.02051 (Liu, Tong, Yuan, Lin, Wang, Lu, Zhang; v1 4 Jan 2024; v3 1 Jun 2024). Numbers from Table 9 and text via the HTML version. Report claim 'beats hand heuristics incl. online bin packing' holds. I could not confirm a conference venue from arXiv metadata, so none is stated."
+  }
+}

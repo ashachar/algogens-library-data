@@ -1,0 +1,31 @@
+{
+  "slug": "agentless",
+  "name": "Agentless",
+  "author": "OpenAutoCoder",
+  "kind": "loop",
+  "repo_url": "https://github.com/OpenAutoCoder/Agentless",
+  "install": "git clone https://github.com/OpenAutoCoder/Agentless && cd Agentless && pip install -r requirements.txt",
+  "one_liner": "Fixes software issues in three fixed steps (locate, repair, validate) and ranks candidate patches by test results.",
+  "loop": {
+    "proposes": "Several candidate patches per issue",
+    "judged_by": "Regression tests it selects plus reproduction tests, run in code",
+    "steers": "Test results re-rank the patches and the best one is submitted"
+  },
+  "not_proved": "Passing the selected tests does not show the patch is correct or complete. The reproduction tests are themselves written by the model, so they can miss the real bug. Setup also needs an OpenAI API key.",
+  "license": "MIT",
+  "sources": [
+    {
+      "title": "Agentless README",
+      "url": "https://raw.githubusercontent.com/OpenAutoCoder/Agentless/main/README.md"
+    },
+    {
+      "title": "Agentless repo",
+      "url": "https://github.com/OpenAutoCoder/Agentless"
+    },
+    {
+      "title": "Agentless paper",
+      "url": "https://arxiv.org/abs/2407.01489"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

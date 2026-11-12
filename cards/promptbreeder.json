@@ -1,0 +1,48 @@
+{
+  "slug": "promptbreeder",
+  "name": "Promptbreeder",
+  "org": "Google DeepMind",
+  "year": 2023,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "Self-referential evolutionary algorithm that simultaneously evolves task heuristics and the mutation prompts that generate them under benchmark fitness.",
+  "loop": {
+    "proposes": "An LLM applies a population of evolving mutation-prompts to parent task-prompts (plus Lamarckian working-out traces) to produce offspring.",
+    "judged_by": "An automated benchmark harness evaluates each candidate on multi-step mathematical, logic, and commonsense training batches.",
+    "steers": "Binary tournament genetic selection updates both the task-prompt genome and the meta-level mutation-prompt genome."
+  },
+  "headline_result": "Outperformed Chain-of-Thought, Plan-and-Solve, and OPRO across arithmetic, commonsense, and hate-speech classification benchmarks.",
+  "caveat": "Requires thousands of forward evaluation passes across the evolutionary population before convergence.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "meta-evolution"
+  ],
+  "beyond_harness_note": "A binary-tournament genetic algorithm controls population evolution over both task heuristics and hyper-mutation operators.",
+  "proposal_object": "heuristic",
+  "generative_model": "PaLM 2L self-referential evolutionary mutator",
+  "algorithmic_authority": "Tournament genetic algorithm and benchmark fitness evaluator",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Promptbreeder: Self-Referential Self-Improvement Via Prompt Evolution (ICML 2024 / arXiv:2309.16797)",
+      "url": "https://arxiv.org/abs/2309.16797",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Fernando et al., ICML 2024."
+  }
+}

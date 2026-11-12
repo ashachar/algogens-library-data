@@ -1,0 +1,47 @@
+{
+  "slug": "dafnybench-repair",
+  "name": "DafnyBench Verifier Repair",
+  "org": "Massachusetts Institute of Technology",
+  "year": 2024,
+  "domain": "code-verification",
+  "family": "verifier-guided-repair",
+  "parent": null,
+  "one_liner": "Iterative synthesis of loop invariants and helper assertions in Dafny guided by Dafny verifier error messages.",
+  "loop": {
+    "proposes": "An LLM inserts loop invariants and assertions into a Dafny program while keeping the top-level specification intact.",
+    "judged_by": "The Dafny verifier checks whether the program verifies and returns its error message when it does not.",
+    "steers": "The Dafny error message is fed back for up to 10 attempts until the verifier accepts the proof."
+  },
+  "headline_result": "Verified 68% of the 782 ground-truth formal verification programs in DafnyBench via multi-turn compiler feedback.",
+  "caveat": "A spec check must prevent the model from trivially satisfying the verifier by weakening `ensures` clauses or adding `assume false`.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "formal-kernel"
+  ],
+  "beyond_harness_note": "The Dafny deductive verifier enforces formal proof obligations across iterative invariant synthesis.",
+  "proposal_object": "proof",
+  "generative_model": "Claude 3 Opus / GPT-4o invariant synthesizer",
+  "algorithmic_authority": "Dafny formal verifier",
+  "feedback_payload": "verifier-errors",
+  "update_target": "context",
+  "loop_stage": "inference",
+  "validity_scope": "formal",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "DafnyBench: A Benchmark for Formal Software Verification (arXiv:2406.08467)",
+      "url": "https://arxiv.org/abs/2406.08467",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Loughridge et al., arXiv:2406.08467."
+  }
+}

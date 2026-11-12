@@ -1,0 +1,47 @@
+{
+  "slug": "orlm",
+  "name": "ORLM (Operations Research Language Model)",
+  "org": "Cardinal Operations, Tsinghua University",
+  "year": 2024,
+  "domain": "optimization",
+  "family": "formalize-and-solve",
+  "parent": null,
+  "one_liner": "Trains open-weight LLMs on synthetic operations-research formulations whose programs execute in the COPT mixed-integer solver, then solves problems via LLM+Solver.",
+  "loop": {
+    "proposes": "An LLM translates complex industrial scheduling, routing, and supply-chain descriptions into formal mathematical models and COPT Python code.",
+    "judged_by": "The COPT mathematical programming solver executes the generated MIP/LP script and reports the solver optimum.",
+    "steers": "During synthetic data curation (OR-Instruct) unexecutable programs are discarded; at inference the code is run and the solver optimum is reported."
+  },
+  "headline_result": "Outperformed GPT-4 across NL4Opt, MAMO, and IndustryOR benchmarks using a 7B open-weight model paired with the COPT solver.",
+  "caveat": "As in all Formalize-and-Solve systems, solver optimality applies to the generated algebraic model rather than unstated domain nuances.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "domain-authority-judge",
+    "retrains-generator"
+  ],
+  "beyond_harness_note": "An exact mathematical programming solver (COPT) both discards unexecutable synthetic training programs and computes the final optimization solution.",
+  "proposal_object": "specification",
+  "generative_model": "Fine-tuned Mistral-7B / LLaMA-3 ORLM",
+  "algorithmic_authority": "COPT mixed-integer and linear programming solver",
+  "feedback_payload": "verifier-errors",
+  "update_target": "weights+training-data",
+  "loop_stage": "inference",
+  "validity_scope": "formal",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "ORLM: A Customizable Framework in Training Large Models for Automated Optimization Modeling (Operations Research / arXiv:2405.17743)",
+      "url": "https://arxiv.org/abs/2405.17743",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Tang et al., arXiv:2405.17743."
+  }
+}

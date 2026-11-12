@@ -1,0 +1,54 @@
+{
+  "parent": "eureka",
+  "youtube_id": null,
+  "direct_algogen_link": "conceptual-fit",
+  "slug": "dreureka",
+  "name": "DrEureka",
+  "org": "University of Pennsylvania, NVIDIA and UT Austin",
+  "year": 2024,
+  "domain": "robotics",
+  "family": "program-evolution",
+  "one_liner": "Eureka's reward loop extended to sim-to-real: an LLM also proposes the simulator's randomization settings so a trained robot policy works on hardware.",
+  "loop": {
+    "proposes": "Reward code (as in Eureka, with safety instructions) and then domain randomization configurations from GPT-4",
+    "judged_by": "RL training in simulation, plus a physics-prior step (RAPP) that bounds each randomized parameter",
+    "steers": "Reward stage: best result feeds back into the prompt. Randomization stage: open loop, no real-world feedback"
+  },
+  "headline_result": "On a real quadruped forward-locomotion test (2 m/s target, 5 m track), the best DrEureka policy reached 1.83 m/s and 5.00 m versus 1.32 m/s and 4.17 m for the human-designed setup. The robot also walked atop a real yoga ball for 15.4 seconds on average.",
+  "caveat": "Only the reward stage closes a loop with simulation results, and the randomization stage is a one-shot proposal. The real-world numbers come from short hardware trials, and the yoga-ball runs are about 15 seconds, not minutes.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "design-time",
+    "physical-grounding"
+  ],
+  "beyond_harness_note": "The LLM designs training settings offline in simulation, and the resulting policy runs on the robot without the model.",
+  "proposal_object": "reward-function",
+  "generative_model": "GPT-4, frozen",
+  "algorithmic_authority": "Physics simulation with RL training and a reward-aware physics prior",
+  "feedback_payload": "verbal-reflection",
+  "update_target": "context",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "successor",
+  "sources": [
+    {
+      "title": "DrEureka: Language Model Guided Sim-To-Real Transfer (RSS 2024)",
+      "url": "https://arxiv.org/abs/2406.01967",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    },
+    {
+      "title": "DrEureka project page and code",
+      "url": "https://eureka-research.github.io/dr-eureka/",
+      "kind": "code",
+      "supports": "availability"
+    }
+  ],
+  "verification": {
+    "checked_on": "2026-11-03",
+    "status": "verified",
+    "notes": "Read the arXiv abstract (RSS 2024) and the HTML full text (first 100,000 characters). Table I values quoted directly. The paper text claims 34% faster and 20% farther; the track table gives about 39% faster and 20% farther for the best policy, so the card quotes table values and avoids the percentages. Affiliation order in the extracted text was ambiguous (UPenn, NVIDIA, UT Austin). Added from the robotics-gap list. Org confirmed from the arXiv HTML title block (review 2026-11-03)."
+  }
+}

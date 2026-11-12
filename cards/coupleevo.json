@@ -1,0 +1,51 @@
+{
+  "slug": "coupleevo",
+  "name": "CoupleEvo",
+  "org": "Karlsruhe Institute of Technology",
+  "year": 2026,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "An LLM heuristic-evolution method for problems made of several linked sub-problems, with three ways to coordinate the evolution.",
+  "loop": {
+    "proposes": "Heuristics for each sub-problem, written by an LLM inside an evolutionary loop",
+    "judged_by": "Running the combined heuristics on instances of the coupled problem",
+    "steers": "Sequential, iterative or integrated schedules decide which sub-problem's heuristic evolves in each generation"
+  },
+  "headline_result": "On two coupled problems (inventory routing, and multi-robot multi-bay pre-marshalling) with Qwen3-coder:30b, the sequential and iterative strategies converged more stably than the integrated one. On inventory routing the mean relative gap was 0.0429 (sequential), 0.0433 (iterative), 0.0537 (integrated).",
+  "caveat": "Two problems and one model. The paper's own text says iterative has the smallest median on one problem while its table shows sequential lower, so read the tables, not the prose. Accepted to a GECCO 2026 workshop.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model",
+    "design-time",
+    "meta-evolution",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "An evolutionary schedule over several sub-heuristics is the solver, and the evolved heuristics run without the model.",
+  "proposal_object": "heuristic",
+  "generative_model": "Qwen3-coder:30b, frozen",
+  "algorithmic_authority": "Evaluation on coupled-problem instances",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "derivative",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "CoupleEvo: Evolving Heuristics for Coupled Optimization Problems Using Large Language Models",
+      "url": "https://arxiv.org/abs/2605.06341",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Resolved arXiv:2605.06341 (Bomer, Amberg, Disselnmeyer, Meyer; v1 7 May 2026; comment 'accepted at GECCO 2026 workshop'). Table 1 numbers read from the HTML. Report said 'sequential/iterative more stable than integrated' - confirmed. Not verified whether it is built on EoH, so parent is null. Org confirmed from the arXiv HTML: all authors at KIT (review 2026-11-03)."
+  }
+}

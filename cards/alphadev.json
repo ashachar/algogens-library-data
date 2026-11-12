@@ -1,0 +1,59 @@
+{
+  "slug": "alphadev",
+  "name": "AlphaDev",
+  "org": "Google DeepMind",
+  "year": 2023,
+  "domain": "engineering",
+  "family": "offline-solver-discovery",
+  "parent": null,
+  "one_liner": "A reinforcement learning agent searches x86 assembly instructions inside Monte Carlo Tree Search to discover faster verified sorting routines.",
+  "loop": {
+    "proposes": "x86 assembly instructions appended one step at a time by a representation and policy-value network",
+    "judged_by": "Correctness checked over exhaustive test permutations, plus latency measured on real CPUs or estimated by a learned latency model",
+    "steers": "Monte Carlo Tree Search expands high-value assembly prefixes and updates network weights from verified fast routines"
+  },
+  "headline_result": "In Nature (2023), AlphaDev discovered new x86 assembly sorting routines for small fixed and variable sequence lengths, cutting one instruction from sort3 (17 vs 18 instructions) and speeding up sort3 through sort5 by up to 70% and 250,000-element sorting by about 1.7%. The routines were merged into the LLVM libc++ standard sorting library.",
+  "caveat": "AlphaDev optimizes short branchless assembly blocks (such as 3-to-5-element base cases called inside larger sorts) rather than inventing a new asymptotic sorting complexity class. Search cost grows rapidly with program length.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "domain-authority-judge",
+    "retrains-generator",
+    "population-search",
+    "non-llm-generator",
+    "output-outlives-model",
+    "design-time",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "Monte Carlo Tree Search and correctness and latency evaluation drive the search offline, and the resulting assembly routines ship inside LLVM libc++ with no neural network at runtime.",
+  "proposal_object": "program",
+  "generative_model": "AlphaZero-style transformer and MLP policy-value network trained via reinforcement learning (not an LLM)",
+  "algorithmic_authority": "exhaustive permutation verifier for correctness, and latency measured on real CPUs or estimated by a learned latency model, inside Monte Carlo Tree Search",
+  "feedback_payload": "reward",
+  "update_target": "search-tree+weights",
+  "loop_stage": "offline-design",
+  "validity_scope": "formal",
+  "evidence_level": "deployment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Faster sorting algorithms discovered using deep reinforcement learning (Nature, 2023)",
+      "url": "https://www.nature.com/articles/s41586-023-06004-9",
+      "kind": "paper",
+      "supports": "headline_result, loop, caveat"
+    },
+    {
+      "title": "google-deepmind/alphadev (code and LLVM libc++ sorting routines)",
+      "url": "https://github.com/google-deepmind/alphadev",
+      "kind": "code",
+      "supports": "headline_result, evidence_level"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-06",
+    "notes": "Verified against Mankowitz et al., Nature 618, 257-263 (2023), doi:10.1038/s41586-023-06004-9. Confirmed sort3 17 vs 18 instructions, up to 70% faster on sort3 and ~1.7% on 250k elements, and adoption in LLVM libc++."
+  }
+}

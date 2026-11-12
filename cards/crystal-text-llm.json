@@ -1,0 +1,47 @@
+{
+  "slug": "crystal-text-llm",
+  "name": "CrystalTextLLM",
+  "org": "New York University, Meta AI",
+  "year": 2024,
+  "domain": "materials",
+  "family": "verifier-guided-repair",
+  "parent": null,
+  "one_liner": "Fine-tuned language model proposes 3D crystal CIF files where sampling retries when a CIF cannot be parsed, and validity, M3GNet and DFT stability are measured afterwards.",
+  "loop": {
+    "proposes": "A fine-tuned LLaMA-2 model generates crystallographic information files (space group, lattice lengths/angles, fractional coordinates).",
+    "judged_by": "Pymatgen structural validators, M3GNet interatomic potential relaxations, and VASP Density Functional Theory calculations measure validity and thermodynamic stability afterwards.",
+    "steers": "Sampling retries when a CIF cannot be parsed, and conditional infill prompts steer generation."
+  },
+  "headline_result": "Nearly 90% of sampled structures pass geometric and charge-neutrality checks, and a high fraction relax to metastable or stable states in DFT.",
+  "caveat": "Text-tokenized coordinates have finite numerical precision prior to force-field or DFT structural relaxation.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "population-search"
+  ],
+  "beyond_harness_note": "Crystallographic geometry checkers and quantum-mechanical DFT relaxations measure validity and stability of the generated crystals afterwards.",
+  "proposal_object": "crystal",
+  "generative_model": "Fine-tuned LLaMA-2 70B on CIF crystal strings",
+  "algorithmic_authority": "Pymatgen validator, M3GNet potential, and VASP DFT solver",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "inference",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Fine-Tuned Language Models Generate Stable Inorganic Materials as Text (ICLR 2024 / arXiv:2402.04379)",
+      "url": "https://arxiv.org/abs/2402.04379",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Gruver et al., ICLR 2024."
+  }
+}

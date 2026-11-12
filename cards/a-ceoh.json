@@ -1,0 +1,51 @@
+{
+  "slug": "a-ceoh",
+  "name": "A-CEoH (Algorithmic Contextual EoH)",
+  "org": "Karlsruhe Institute of Technology and TU Dortmund University",
+  "year": 2026,
+  "domain": "optimization",
+  "family": "program-evolution",
+  "parent": "ceoh",
+  "one_liner": "EoH with the A* search code pasted into every prompt, so the LLM designs a guiding heuristic with the algorithm in view.",
+  "loop": {
+    "proposes": "Guiding heuristic functions for A* search, as thought plus code",
+    "judged_by": "Running A* with the heuristic on instances (solved count, fitness, time)",
+    "steers": "Fitness drives EoH selection; the A* source code is kept in every prompt"
+  },
+  "headline_result": "For unit-load pre-marshalling, Qwen2.5-Coder:32b-generated heuristics solved 30 of 30 held-out instances (seeds 10-39) against 27 of 30 for the \"Optimal A*\" baseline. For the sliding puzzle they solved 10 of 10 on seeds 0-9 against 5 of 10 for Hybrid A* and for \"Optimal A*\".",
+  "caveat": "Two domains. Where both solve, the LLM heuristics give worse solutions than A* (puzzle fitness 0.281 against 0.252 on shared instances). The paper gives no numeric EoH baseline for the final heuristics, only a qualitative claim of improvement. Accepted at EvoStar.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model",
+    "design-time",
+    "meta-evolution",
+    "intra-algorithmic"
+  ],
+  "beyond_harness_note": "An evolutionary loop designs a heuristic that is plugged into a classical A* search and then runs without the model.",
+  "proposal_object": "heuristic",
+  "generative_model": "Pretrained LLMs, frozen (Qwen2.5-Coder:32b, GPT-4o, Gemma2:27b)",
+  "algorithmic_authority": "A* runs on instances (solved or not, plan quality, time)",
+  "feedback_payload": "score",
+  "update_target": "population",
+  "loop_stage": "offline-design",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "derivative",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Algorithmic Prompt-Augmentation for Efficient LLM-Based Heuristic Design for A* Search",
+      "url": "https://arxiv.org/abs/2601.19622",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Resolved arXiv:2601.19622 (Bomer, Koltermann, Disselnmeyer, Amberg; v1 27 Jan 2026; comment 'accepted at EvoStar'). Solved-count tables read from the HTML (percentages are my arithmetic). Affiliations assumed to match the CEoH authors (KIT / TU Dortmund) and not checked on this paper. Report's 'pre-marshalling and sliding puzzles' confirmed. Parent set to eoh as a variant of CEoH/EoH. Org confirmed from the arXiv HTML: KIT (4 authors) and TU Dortmund (1) (review 2026-11-03)."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "parent": null,
+  "direct_algogen_link": "conceptual-fit",
+  "youtube_id": null,
+  "lineage": "origin",
+  "evidence_level": "experiment",
+  "validity_scope": "formal",
+  "slug": "seed-prover",
+  "name": "Seed-Prover",
+  "org": "ByteDance Seed (AI4Math team)",
+  "year": 2025,
+  "domain": "proofs",
+  "family": "verifier-guided-repair",
+  "one_liner": "A Lean prover that writes whole proofs from lemmas and revises them using Lean feedback, proven lemmas and summaries of earlier tries.",
+  "loop": {
+    "proposes": "Lean proofs built from lemmas, from a language model",
+    "judged_by": "The Lean proof assistant",
+    "steers": "Lean feedback, proved lemmas and self-summaries of earlier attempts go into the next try, with three test-time strategies"
+  },
+  "headline_result": "The abstract reports 78.1% of formalized past IMO problems proved, MiniF2F saturated, above 50% on PutnamBench, and 5 of 6 IMO 2025 problems fully proved; a separate Seed-Geometry engine handles geometry.",
+  "caveat": "This card rests on the abstract only. Budgets, training details and who formalized the IMO 2025 statements are not stated there.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "formal-kernel"
+  ],
+  "beyond_harness_note": "Lean decides validity and the finished proof is checkable without the model; the abstract does not support weight updates from the loop.",
+  "proposal_object": "proof",
+  "generative_model": "Lemma-style whole-proof language model",
+  "algorithmic_authority": "Lean proof assistant",
+  "feedback_payload": "verifier-errors",
+  "update_target": "context",
+  "loop_stage": "inference",
+  "sources": [
+    {
+      "title": "Seed-Prover: Deep and Broad Reasoning for Automated Theorem Proving",
+      "url": "https://arxiv.org/abs/2507.23726",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Abstract only (arXiv 2507.23726, v2). Org 'ByteDance Seed' is from the system's naming; the abstract fetch did not list affiliations, so confirm before publishing. Compute and formalization conditions not checked. Org: PDF lists ByteDance Seed AI4Math per search result; the PDF text itself did not decode in review, so the full author list is unconfirmed."
+  }
+}

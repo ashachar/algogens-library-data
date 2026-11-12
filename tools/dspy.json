@@ -1,0 +1,27 @@
+{
+  "slug": "dspy",
+  "name": "DSPy",
+  "author": "stanfordnlp",
+  "kind": "library",
+  "repo_url": "https://github.com/stanfordnlp/dspy",
+  "install": "pip install dspy",
+  "one_liner": "Python framework whose optimizers (MIPROv2, GEPA and others) tune prompts and weights to maximize a metric you write.",
+  "loop": {
+    "proposes": "candidate instructions and few-shot examples for each module",
+    "judged_by": "a metric function you write that scores program outputs",
+    "steers": "optimizers such as MIPROv2 (Bayesian search) and COPRO (hill-climbing) keep the settings that raise the metric"
+  },
+  "not_proved": "A prompt tuned on a metric and a training set is only as good as that metric; gains may not carry to new inputs or to what the metric misses.",
+  "license": "MIT",
+  "sources": [
+    {
+      "title": "DSPy README",
+      "url": "https://github.com/stanfordnlp/dspy"
+    },
+    {
+      "title": "DSPy optimizers doc (source)",
+      "url": "https://github.com/stanfordnlp/dspy/blob/main/docs/docs/learn/optimization/optimizers.md"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}

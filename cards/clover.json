@@ -1,0 +1,47 @@
+{
+  "slug": "clover",
+  "name": "Clover (Closed-Loop Verifiable Code Generation)",
+  "org": "Stanford University",
+  "year": 2023,
+  "domain": "code-verification",
+  "family": "verifier-guided-repair",
+  "parent": null,
+  "one_liner": "Checks mutual consistency between code, docstrings, and formal Dafny specifications using SMT equivalence and deductive verification.",
+  "loop": {
+    "proposes": "An LLM generates Dafny implementation code, formal preconditions/postconditions, and loop invariants from a problem description.",
+    "judged_by": "The Dafny/Boogie/Z3 verifier checks that the code satisfies the specification and tests logical equivalence between reconstructed specs and test suites.",
+    "steers": "Z3 verification errors and equivalence counterexamples are returned to the LLM to repair either the implementation or the annotations."
+  },
+  "headline_result": "Accepted 87% of correct Dafny programs while rejecting all of adversarial incorrect synthesis candidates on the CloverBench suite.",
+  "caveat": "Of the six checks, the Dafny verifier checks the code against its annotations and five reconstruction tests each use an LLM.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "output-outlives-model",
+    "formal-kernel"
+  ],
+  "beyond_harness_note": "The Dafny/Z3 SMT verifier checks deductive correctness and specification equivalence across the synthesis loop.",
+  "proposal_object": "program",
+  "generative_model": "GPT-4 Dafny code and specification generator",
+  "algorithmic_authority": "Dafny compiler and Z3 SMT solver",
+  "feedback_payload": "verifier-errors",
+  "update_target": "context",
+  "loop_stage": "inference",
+  "validity_scope": "formal",
+  "evidence_level": "code",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Clover: Closed-Loop Verifiable Code Generation (arXiv:2310.17807, first posted 2023-10-26)",
+      "url": "https://arxiv.org/abs/2310.17807",
+      "kind": "paper",
+      "supports": "all"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-04-12",
+    "notes": "Checked against Sun et al., arXiv:2310.17807. Year corrected 2024 to 2023 (first posting); SAIV 2024 venue is not printed on the arXiv page, so it was removed from the source title (ledger)."
+  }
+}

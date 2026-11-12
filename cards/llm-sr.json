@@ -1,0 +1,49 @@
+{
+  "slug": "llm-sr",
+  "name": "LLM-SR",
+  "org": "Virginia Tech, Carnegie Mellon University and Allen Institute for AI",
+  "year": 2025,
+  "domain": "science",
+  "family": "program-evolution",
+  "parent": null,
+  "one_liner": "An LLM proposes equation shapes as Python functions, an optimizer fits their constants to data, and the scores steer later proposals.",
+  "loop": {
+    "proposes": "Equation skeletons as Python functions with placeholder parameters",
+    "judged_by": "Fitting parameters with BFGS or Adam and scoring negative mean squared error against data",
+    "steers": "An experience buffer of 10 islands feeds the best equations (k=2) into the next prompt"
+  },
+  "headline_result": "Across four problems (two oscillators, E. coli growth, aluminum stress-strain) with about 2.5K iterations, LLM-SR beat symbolic regression baselines on normalized MSE, most clearly out of domain: for E. coli growth 0.0037 against 1.0141 for the best baseline.",
+  "caveat": "Four benchmarks, two of them custom-built. Baselines (e.g. PySR) ran with far more evaluations (2M+). Results use GPT-3.5-turbo or Mixtral-8x7B; the best model differs by problem.",
+  "beyond_harness": [
+    "algorithm-is-solver",
+    "inverted-control",
+    "population-search",
+    "output-outlives-model",
+    "neuro-symbolic"
+  ],
+  "beyond_harness_note": "The island-based search with data fitting is the solver, and the discovered equation is a compact scientific artifact usable without the LLM.",
+  "proposal_object": "equation",
+  "generative_model": "Frozen LLM (GPT-3.5-turbo, Mixtral-8x7B)",
+  "algorithmic_authority": "Numerical fit to data scored by error",
+  "feedback_payload": "score",
+  "update_target": "context+population",
+  "loop_stage": "inference",
+  "validity_scope": "empirical",
+  "evidence_level": "experiment",
+  "lineage": "derivative",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "LLM-SR: Scientific Equation Discovery via Programming with Large Language Models",
+      "url": "https://arxiv.org/abs/2404.18400",
+      "kind": "paper",
+      "supports": "headline_result, loop"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-03",
+    "notes": "Resolved arXiv:2404.18400 (v1 29 Apr 2024, v3 20 Mar 2025; comment 'ICLR 2025 Oral'). NOTE: arXiv:2502.20286, which I first tried from memory, is an unrelated tensor paper. Loop details, models and the NMSE table read from the HTML. Affiliations were not shown on the page, so org lists authors only. Derivative lineage: the paper credits FunSearch-style search but I did not verify a quote. Org confirmed from the arXiv HTML title block; per-author mapping not checked (review 2026-11-03)."
+  }
+}

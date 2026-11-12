@@ -1,0 +1,62 @@
+{
+  "slug": "gnome",
+  "name": "GNoME (Graph Networks for Materials Exploration)",
+  "org": "Google DeepMind",
+  "year": 2023,
+  "domain": "materials",
+  "family": "active-learning-generation",
+  "parent": null,
+  "one_liner": "Graph neural networks and symmetry-aware structural generators propose inorganic crystals, and Density Functional Theory calculations label their stability to retrain the models across active-learning rounds.",
+  "loop": {
+    "proposes": "Candidate inorganic crystal structures generated via elemental substitution, symmetry-aware partial random structures and GNN energy filtering",
+    "judged_by": "Ab initio Density Functional Theory (DFT) relaxation in VASP computing formation energy relative to the competing-phase convex hull",
+    "steers": "DFT energies and relaxed geometries expand the training set and retrain the GNoME graph neural networks for the next discovery round"
+  },
+  "headline_result": "In Nature (2023), GNoME identified 2.2 million crystal structures below the previous convex hull of known materials, including 381,000 structures on the updated convex hull (nearly an order of magnitude more than the roughly 48,000 stable inorganic crystals previously catalogued). Active learning raised the DFT stability hit rate from under 10% to over 80% for compositional pipeline candidates and from 6% to 33% for structural candidates.",
+  "caveat": "DFT stability is calculated at 0 K for ordered unit cells and does not establish room-temperature phase stability, configurational entropy or practical lab synthesis. A 2024 Chemistry of Materials assessment by Cheetham and Seshadri argued that many predicted compounds are routine ionic or intermetallic substitutions with limited novelty or proven utility.",
+  "beyond_harness": [
+    "domain-authority-judge",
+    "retrains-generator",
+    "population-search",
+    "non-llm-generator",
+    "output-outlives-model",
+    "multi-fidelity"
+  ],
+  "beyond_harness_note": "The generator is a graph neural network pipeline rather than an LLM, VASP quantum-mechanical DFT calculations judge thermodynamic stability, and the discovered crystal catalogue is usable without the model.",
+  "proposal_object": "crystal",
+  "generative_model": "Message-passing Graph Neural Networks (GNoME) paired with structural and compositional candidate pipelines (not an LLM)",
+  "algorithmic_authority": "Density Functional Theory (DFT, VASP) structural relaxation and convex-hull phase stability evaluation",
+  "feedback_payload": "new-data",
+  "update_target": "weights+training-data",
+  "loop_stage": "training",
+  "validity_scope": "approximate-physical",
+  "evidence_level": "experiment",
+  "lineage": "origin",
+  "direct_algogen_link": "conceptual-fit",
+  "sources": [
+    {
+      "title": "Scaling deep learning for materials discovery (Nature, 2023)",
+      "url": "https://www.nature.com/articles/s41586-023-06735-9",
+      "kind": "paper",
+      "supports": "headline_result, loop, generative_model"
+    },
+    {
+      "title": "google-deepmind/materials_discovery (released stable crystal structures)",
+      "url": "https://github.com/google-deepmind/materials_discovery",
+      "kind": "code",
+      "supports": "headline_result, output-outlives-model"
+    },
+    {
+      "title": "Artificial Intelligence Driving Materials Discovery? Perspective on the Article: Scaling Deep Learning for Materials Discovery (Cheetham and Seshadri, Chem. Mater. 2024)",
+      "url": "https://pubs.acs.org/doi/10.1021/acs.chemmater.4c00643",
+      "kind": "paper",
+      "supports": "caveat"
+    }
+  ],
+  "youtube_id": null,
+  "verification": {
+    "status": "verified",
+    "checked_on": "2026-11-06",
+    "notes": "Verified against Merchant et al., Nature 624, 80-90 (2023), doi:10.1038/s41586-023-06735-9, and Cheetham & Seshadri, Chem. Mater. 36, 3490-3495 (2024). Confirmed 2.2M structures below prior hull, 381,000 on updated hull, hit-rate improvements across active-learning rounds, and 0 K DFT / chemical-novelty caveats."
+  }
+}

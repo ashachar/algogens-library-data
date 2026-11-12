@@ -1,0 +1,27 @@
+{
+  "slug": "openevolve",
+  "name": "OpenEvolve",
+  "author": "algorithmicsuperintelligence",
+  "kind": "loop",
+  "repo_url": "https://github.com/algorithmicsuperintelligence/openevolve",
+  "install": "pip install openevolve",
+  "one_liner": "Open-source AlphaEvolve-style loop: an LLM mutates programs and your scoring function picks which survive.",
+  "loop": {
+    "proposes": "LLM-written program mutations",
+    "judged_by": "a user-supplied evaluator function that scores each program",
+    "steers": "MAP-Elites quality-diversity archive and island populations choose which programs get mutated next"
+  },
+  "not_proved": "A high evaluator score shows a program does well on that scoring function, not that nothing better exists or that the evaluator captures what you really want.",
+  "license": "Apache-2.0",
+  "sources": [
+    {
+      "title": "OpenEvolve README",
+      "url": "https://github.com/algorithmicsuperintelligence/openevolve"
+    },
+    {
+      "title": "PyPI page",
+      "url": "https://pypi.org/project/openevolve/"
+    }
+  ],
+  "checked_on": "2026-11-09"
+}
