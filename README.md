@@ -42,8 +42,12 @@ checked against its sources before it is merged.
 
 ## Cite it
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24182052.svg)](https://doi.org/10.5281/zenodo.24182052)
+
 Citation details are in [`CITATION.cff`](CITATION.cff) (GitHub shows a "Cite this repository" button). Releases
-are archived on Zenodo, which gives each one a DOI.
+are archived on Zenodo, which gives each one a DOI. To cite the dataset as a whole, use
+[10.5281/zenodo.24182052](https://doi.org/10.5281/zenodo.24182052), which always points to the latest version;
+v1.0.0 is [10.5281/zenodo.24182053](https://doi.org/10.5281/zenodo.24182053).
 
 The idea behind the library comes from Amir Shachar, *Introduction to Algogens: Integrating Generative AI with
 Algorithmic Frameworks* (2024), [arXiv:2403.01426](https://arxiv.org/abs/2403.01426).

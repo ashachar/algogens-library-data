@@ -5,6 +5,7 @@ title: "AlgoGens Library: a dataset of systems where generative models propose a
 version: 1.0.0
 date-released: 2026-11-12
 license: CC-BY-4.0
+doi: 10.5281/zenodo.24182052
 repository-code: "https://github.com/ashachar/algogens-library-data"
 url: "https://algogens.org/library/"
 authors:
